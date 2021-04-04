@@ -1,0 +1,615 @@
+
+h2,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+
+
+h1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: linear-gradient(to left, #ffffff, #a8c9ff);
+    float:left;
+}
+
+.header-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    display: flex;
+    align-items:center;
+    background: linear-gradient(to left, #dfdfdf, #9fa4af);
+    color: rgb(33, 36, 46);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+  }
+  
+  .header-line ul li{
+      display: inline-block;
+      padding: 10px 20px;
+      color: rgb(33, 36, 46);
+      font-size: 15px;
+  }
+
+
+.animation-area{
+    background: linear-gradient(to left, #a9aabb, #08113df5);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top:7%;
+    left: 0;
+    right: 0;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    justify-content: center;
+   
+}
+
+.naslov-paragraph{
+    color: rgb(38, 41, 54);
+    font-size: 50px;
+    margin: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container-naslov{
+    background: linear-gradient(to top, #f5f8ff, #9fa4af);
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 710px;
+    transform: rotate(0deg);
+    margin-bottom: 0%;
+   
+}
+
+.phone-class{
+    width: 20px;
+    height: 20px;
+    margin-left: -85%;
+    
+}
+
+.report-div{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+.report-btn{
+    position: relative;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 20%;
+    font-size: 15px;
+    color: rgb(38, 41, 54);
+    border-width: 1.5px;
+    border-color: rgba(38, 41, 54, 0.548);
+    background-color: rgba(76, 84, 131, 0.192);
+}
+
+.container1{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 5px;
+    height: 300px;
+    transform: rotate(10deg);
+    border-radius: 50%;
+    margin-left: -25%;
+    animation: animate 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container2{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 5px;
+    height: 300px;
+    transform: rotate(-10deg);
+    border-radius: 50%;
+    margin-left: 4.8%;
+    animation: animate2 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container3{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 200px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    margin-left: -3%;
+    margin-bottom: -30%;
+    animation: animate3 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    
+}
+.container4{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 230px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    margin-left: -0.5%;
+    margin-bottom: -32%;
+    animation: animate3 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container5{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 105px;
+    transform: rotate(65deg);
+    border-radius: 50%;
+    margin-left: -0.6%;
+    margin-bottom: -24%;
+    animation: animate5 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container6{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2.5px;
+    height: 88px;
+    transform: rotate(-65deg);
+    border-radius: 50%;
+    margin-left: 0.3%;
+    margin-bottom: -15%;
+    animation: animate6 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+   
+}
+.container7{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2px;
+    height: 70px;
+    transform: rotate(65deg);
+    border-radius: 50%;
+    margin-left: -0.7%;
+    margin-bottom: -7%;
+    animation: animate7 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+    
+}
+.container8{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2px;
+    height: 60px;
+    transform: rotate(-65deg);
+    border-radius: 50%;
+    margin-left: 0.5%;
+    margin-bottom: -0%;
+    animation: animate8 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+   
+}
+.container9{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 1.5px;
+    height: 50px;
+    transform: rotate(65deg);
+    border-radius: 50%;
+    margin-left: -0.7%;
+    margin-bottom: 5.5%;
+    animation: animate9 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+   
+}
+
+
+.container10{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 1.5px;
+    height: 85px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    margin-left: 0%;
+    margin-bottom: 17%;
+    animation: animate10 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container11{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 1.9px;
+    height: 120px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    margin-left: 0%;
+    margin-bottom: 12%;
+    animation: animate11 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container12{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2.5px;
+    height: 160px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    margin-left: 0%;
+    margin-bottom: 3%;
+    animation: animate12 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container13{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2.9px;
+    height: 210px;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    margin-left: 0%;
+    margin-bottom: -4%;
+    animation: animate13 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+
+.container14{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 1.5px;
+    height: 28px;
+    transform: rotate(33deg);
+    border-radius: 50%;
+    margin-left: -6%;
+    margin-bottom: 14.5%;
+    animation: animate14 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container15{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 1.5px;
+    height: 28px;
+    transform: rotate(-33deg);
+    border-radius: 50%;
+    margin-left: 10.1%;
+    margin-bottom: 14.5%;
+    animation: animate15 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container16{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2px;
+    height: 40px;
+    transform: rotate(33deg);
+    border-radius: 50%;
+    margin-left: -14%;
+    margin-bottom: -0.5%;
+    animation: animate16 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container17{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 2px;
+    height: 41px;
+    transform: rotate(-35deg);
+    border-radius: 50%;
+    margin-left: 18%;
+    margin-bottom: -0.5%;
+    animation: animate17 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+
+.container18{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 14px;
+    transform: rotate(0deg);
+    border-radius: 80%;
+    margin-left: -15.5%;
+    margin-bottom: 11%;
+    animation: animate18 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container19{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 14px;
+    transform: rotate(0deg);
+    border-radius: 80%;
+    margin-left: 11.4%;
+    margin-bottom: 11%;
+    animation: animate19 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container20{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 14px;
+    transform: rotate(0deg);
+    border-radius: 80%;
+    margin-left: -16.0%;
+    margin-bottom: -5.2%;
+    animation: animate20 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+.container21{
+    background: linear-gradient(to left, #ffffff, #a8c9ff);
+    width: 3px;
+    height: 14px;
+    transform: rotate(0deg);
+    border-radius: 80%;
+    margin-left: 20.3%;
+    margin-bottom: -5.2%;
+    animation: animate21 2s ease forwards infinite;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+@keyframes animate{
+    60%{
+        transform: translateX(0px) rotate(10deg);
+    }
+    70%{
+        transform: translateX(-700px) rotate(180deg);
+    }
+    100%{
+        transform: translateX(0px) rotate(370deg);
+    }
+    
+}
+@keyframes animate2{
+    60%{
+        transform: translateX(0px) rotate(-10deg);
+    }
+    70%{
+        transform: translateX(930px) rotate(-180deg);
+    }
+    100%{
+        transform: translateX(0px) rotate(350deg);
+    }
+    
+}
+@keyframes animate3{
+    60%{
+        transform: translateX(0px) rotate(90deg);
+    }
+    70%{
+        transform: translateY(400px) rotate(90deg);
+    }
+    100%{
+        transform: translateX(0px) rotate(90deg);
+    }
+    
+}
+@keyframes animate5{
+    60%{
+        transform: rotate(65deg);
+    }
+    70%{
+        transform: translateY(-790px) translateX(-300px) rotate(-65deg);
+    }
+    100%{
+        transform:rotate(65deg);
+    }
+}
+@keyframes animate6{
+    60%{
+        transform: rotate(-65deg);
+    }
+    70%{
+        transform: translateY(290px) translateX(-300px) rotate(65deg);
+    }
+    100%{
+        transform:rotate(-65deg);
+    }
+}
+@keyframes animate7{
+    60%{
+        transform: rotate(65deg);
+    }
+    70%{
+        transform: translateY(-390px) translateX(300px) rotate(-65deg);
+    }
+    100%{
+        transform:rotate(65deg);
+    }
+}
+@keyframes animate8{
+    60%{
+        transform: rotate(-65deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(65deg);
+    }
+    100%{
+        transform:rotate(-65deg);
+    }
+}
+@keyframes animate9{
+    60%{
+        transform: rotate(65deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(-65deg);
+    }
+    100%{
+        transform:rotate(65deg);
+    }
+}
+
+@keyframes animate10{
+    60%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(-90deg);
+    }
+    100%{
+        transform:rotate(90deg);
+    }
+}
+@keyframes animate11{
+    60%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(-90deg);
+    }
+    100%{
+        transform:rotate(90deg);
+    }
+}
+@keyframes animate12{
+    60%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: translateY(-490px) translateX(300px) rotate(170deg);
+    }
+    100%{
+        transform:rotate(90deg);
+    }
+}
+@keyframes animate13{
+    60%{
+        transform: rotate(90deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(-200deg);
+    }
+    100%{
+        transform:rotate(90deg);
+    }
+}
+@keyframes animate14{
+    60%{
+        transform: rotate(33deg);
+    }
+    70%{
+        transform: translateY(-490px) translateX(300px) rotate(360deg);
+    }
+    100%{
+        transform:rotate(33deg);
+    }
+}
+@keyframes animate15{
+    60%{
+        transform: rotate(-33deg);
+    }
+    70%{
+        transform: translateY(-490px) translateX(300px) rotate(-300deg);
+    }
+    100%{
+        transform:rotate(-33deg);
+    }
+}
+@keyframes animate16{
+    60%{
+        transform: rotate(33deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(260deg);
+    }
+    100%{
+        transform:rotate(33deg);
+    }
+}
+@keyframes animate17{
+    60%{
+        transform: rotate(-35deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(-260deg);
+    }
+    100%{
+        transform:rotate(-35deg);
+    }
+}
+
+@keyframes animate18{
+    60%{
+        transform: rotate(0deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(180deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+@keyframes animate19{
+    60%{
+        transform: rotate(0deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(180deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+@keyframes animate20{
+    60%{
+        transform: rotate(0deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(180deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+@keyframes animate21{
+    60%{
+        transform: rotate(0deg);
+    }
+    70%{
+        transform: translateY(490px) translateX(-300px) rotate(180deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+@keyframes animatePhone{
+    60%{
+        transform: rotate(0deg);
+    }
+    95%{
+        transform:rotate(90deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+
+
+
+
+
+
+
+
