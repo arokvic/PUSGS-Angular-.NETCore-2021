@@ -275,10 +275,10 @@ html, body{
 
 
 @keyframes animate{
-    80%{
+    70%{
         transform: rotate(0deg);
     }
-    90%{
+    85%{
         transform: translateY(-110px) translateX(-400px) rotate(180deg);
     }
     100%{
@@ -287,7 +287,7 @@ html, body{
 }
 
 @keyframes animate2{
-    80%{
+    70%{
         transform: rotate(0deg);
     }
     90%{
@@ -299,10 +299,10 @@ html, body{
 }
 @keyframes animate3
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
-    90%{
+    85%{
         transform: translateY(-300px) translateX(300px) rotate(-190deg);
     }
     100%{
@@ -311,7 +311,7 @@ html, body{
 }
 @keyframes animate4
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
     90%{
@@ -323,10 +323,10 @@ html, body{
 }
 @keyframes animate5
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
-    90%{
+    85%{
         transform: translateY(490px) translateX(-1000px) rotate(-190deg);
     }
     100%{
@@ -335,7 +335,7 @@ html, body{
 }
 @keyframes animate6
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
     90%{
@@ -347,10 +347,10 @@ html, body{
 }
 @keyframes animate7
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
-    90%{
+    85%{
         transform: translateY(490px) translateX(100px) rotate(-180deg);
     }
     100%{
@@ -359,7 +359,7 @@ html, body{
 }
 @keyframes animate8
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
     90%{
@@ -372,10 +372,10 @@ html, body{
 
 @keyframes animate9
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
-    90%{
+    85%{
         transform: translateY(490px) translateX(-600px) rotate(-180deg);
     }
     100%{
@@ -384,7 +384,7 @@ html, body{
 }
 @keyframes animate10
 {
-    80%{
+    70%{
         transform: rotate(0deg);
     }
     90%{
