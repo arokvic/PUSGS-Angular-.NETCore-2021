@@ -78,34 +78,34 @@
        
         <div class="div8">
           <div class="div1_1">
-            <img class="slika71" src="assets/finalno/cut_images_71INr81E4w/image_part_003.png"/>
+            <img class="slika81" src="assets/finalno/cut_images_71INr81E4w/image_part_003.png"/>
           </div>
           <div class="div1_2">
-            <img class="slika72" src="assets/finalno/cut_images_71INr81E4w/image_part_007.png"/>
+            <img class="slika82" src="assets/finalno/cut_images_71INr81E4w/image_part_007.png"/>
           </div>
           <div class="div1_3">
-            <img class="slika73" src="assets/finalno/cut_images_71INr81E4w/image_part_011.png"/>
+            <img class="slika83" src="assets/finalno/cut_images_71INr81E4w/image_part_011.png"/>
           </div>
           <div class="div1_4">
-            <img class="slika74" src="assets/finalno/cut_images_71INr81E4w/image_part_015.png"/>
+            <img class="slika84" src="assets/finalno/cut_images_71INr81E4w/image_part_015.png"/>
           </div>
           <div class="div1_5">
-            <img class="slika75" src="assets/finalno/cut_images_71INr81E4w/image_part_019.png"/>
+            <img class="slika85" src="assets/finalno/cut_images_71INr81E4w/image_part_019.png"/>
           </div>
           <div class="div1_6">
-            <img class="slika76" src="assets/finalno/cut_images_71INr81E4w/image_part_023.png"/>
+            <img class="slika86" src="assets/finalno/cut_images_71INr81E4w/image_part_023.png"/>
           </div>
           <div class="div1_7">
-            <img class="slika77" src="assets/finalno/cut_images_71INr81E4w/image_part_027.png"/>
+            <img class="slika87" src="assets/finalno/cut_images_71INr81E4w/image_part_027.png"/>
           </div>
           <div class="div1_8">
-            <img class="slika78" src="assets/finalno/cut_images_71INr81E4w/image_part_031.png"/>
+            <img class="slika88" src="assets/finalno/cut_images_71INr81E4w/image_part_031.png"/>
           </div>
           <div class="div1_9">
-            <img class="slika79" src="assets/finalno/cut_images_71INr81E4w/image_part_035.png"/>
+            <img class="slika89" src="assets/finalno/cut_images_71INr81E4w/image_part_035.png"/>
           </div>
           <div class="div1_10">
-            <img class="slika710" src="assets/finalno/cut_images_71INr81E4w/image_part_039.png"/>
+            <img class="slika810" src="assets/finalno/cut_images_71INr81E4w/image_part_039.png"/>
           </div>
         </div>
       
@@ -150,17 +150,56 @@
         <p class="naslov">Electricity<br> For<br> The<br> Future</p>
       </div>
 
-      <div class="navbar-area">
-        <nav class="navbar-class">
-          Home
-        </nav>
-       </div>
-     
-      <div class="report-area">
-        <p class="tekst"><br>If your electric power is interrupted, report outage to us right away</p>
-        <button class="report-btn" type="button">
-          <img class="phone-class" src="assets/phone.png"/>
+      <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="https://www.google.com/">News</a>
+        <a href="#contact">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
           </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+
+      <script>
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+      x.className += " responsive";
+      } else {
+       x.className = "topnav";
+      }
+      }
+      </script>
+
+  
+    
+      <div class="report-area">
+        <div class="report-tekst">
+          <p class="tekst"><br>If your electric power is interrupted, report outage to us right away</p>
+        </div>
+        <div class="report-button">
+          
+          <button class="report-btn" type="button">
+            <div class="button-image">
+              <img class="phone-class" src="assets/phone.png"/>
+            </div>
+            <div class="button-text-div">
+                <p class="report-outage">
+                  Report outage
+                </p>
+            </div>
+          </button>
+          
+        </div>
+      
       </div>
      
       

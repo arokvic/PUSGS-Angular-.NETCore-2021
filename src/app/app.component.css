@@ -11,13 +11,17 @@ html, body{
     width: 100%;
     left: 0;
     top: 0;
-    overflow: auto;
+    overflow: hidden;
     position: fixed;
-    background: linear-gradient(to left, #06063f, #000003);
+    background: linear-gradient(55deg,black, #0b0c10,#1f2833);
+    animation: animateColor 2s ease forwards infinite;
+    animation-duration: 5.5s;
 }
 
+/* #region    FOOTER*/
 .footer-area{
-    background-color: rgba(255, 255, 255, 0.048);
+   /* background-color: rgba(255, 255, 255, 0.02);*/
+   background-color: #1f283336;
     position:fixed;
     bottom:0;
     width:100%;
@@ -32,90 +36,239 @@ html, body{
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 8px;
 }
+/* #endregion */
 
-.report-area{
-    background-color: rgba(255, 255, 255, 0.055);
-    width:30%;
-    height:30%;
+/* #region    NAVBAR*/
+.topnav {
+    background-color: #1f2833;
+    overflow: hidden;
     position: fixed;
-    margin-left: 33%;
-    margin-top: 15%;
-   
+    width: 100%;
+    height: 30px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .active {
+    background-color: #45a29e;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+  
+  /* Dropdown container - needed to position the dropdown content */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Style the dropdown button to fit inside the topnav */
+  .dropdown .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Style the links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a dark background on topnav links and the dropdown button on hover */
+  .topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #66fcf1;
+    color: white;
+  }
+  
+  /* Add a grey background to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+
+/* #endregion */
+
+
+/* #region  REPORT-AREA */
+.report-area{
+   position: relative;
+   display: flex;
+   background-color: #45a29d17;
+   width: 26%;
+   height: 30%;
+   top: -40%; 
+   left: 37%;
+   flex-direction: column;
 }
 
+.report-tekst{
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+}
+.tekst{
+    font-size: 80%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 0%;
+}
+
+.report-button
+{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    margin-left: 0%;
+    margin-bottom: 2%;
+    flex-direction: column;
+}
+
+.report-btn{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    background-color: #c5c6c7;
+    border-width: 1.5px;
+    border-color: #66fcf1;
+    align-self: center;
+}
+
+.button-image
+{
+    height: 100%;
+    width:10%;
+}
+.button-text-div
+{
+    height: 100%;
+    width:85%;
+    overflow:hidden;
+}
+.phone-class
+{
+    width: 100%;
+    height: 100%;
+}
+
+.report-outage
+{
+    margin-left: -10%;
+    margin-top: 0%;
+    font-size: 90%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+    font-weight:lighter;
+}
 .naslov{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
+    font-size: 340%;
+    font-weight: bold;
     margin-left: 16px;
-    margin-top: auto;
-    color:rgba(255, 255, 255, 0.787)
+    margin-top: 5%;
+    color:#66fcf1
 }
 
-.tekst
+.naslov-area
 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    margin-left: 8%;
-    margin-top: auto;
-    position: relative;
-    color:rgba(255, 255, 255, 0.424)
-}
-.phone-class{
-    width: 8.5%;
-    height: 80%;
-    margin-left: 0%;
-    margin-top: 1%;
-    position: relative;
-}
-
-.report-div{
-    position: relative;
-    margin-top: -12%;
-}
-.report-btn{
-    position: relative;
-    width: 80%;
-    height: 21%;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 12%;
-    margin-top: 8%;
-    font-size: 15px;
-    color: rgb(38, 41, 54);
-    border-width: 1.5px;
-    border-color: rgba(38, 41, 54, 0.548);
-    background-color: rgba(255, 255, 255, 0.924);
-}
-
-.naslov-area{
-    background-color: rgba(4, 0, 255, 0);
     position: fixed;
     margin-left: 0%;
     margin-top: 5%;
-    overflow: auto;
 }
-
-.navbar-class{
-    background-color: rgba(255, 255, 255, 0.924);
-    width:100%;
-    height:6%;
-    position: fixed;
-    overflow:auto;
-    
+.tekst
+{
+    color:rgba(255, 255, 255, 0.835);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin-top: 0%;
 }
+/* #endregion*/
 
 
+  
+
+/* #region       SLIKA     */
 
 .animation-area1{
     float: left;
     position: relative;
-    background-color: rgba(139, 0, 139, 0);
     width: 17%;
     height: 55%;
-    margin-left: 81%;
-    margin-top: 12.0%;
+    margin-left: 78%;
+    margin-top: 8.0%;
     display: flex;
-    overflow: visible;
+    overflow:visible;
     justify-content: center;
    flex-flow: row;
   transform: rotate(-1.4deg);
@@ -232,144 +385,222 @@ html, body{
 {
     width: 100%;
     height: 100%;
-    animation: animate 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate1 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika12
 {
     width: 100%;
     height: 100%;
     animation: animate2 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
 }
 .slika13
 {
     width: 100%;
     height: 100%;
     animation: animate3 2s ease forwards infinite;
-    animation-duration: 4s;
-
+    animation-duration: 6s;
 }
 .slika14
 {
     width: 100%;
     height: 100%;
     animation: animate4 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+   
 }
 .slika15
 {
     width: 100%;
     height: 100%;
     animation: animate5 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+    
 }
 .slika16
 {
     width: 100%;
     height: 100%;
     animation: animate6 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+   
 }
 .slika17
 {
     width: 100%;
     height: 100%;
     animation: animate7 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+   
 }
 .slika18
 {
     width: 100%;
     height: 100%;
     animation: animate8 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+   
 }
 .slika19
 {
     width: 100%;
     height: 100%;
     animation: animate9 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+    
 }
 .slika110
 {
     width: 100%;
     height: 100%;
     animation: animate10 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+   
 }
 
 .slika71
 {
     width: 100%;
     height: 100%;
-    animation: animate3 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate2 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika72
 {
     width: 100%;
     height: 100%;
-    animation: animate2 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate1 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika73
 {
     width: 100%;
     height: 100%;
-    animation: animate9 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate5 2s ease forwards infinite;
+    animation-duration: 6s;
 
 }
 .slika74
 {
     width: 100%;
     height: 100%;
-    animation: animate4 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate7 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika75
 {
     width: 100%;
     height: 100%;
     animation: animate10 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
 }
 .slika76
 {
     width: 100%;
     height: 100%;
-    animation: animate6 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate3 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika77
 {
     width: 100%;
     height: 100%;
-    animation: animate 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate4 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika78
 {
     width: 100%;
     height: 100%;
-    animation: animate2 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate5 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika79
 {
     width: 100%;
     height: 100%;
-    animation: animate3 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate2 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika710
 {
     width: 100%;
     height: 100%;
+    animation: animate1 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+
+.slika81
+{
+    width: 100%;
+    height: 100%;
+    animation: animate4 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika82
+{
+    width: 100%;
+    height: 100%;
+    animation: animate3 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika83
+{
+    width: 100%;
+    height: 100%;
+    animation: animate7 2s ease forwards infinite;
+    animation-duration: 6s;
+
+}
+.slika84
+{
+    width: 100%;
+    height: 100%;
+    animation: animate9 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika85
+{
+    width: 100%;
+    height: 100%;
+    animation: animate2 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika86
+{
+    width: 100%;
+    height: 100%;
+    animation: animate8 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika87
+{
+    width: 100%;
+    height: 100%;
+    animation: animate9 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika88
+{
+    width: 100%;
+    height: 100%;
     animation: animate10 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
+}
+.slika89
+{
+    width: 100%;
+    height: 100%;
+    animation: animate1 2s ease forwards infinite;
+    animation-duration: 6s;
+}
+.slika810
+{
+    width: 100%;
+    height: 100%;
+    animation: animate3 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 
 
@@ -377,80 +608,81 @@ html, body{
 {
     width: 100%;
     height: 100%;
-    animation: animate6 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate10 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika92
 {
     width: 100%;
     height: 100%;
-    animation: animate8 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate9 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika93
 {
     width: 100%;
     height: 100%;
-    animation: animate4 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate8 2s ease forwards infinite;
+    animation-duration: 6s;
 
 }
 .slika94
 {
     width: 100%;
     height: 100%;
-    animation: animate2 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate7 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika95
 {
     width: 100%;
     height: 100%;
-    animation: animate5 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate6 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika96
 {
     width: 100%;
     height: 100%;
-    animation: animate6 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate5 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika97
 {
     width: 100%;
     height: 100%;
-    animation: animate7 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate4 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika98
 {
     width: 100%;
     height: 100%;
-    animation: animate8 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate3 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 .slika99
 {
     width: 100%;
     height: 100%;
     animation: animate2 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation-duration: 6s;
 }
+
 .slika910
 {
     width: 100%;
     height: 100%;
-    animation: animate 2s ease forwards infinite;
-    animation-duration: 4s;
+    animation: animate10 2s ease forwards infinite;
+    animation-duration: 6s;
 }
 
 
-@keyframes animate{
-    70%{
+@keyframes animate1{
+    80%{
         transform: rotate(0deg);
     }
-    85%{
+    90%{
         transform: translateY(-110px) translateX(-400px) rotate(180deg);
     }
     100%{
@@ -459,11 +691,11 @@ html, body{
 }
 
 @keyframes animate2{
-    70%{
+    81%{
         transform: rotate(0deg);
     }
     90%{
-        transform: translateY(-110px) translateX(50px) rotate(-180deg);
+        transform: translateY(3000%) translateX(100%) rotate(180deg);
     }
     100%{
         transform:rotate(360deg);
@@ -471,10 +703,10 @@ html, body{
 }
 @keyframes animate3
 {
-    70%{
+    82%{
         transform: rotate(0deg);
     }
-    85%{
+    93%{
         transform: translateY(-300px) translateX(300px) rotate(-190deg);
     }
     100%{
@@ -483,10 +715,10 @@ html, body{
 }
 @keyframes animate4
 {
-    70%{
+    83%{
         transform: rotate(0deg);
     }
-    90%{
+    92%{
         transform: translateY(490px) translateX(100px) rotate(-190deg);
     }
     100%{
@@ -495,10 +727,10 @@ html, body{
 }
 @keyframes animate5
 {
-    70%{
+    84%{
         transform: rotate(0deg);
     }
-    85%{
+    96%{
         transform: translateY(490px) translateX(-1000px) rotate(-190deg);
     }
     100%{
@@ -507,10 +739,10 @@ html, body{
 }
 @keyframes animate6
 {
-    70%{
+    85%{
         transform: rotate(0deg);
     }
-    90%{
+    94%{
         transform: translateY(490px) translateX(100px) rotate(-180deg);
     }
     100%{
@@ -519,10 +751,10 @@ html, body{
 }
 @keyframes animate7
 {
-    70%{
+    86%{
         transform: rotate(0deg);
     }
-    85%{
+    95%{
         transform: translateY(490px) translateX(100px) rotate(-180deg);
     }
     100%{
@@ -531,10 +763,10 @@ html, body{
 }
 @keyframes animate8
 {
-    70%{
+    84%{
         transform: rotate(0deg);
     }
-    90%{
+    93%{
         transform: translateY(490px) translateX(100px) rotate(-180deg);
     }
     100%{
@@ -544,10 +776,10 @@ html, body{
 
 @keyframes animate9
 {
-    70%{
+    84%{
         transform: rotate(0deg);
     }
-    85%{
+    95%{
         transform: translateY(490px) translateX(-600px) rotate(-180deg);
     }
     100%{
@@ -556,16 +788,19 @@ html, body{
 }
 @keyframes animate10
 {
-    70%{
+    85%{
         transform: rotate(0deg);
     }
-    90%{
-        transform: translateY(490px) translateX(100px) rotate(-180deg);
+    92%{
+        transform: translateY(490px) translateX(800px) rotate(-180deg);
     }
     100%{
         transform:rotate(360deg);
     }
 }
+/* #endregion */
+
+
 
 
 
