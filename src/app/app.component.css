@@ -13,9 +13,7 @@ html, body{
     top: 0;
     overflow: hidden;
     position: fixed;
-    background: linear-gradient(55deg,black, #0b0c10,#1f2833);
-    animation: animateColor 2s ease forwards infinite;
-    animation-duration: 5.5s;
+    background: linear-gradient(55deg,black, #0b0c10, #1f2833);
 }
 
 /* #region    FOOTER*/
@@ -73,43 +71,6 @@ html, body{
     display: none;
   }
   
-  /* Dropdown container - needed to position the dropdown content */
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  /* Style the dropdown button to fit inside the topnav */
-  .dropdown .dropbtn {
-    font-size: 14px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 8px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  
-  /* Style the dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Style the links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
   
   /* Add a dark background on topnav links and the dropdown button on hover */
   .topnav a:hover, .dropdown:hover .dropbtn {
@@ -205,7 +166,7 @@ html, body{
     flex-direction: row;
     background-color: #c5c6c7;
     border-width: 1.5px;
-    border-color: #66fcf1;
+    border-color: #1f2833;
     align-self: center;
 }
 
@@ -237,14 +198,104 @@ html, body{
     font-weight:lighter;
 }
 .naslov{
+    
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40pt;
     font-weight: bold;
     margin-left: 16px;
     margin-top: 5%;
-    color:#66fcf1;
+   /* color:#66fcf1;*/
     text-align: left;
+   
 }
+.naslov1{
+    animation: animateColor1 2s ease forwards infinite;
+    animation-duration: 7s;
+}
+.naslov2{
+    animation: animateColor2 2s ease forwards infinite;
+    animation-duration: 7s;
+}
+.naslov3{
+    animation: animateColor3 2s ease forwards infinite;
+    animation-duration: 7s;
+}
+.naslov4{
+    animation: animateColor4 2s ease forwards infinite;
+    animation-duration: 7s;
+}
+@keyframes animateColor1
+{
+    0%{
+        color:#66fcf1;
+    }
+    20%{
+        color:#66fcf1;
+    }
+    50%
+    {
+        color: #1f2833;
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
+}
+@keyframes animateColor2
+{
+    
+    0%{
+        color:#66fcf1;
+    }
+    25%{
+        color:#66fcf1;
+    }
+    45%
+    {
+        color: #1f2833;
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
+}
+@keyframes animateColor3
+{
+    
+    0%{
+        color:#66fcf1;
+    }
+    20%{
+        color:#66fcf1;
+    }
+    40%
+    {
+        color: #1f2833;
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
+}
+@keyframes animateColor4
+{
+    
+    0%{
+        color:#66fcf1;
+    }
+    15%{
+        color:#66fcf1;
+    }
+    35%
+    {
+        color: #1f2833;
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
+}
+
 
 .naslov-area
 {
@@ -280,14 +331,15 @@ html, body{
     display: flex;
     overflow:visible;
     justify-content: center;
-   flex-flow: row;
-  transform: rotate(-1.4deg);
-   
+    flex-flow: row;
+    border-bottom-color: #3d8d89;
+    border-bottom-width: 7px;
+    border-bottom-style:dashed;
 }
 
 .div1
 {
-    background-color: rgba(0, 128, 128, 0);
+    background-color: rgba(22, 177, 177, 0);
     height: 100%;
     width: 25%;
     display: flex;
@@ -295,6 +347,7 @@ html, body{
     flex-flow: column;
     justify-content: center;
     overflow: visible;
+    
 }
 .div7
 {
@@ -305,6 +358,7 @@ html, body{
     position: relative;
     flex-flow: column;
     overflow: visible;
+ 
 }
 .div8
 {
@@ -315,6 +369,7 @@ html, body{
     position: relative;
     flex-flow: column;
     overflow: visible;
+   
 }
 .div9
 {
@@ -325,6 +380,7 @@ html, body{
     position: relative;
     flex-flow: column;
     overflow: visible;
+    
 }
 
 .div1_1
