@@ -14,7 +14,21 @@ html, body{
     overflow: hidden;
     position: fixed;
     background: linear-gradient(55deg,black, #0b0c10, #1f2833);
+    /*
+
+    */
+    background-image: url("/assets/good7.jpg");
+    /*
+    good4
+    good5
+    good7
+    good8
+    */
+    background-size: cover;
+
 }
+
+
 
 /* #region    FOOTER*/
 .footer-area{
@@ -43,7 +57,11 @@ html, body{
 
 /* #region    NAVBAR*/
 .topnav {
-    background-color: #1f2833;
+  /*
+  background-color: #1f2833;
+
+    */
+    background-color: #0b0c10;
     overflow: hidden;
     position: fixed;
     width: 100%;
