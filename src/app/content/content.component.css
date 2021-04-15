@@ -72,7 +72,7 @@
      font-weight:lighter;
  }
  .naslov{
-     
+    
      font-family: Arial, Helvetica, sans-serif;
      font-size: 6.5vw;
      font-weight: bold;
@@ -80,13 +80,16 @@
      margin-top: 5%;
     /* color:#66fcf1;*/
      text-align: left;
+     display:grid;
     
  }
  .naslov1{
      animation: animateColor1 2s ease forwards infinite;
      animation-duration: 7s;
+    
  }
  .naslov2{
+   
      animation: animateColor2 2s ease forwards infinite;
      animation-duration: 7s;
  }
@@ -619,11 +622,11 @@
  
  
  @keyframes animate1{
-     80%{
+     85%{
          transform: rotate(0deg);
      }
      90%{
-         transform: translateY(-110px) translateX(-400px) rotate(180deg);
+         transform: translateY(-210px) translateX(-500px) rotate(180deg);
      }
      100%{
          transform:rotate(360deg);
@@ -631,11 +634,11 @@
  }
  
  @keyframes animate2{
-     81%{
+     84%{
          transform: rotate(0deg);
      }
-     90%{
-         transform: translateY(3000%) translateX(100%) rotate(180deg);
+     93%{
+         transform: translateY(300px) translateX(200px) rotate(180deg);
      }
      100%{
          transform:rotate(360deg);
@@ -646,7 +649,7 @@
      82%{
          transform: rotate(0deg);
      }
-     93%{
+     96%{
          transform: translateY(-300px) translateX(300px) rotate(-190deg);
      }
      100%{
@@ -658,7 +661,7 @@
      83%{
          transform: rotate(0deg);
      }
-     92%{
+     94%{
          transform: translateY(490px) translateX(100px) rotate(-190deg);
      }
      100%{
@@ -667,10 +670,10 @@
  }
  @keyframes animate5
  {
-     84%{
+     80%{
          transform: rotate(0deg);
      }
-     96%{
+     91%{
          transform: translateY(490px) translateX(-1000px) rotate(-190deg);
      }
      100%{
@@ -679,10 +682,10 @@
  }
  @keyframes animate6
  {
-     85%{
+     81%{
          transform: rotate(0deg);
      }
-     94%{
+     92%{
          transform: translateY(490px) translateX(100px) rotate(-180deg);
      }
      100%{
@@ -691,7 +694,7 @@
  }
  @keyframes animate7
  {
-     86%{
+     82%{
          transform: rotate(0deg);
      }
      95%{
@@ -703,10 +706,10 @@
  }
  @keyframes animate8
  {
-     84%{
+     85%{
          transform: rotate(0deg);
      }
-     93%{
+     94%{
          transform: translateY(490px) translateX(100px) rotate(-180deg);
      }
      100%{
@@ -716,10 +719,10 @@
  
  @keyframes animate9
  {
-     84%{
+     83%{
          transform: rotate(0deg);
      }
-     95%{
+     96%{
          transform: translateY(490px) translateX(-600px) rotate(-180deg);
      }
      100%{
@@ -728,7 +731,7 @@
  }
  @keyframes animate10
  {
-     85%{
+     81%{
          transform: rotate(0deg);
      }
      92%{
