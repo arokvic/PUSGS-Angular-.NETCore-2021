@@ -72,139 +72,157 @@
      font-weight:lighter;
  }
  
- .naslov1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 6.5vw;
-    font-weight: bold;
-    margin-left: 16px;
-    margin-top: 5%;
-   /* color:#66fcf1;*/
-    text-align: left;
-    display:grid;
-     animation: animateColor1 2s ease forwards infinite;
-     animation-duration: 7s;
+ .naslov11{
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 6.5vw;
+     font-weight: bold;
+     margin-left: 16px;
+     text-align: left;
+     animation: animateColor1 10s ease forwards infinite;
+     animation-duration: 10s;
+    }
     
- }
- .naslov2{
+ .naslov22{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 6.5vw;
     font-weight: bold;
     margin-left: 16px;
-    margin-top: 5%;
-   /* color:#66fcf1;*/
     text-align: left;
-    display:grid;
-     animation: animateColor2 2s ease forwards infinite;
-     animation-duration: 7s;
- }
- .naslov3{
+    animation: animateColor2 10s ease forwards infinite;
+    animation-duration: 9.6s;
+}
+.naslov33{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 6.5vw;
     font-weight: bold;
     margin-left: 16px;
-    margin-top: 5%;
-   /* color:#66fcf1;*/
     text-align: left;
-    display:grid;
-     animation: animateColor3 2s ease forwards infinite;
-     animation-duration: 7s;
- }
- .naslov4{
+    animation: animateColor3 10s ease forwards infinite;
+    animation-duration: 9.8s;
+}
+
+.naslov44{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 6.5vw;
     font-weight: bold;
     margin-left: 16px;
-    margin-top: 5%;
-   /* color:#66fcf1;*/
     text-align: left;
-    display:grid;
-     animation: animateColor4 2s ease forwards infinite;
-     animation-duration: 7s;
- }
- @keyframes animateColor1
- {
-     0%{
-         color:#66fcf1;
-     }
-     20%{
-         color:#66fcf1;
-     }
-     50%
-     {
-         color: #1f2833;
-     }
-     100%
-     {
-         color: #66fcf1;
-     }
- }
+    animation: animateColor4 10s ease forwards infinite;
+    animation-duration: 10.2s;
+}
+
+ 
+@keyframes animateColor1
+{
+    0%{
+        color:#66fcf1;
+    }
+    50%{
+        color:rgba(127, 255, 212, 0);
+    }
+     45%{
+        color:#66fcf200;
+        transform: translateX(0vw)
+    }
+    60%
+    {
+        color: #1f283300;
+        letter-spacing: 1vw;
+       
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
+}
  @keyframes animateColor2
  {
-     
-     0%{
-         color:#66fcf1;
-     }
-     25%{
-         color:#66fcf1;
-     }
-     45%
-     {
-         color: #1f2833;
-     }
-     100%
-     {
-         color: #66fcf1;
-     }
+   
+    0%{
+        color:#66fcf1;
+    }
+    50%{
+        color:rgba(127, 255, 212, 0);
+        letter-spacing: 3.3vw;
+    }
+    55%{
+        color:#66fcf200;
+        transform: translateX(5vw);
+        letter-spacing: 12.8vw;
+    }
+    60%
+    {
+        color: #1f283300;
+       
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
  }
  @keyframes animateColor3
  {
      
-     0%{
-         color:#66fcf1;
-     }
-     20%{
-         color:#66fcf1;
-     }
-     40%
-     {
-         color: #1f2833;
-     }
-     100%
-     {
-         color: #66fcf1;
-     }
+    0%{
+        color:#66fcf1;
+    }
+    40%{
+        color:rgba(127, 255, 212, 0);
+    }
+    50%{
+        color:#66fcf200;
+        transform: translateX(6vw);
+        letter-spacing: 8vw;
+    }
+    60%
+    {
+        color: #1f283300;
+       
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
  }
  @keyframes animateColor4
  {
      
-     0%{
-         color:#66fcf1;
-     }
-     15%{
-         color:#66fcf1;
-     }
-     35%
-     {
-         color: #1f2833;
-     }
-     100%
-     {
-         color: #66fcf1;
-     }
+    0%{
+        color:#66fcf1;
+    }
+    30%{
+        color:rgba(127, 255, 212, 0);
+    }
+     45%{
+        color:#66fcf200;
+        transform: translateX(2vw)
+    }
+    50%
+    {
+        color: #1f283300;
+        letter-spacing: 1vw;
+       
+    }
+    100%
+    {
+        color: #66fcf1;
+    }
  }
  
  
  .naslov-area
  {
-     background-color: brown;
+     background-color: rgba(165, 42, 42, 0);
      overflow:visible;
      width: 35%;
      height: 67%;
-     background-color: rgba(240, 128, 128, 0);
      position: fixed;
      margin-left: 0%;
-     margin-top: 5%;
+     margin-top: 3%;
+     font-size: xx-large;
+     line-height: normal;
  }
+ 
  .tekst
  {
      color:rgba(255, 255, 255, 0.835);
