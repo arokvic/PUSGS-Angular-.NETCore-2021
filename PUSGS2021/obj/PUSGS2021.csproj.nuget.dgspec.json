@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\38165\\Desktop\\PUSGS2021\\PUSGS2021.csproj": {}
+    "C:\\Users\\38165\\Documents\\GitHub\\PUSGS-Projekat\\PUSGS2021\\PUSGS2021.csproj": {}
   },
   "projects": {
-    "C:\\Users\\38165\\Desktop\\PUSGS2021\\PUSGS2021.csproj": {
+    "C:\\Users\\38165\\Documents\\GitHub\\PUSGS-Projekat\\PUSGS2021\\PUSGS2021.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\38165\\Desktop\\PUSGS2021\\PUSGS2021.csproj",
+        "projectUniqueName": "C:\\Users\\38165\\Documents\\GitHub\\PUSGS-Projekat\\PUSGS2021\\PUSGS2021.csproj",
         "projectName": "PUSGS2021",
-        "projectPath": "C:\\Users\\38165\\Desktop\\PUSGS2021\\PUSGS2021.csproj",
+        "projectPath": "C:\\Users\\38165\\Documents\\GitHub\\PUSGS-Projekat\\PUSGS2021\\PUSGS2021.csproj",
         "packagesPath": "C:\\Users\\38165\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\38165\\Desktop\\PUSGS2021\\obj\\",
+        "outputPath": "C:\\Users\\38165\\Documents\\GitHub\\PUSGS-Projekat\\PUSGS2021\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

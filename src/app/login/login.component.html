@@ -1,6 +1,6 @@
 
 <div class="loginDiv">
-    <form class="login-form">
+    <form class="login-form" #loginForm = "ngForm" (ngSubmit)="login(loginForm)">
         <table id="loginTable">
             <tr>
                 <td id="logLabel">
@@ -8,7 +8,7 @@
                 </td>
             </tr>
             <tr id="usInput">
-                <td> <input type="text" placeholder="Username" id="username-input" ></td>
+                <td> <input type="text" placeholder="Username" id="username-input" ngModel class="form-control" ></td>
             </tr>
             
             <tr id="passInput">
