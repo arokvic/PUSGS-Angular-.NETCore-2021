@@ -16,14 +16,16 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
-
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { ReactiveFormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ContentComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { RouterModule, Routes } from '@angular/router';
     FormsModule,
     MatDividerModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
