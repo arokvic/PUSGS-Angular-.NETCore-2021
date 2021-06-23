@@ -1,6 +1,6 @@
 
 <div class="loginDiv">
-    <form class="login-form" #loginForm = "ngForm" (ngSubmit)="login(loginForm)">
+    <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <table id="loginTable">
             <tr>
                 <td id="logLabel">
@@ -8,11 +8,12 @@
                 </td>
             </tr>
             <tr id="usInput">
-                <td> <input type="text" placeholder="Username" id="username-input" ngModel class="form-control" ></td>
+                <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
+                <td> <input type="text" placeholder="Username" id="username-input" name = "username" ngModel class="form-control" required autofocus></td>
             </tr>
             
             <tr id="passInput">
-               <td><input type="password" placeholder="Password" id="password-input"></td> 
+               <td><input type="password" placeholder="Password" id="password-input" name = "password" ngModel class="form-control" required></td> 
             </tr>
             <tr>
                 <td>

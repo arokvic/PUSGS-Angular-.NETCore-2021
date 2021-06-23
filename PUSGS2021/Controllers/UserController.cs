@@ -76,7 +76,7 @@ namespace PUSGS2021.Controllers
 
           var claims = new List<Claim>
                     {
-                        //new Claim(ClaimTypes.Role, getRole(user)),
+                        new Claim(ClaimTypes.Role, getRole(user)),
                         new Claim(ClaimTypes.Name, user.Username)
                     };
 
@@ -95,7 +95,7 @@ namespace PUSGS2021.Controllers
             Token = tokenString,
             Username = user.Username,
             NameAndLastname = user.NameAndLastname,
-            //Type = user.UserType
+            Type = user.UserType
 
           };
 
@@ -104,6 +104,30 @@ namespace PUSGS2021.Controllers
       }
 
       return Unauthorized();
+    }
+    private string getRole(UserModel user)
+    {
+
+      if (user.UserType == "Admin")
+      {
+        return "Admin";
+      }
+      else if (user.UserType == "TeamMember")
+      {
+        return "TeamMember";
+      }
+      else if (user.UserType == "Dispatcher")
+      {
+        return "Dispatcher";
+      }
+      else if (user.UserType == "Worker")
+      {
+        return "Worker";
+      }
+      else
+      {
+        return "User";
+      }
     }
   }
 }

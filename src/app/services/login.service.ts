@@ -7,4 +7,13 @@ import { Router } from '@angular/router';
 export class LoginService {
 
   constructor(private router: Router) { }
+
+  logOut(): void {
+
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("username");
+    localStorage.removeItem("type");
+    this.router.navigate(["home"]);
+  
+  }
 }

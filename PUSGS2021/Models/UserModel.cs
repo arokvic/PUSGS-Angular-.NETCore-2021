@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,14 +18,16 @@ namespace PUSGS2021.Models
        
         public string Address { get; set; }
 
-        public UserModel()
+      public string UserType { get; set; }
+    public UserModel()
         {
             Username = "+";
             Password = "+";
             NameAndLastname = "+";
             BirthDate = DateTime.Now;
             Address = "+";
+            UserType = "+";
 
-        }
     }
+  }
 }

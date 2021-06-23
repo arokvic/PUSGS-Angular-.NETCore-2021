@@ -31,7 +31,7 @@ export class AppComponent{
     {
       label: 'Log in',
       icon: 'login',
-      showOnMobile: false,
+      showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
     },
@@ -75,7 +75,7 @@ export class AppComponent{
     }
     if(menuItem.label ==='Home')
     {
-      this.router.navigate(['']);
+      this.router.navigate(['/home']);
     }
     if(menuItem.label ==='Dashboard')
     {
@@ -94,7 +94,7 @@ clickMenuItem1(menuItem : MenuItem){
     }
     if(menuItem.label ==='Home')
     {
-      this.router.navigate(['']);
+      this.router.navigate(['/home']);
     }
   if(menuItem.label ==='Dashboard')
   {

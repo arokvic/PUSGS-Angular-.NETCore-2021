@@ -7,10 +7,14 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent implements OnInit { 
   invalidLogin!: boolean;
 
+  
   constructor(private router: Router, private http: HttpClient) { }
+
 
   public login = (form: NgForm) => {
     const credentials = JSON.stringify(form.value);
@@ -31,8 +35,6 @@ export class LoginComponent implements OnInit {
       this.invalidLogin = true;
     });
   }
-
   ngOnInit(): void {
   }
-
 }

@@ -11,10 +11,7 @@ const routes: Routes = [
     path: "dashboard",
     component: DashboardComponent
   },
-  {
-    path: "",
-    component: ContentComponent
-  },
+  
   {
     path: "register",
     component: RegisterComponent
@@ -22,6 +19,14 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "",
+    component: ContentComponent
+  },
+  {
+    path: "home",
+    component: ContentComponent
   }
 
 
