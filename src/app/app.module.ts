@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     ContentComponent,
     RegisterComponent,
     LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

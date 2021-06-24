@@ -10,6 +10,17 @@ import { Router, RouterLink }  from '@angular/router';
 })
 export class AppComponent{
   title = 'PUSGSprojekat';
+  isAdmin:boolean = true;
+
+  menuItemsLogged: MenuItem[] = [
+    {
+      label: 'Profile',
+      icon: 'profile',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    }
+  ]
 
   menuItems: MenuItem[] = [
     {
@@ -56,11 +67,25 @@ export class AppComponent{
       showOnTablet: false,
       showOnDesktop: false
     },
+    {
+      label: 'Profile',
+      icon: 'profile',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    }
   ];
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    const type = localStorage.getItem('type');
+    if(type === 'Admin'){
+      this.isAdmin = true;
+    }else{
+      this.isAdmin = false;
+    }
+    console.log(this.isAdmin);
   }
 
   clickMenuItem(menuItem : MenuItem){
@@ -81,6 +106,11 @@ export class AppComponent{
     {
       this.router.navigate(['/dashboard']);
     }
+    if(menuItem.label ==='Profile')
+    {
+      this.router.navigate(['/profile']);
+    }
+    
   
 }
 clickMenuItem1(menuItem : MenuItem){
@@ -100,6 +130,10 @@ clickMenuItem1(menuItem : MenuItem){
   if(menuItem.label ==='Dashboard')
   {
     this.router.navigate(['/dashboard']);
+  }
+  if(menuItem.label ==='Profile')
+  {
+    this.router.navigate(['/profile']);
   }
 }
 
