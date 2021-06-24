@@ -117,7 +117,9 @@ namespace PUSGS2021.Controllers
             }
 
         }
-
+ 
+    [Route("GetAllAuthor")]
+    [EnableCors("AllowOrigin")]
     [HttpPost]
     [Route("Login")]
     public IActionResult Login([FromBody]LoginModel loginForm)

@@ -18,6 +18,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { ReactiveFormsModule } from '@angular/forms'
+import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     FormsModule,
     MatDividerModule,
     RouterModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
