@@ -5,7 +5,6 @@ import { DashboardComponent} from './dashboard/dashboard.component'
 import { ContentComponent } from './content/content.component' 
 import { RegisterComponent} from './register/register.component'
 import { LoginComponent } from './login/login.component'
-import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 const routes: Routes = [
   {
@@ -29,12 +28,6 @@ const routes: Routes = [
     path: "home",
     component: ContentComponent
   },
-  {
-    path: "profile-edit",
-    component: ProfileEditComponent
-  }
-
-
 ];
 
 @NgModule({

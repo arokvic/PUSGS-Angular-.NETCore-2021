@@ -12,9 +12,6 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit { 
   invalidLogin!: boolean;
   
-  ngOnInit(): void {
-    
-  }
   
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -33,9 +30,13 @@ export class LoginComponent implements OnInit {
       const type = (<any>response).type;
       localStorage.setItem("type", type);
       this.invalidLogin = false;
-      this.router.navigate(["/home"]);
+      this.router.navigate(["home"]);
     }, err => {
       this.invalidLogin = true;
     });
+  }
+
+  ngOnInit(): void {
+    
   }
 }

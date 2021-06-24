@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TtzXz24vAAt+cbsAodV9Ld5zAb13vRytw9asyGNJHkDhLpGitFXyt6INqNLH9HIpsBvCdykwla1MVxACyjmQfQ==",
+  "dgSpecHash": "dwn7dwCOZINDE2qCtQ8TI6qfCKPPTUlyrEkEnRsJRidmtsMq3TFR4ttrnc2hs3LLCWN56Q/VINoWhHkcsVM6ag==",
   "success": true,
   "projectFilePath": "C:\\Users\\38165\\Documents\\GitHub\\PUSGS-Projekat\\PUSGS2021\\PUSGS2021.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\38165\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\38165\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.16\\microsoft.aspnetcore.authentication.jwtbearer.3.1.16.nupkg.sha512",
     "C:\\Users\\38165\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\38165\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\38165\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

@@ -41,14 +41,7 @@ export class AppComponent{
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true
-    },
-    {
-    label: 'Profile',
-      icon: 'profile',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
+    },   
     {
       label: 'Showcase',
       icon: 'slideshow',
@@ -88,10 +81,7 @@ export class AppComponent{
     {
       this.router.navigate(['/dashboard']);
     }
-    if(menuItem.label ==='Profile')
-    {
-      this.router.navigate(['/profile-edit']);
-    }
+  
 }
 clickMenuItem1(menuItem : MenuItem){
   console.log(menuItem);
@@ -110,9 +100,6 @@ clickMenuItem1(menuItem : MenuItem){
   if(menuItem.label ==='Dashboard')
   {
     this.router.navigate(['/dashboard']);
-  }if(menuItem.label ==='Profile')
-  {
-    this.router.navigate(['/profile-edit']);
   }
 }
 

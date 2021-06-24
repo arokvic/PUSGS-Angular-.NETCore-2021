@@ -57,72 +57,9 @@ namespace PUSGS2021.Controllers
     {
     }
 
-    [HttpPut]
-        [Route("ChangeProfile")]
-        public async Task<ActionResult<UserModel>> ChangeProfile([FromBody] UserModel userF)
-        {
-            if (ModelState.IsValid)
-            {
-                string username = HttpContext.User.FindFirst(ClaimTypes.Name).Value;
-
-
-                UserModel u1 = new UserModel();
-                foreach (UserModel user in _context.Users)
-                {
-                    if (user.Username == username)
-                    {
-                        u1 = user;
-                        break;
-
-                    }
-                }
-
-                if (u1.UserType == null)
-                {
-                    u1.UserType = "Worker";
-                }
-
-                if (u1.UserType.Equals(userF.UserType))
-                {
-                    u1.Username = userF.Username;
-                    u1.NameAndLastname = userF.NameAndLastname;
-                    u1.Address = userF.Address;
-                    
-                    await _context.SaveChangesAsync();
-                    return CreatedAtAction("ChangeProfile", u1);
-                }
-                else
-                {
-                    u1.Username = userF.Username;
-                    u1.NameAndLastname = userF.NameAndLastname;
-                    u1.Address = userF.Address;
-                    UserRequestModel newRequest = new UserRequestModel
-                    {
-                        Username = userF.Username,
-                        NameAndLastname = userF.NameAndLastname,
-                        Address = userF.Address,
-                        BirthDate = userF.BirthDate,
-                        UserType = userF.UserType
-                    };
-
-                    _context.UserRequests.Add(newRequest);
-
-                    await _context.SaveChangesAsync();
-                    return CreatedAtAction("ChangeProfile", u1);
-                }
-            }
-            else
-            {
-                return BadRequest();
-            }
-
-        }
- 
-    [Route("GetAllAuthor")]
-    [EnableCors("AllowOrigin")]
     [HttpPost]
     [Route("Login")]
-    public IActionResult Login([FromBody]LoginModel loginForm)
+    public IActionResult Login([FromBody] LoginModel loginForm)
     {
       if (loginForm == null)
       {
@@ -168,6 +105,7 @@ namespace PUSGS2021.Controllers
 
       return Unauthorized();
     }
+
     private string getRole(UserModel user)
     {
 
@@ -192,8 +130,5 @@ namespace PUSGS2021.Controllers
         return "User";
       }
     }
-
-
-    
   }
 }

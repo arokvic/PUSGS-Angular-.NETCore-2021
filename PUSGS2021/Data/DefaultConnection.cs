@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PUSGS2021.Models;
 using System;
 using System.Collections.Generic;

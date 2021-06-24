@@ -16,7 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +28,6 @@ import { HttpClientModule } from '@angular/common/http';
     ContentComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileEditComponent,
   ],
   imports: [
     BrowserModule,

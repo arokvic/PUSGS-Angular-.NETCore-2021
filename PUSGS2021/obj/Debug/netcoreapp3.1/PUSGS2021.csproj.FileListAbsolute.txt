@@ -124,3 +124,4 @@ C:\Users\38165\Documents\GitHub\PUSGS-Projekat\PUSGS2021\obj\Debug\netcoreapp3.1
 C:\Users\38165\Documents\GitHub\PUSGS-Projekat\PUSGS2021\obj\Debug\netcoreapp3.1\PUSGS2021.dll
 C:\Users\38165\Documents\GitHub\PUSGS-Projekat\PUSGS2021\obj\Debug\netcoreapp3.1\PUSGS2021.pdb
 C:\Users\38165\Documents\GitHub\PUSGS-Projekat\PUSGS2021\obj\Debug\netcoreapp3.1\PUSGS2021.genruntimeconfig.cache
+C:\Users\38165\Documents\GitHub\PUSGS-Projekat\PUSGS2021\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
