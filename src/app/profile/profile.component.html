@@ -1,1 +1,35 @@
-<p>profile works!</p>
+<!-- Default form register -->
+<div class = "profileDiv">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+    <table id="profileTable">
+        <tr>
+            <td id="profileLabel">
+                Fill out the following form to change profile
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr id="usernameInput">
+            <td> <input type="text" placeholder="Username" id="username-input" class ="form-control"formControlName = 'username' ></td>
+        </tr>            
+            <span *ngIf="usernameR" class="error">Username required</span>
+            <span *ngIf="usernameS" class="error">Username too short</span>
+            <span *ngIf="usernameL" class="error">Username too long</span>
+            <span *ngIf="usernameW" class="error">Contain Whitespace</span>
+          
+            <tr id="nameInput">
+                <td> <input type="name" placeholder="Name" id="name-input" class ="form-control"formControlName = 'nameAndLastname'></td>
+            </tr>  
+            <span *ngIf="fullnameR" class="error">Fullname required</span>
+
+            <tr id="addressInput">
+                <td><input type="address" name="address" class="form-control" id="address-input" placeholder="Adress" formControlName='address'></td> 
+             </tr>         
+            <span *ngIf="addressR" class="error">Address required</span>
+            <tr>
+                <td>
+                    <input type="submit" id="submitBtn" value="Submit">
+                </td>
+            </tr>
+        </table>
+  </form>
+</div>

@@ -14,11 +14,40 @@ export class AppComponent{
 
   menuItemsLogged: MenuItem[] = [
     {
+      label: 'Home',
+      icon: 'home',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+      
+    },
+    {
       label: 'Profile',
       icon: 'profile',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
+    },
+    {
+      label: 'Dashboard',
+      icon: 'dashboard',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: true
+    },  
+    {
+      label: 'Showcase',
+      icon: 'slideshow',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: true
+    },
+    {
+      label: 'Blog',
+      icon: 'rss_feed',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: false
     }
   ]
 
@@ -45,34 +74,6 @@ export class AppComponent{
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
-    },
-    {
-      label: 'Dashboard',
-      icon: 'dashboard',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: true
-    },   
-    {
-      label: 'Showcase',
-      icon: 'slideshow',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: true
-    },
-    {
-      label: 'Blog',
-      icon: 'rss_feed',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: false
-    },
-    {
-      label: 'Profile',
-      icon: 'profile',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
     }
   ];
 
@@ -83,7 +84,8 @@ export class AppComponent{
     if(type === 'Admin'){
       this.isAdmin = true;
     }else{
-      this.isAdmin = false;
+      
+      this.isAdmin = false;      
     }
     console.log(this.isAdmin);
   }
@@ -135,6 +137,32 @@ clickMenuItem1(menuItem : MenuItem){
   {
     this.router.navigate(['/profile']);
   }
+}
+
+clickMenuItem2(menuItemsLogged : MenuItem){
+  console.log(menuItemsLogged);
+  if(menuItemsLogged.label ==='Register')
+  {
+    this.router.navigate(['/register']);
+  }
+  if(menuItemsLogged.label ==='Log in')
+  {
+    this.router.navigate(['/login']);
+  }
+  if(menuItemsLogged.label ==='Home')
+  {
+    this.router.navigate(['/home']);
+  }
+  if(menuItemsLogged.label ==='Dashboard')
+  {
+    this.router.navigate(['/dashboard']);
+  }
+  if(menuItemsLogged.label ==='Profile')
+  {
+    this.router.navigate(['/profile']);
+  }
+  
+
 }
 
 }

@@ -14,5 +14,7 @@ namespace PUSGS2021.Data
 
         public DbSet<UserModel> Users { get; set; }
 
-    }
+        public DbSet<UserRequestModel> UserRequests { get; set; }
+
+  }
 }

@@ -20,8 +20,11 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { JwtModule } from "@auth0/angular-jwt";
 
-
+export function getToken() {
+  return localStorage.getItem("jwt");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +48,17 @@ import { ProfileComponent } from './profile/profile.component';
     MatDividerModule,
     RouterModule,
     ReactiveFormsModule,    
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: getToken, 
+        allowedDomains: ["localhost:44364"],
+        disallowedRoutes: []
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

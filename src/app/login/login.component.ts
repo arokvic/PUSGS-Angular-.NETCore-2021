@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       const type = (<any>response).type;
       localStorage.setItem("type", type);
       this.invalidLogin = false;
-      this.router.navigate(["home"]);
+      this.router.navigate([""]);
     }, err => {
       this.invalidLogin = true;
     });

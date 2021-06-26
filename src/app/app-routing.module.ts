@@ -17,6 +17,7 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+    
   },
   {
     path: "",
@@ -24,11 +25,18 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: ContentComponent
+    component: AppComponent,
+     canActivate: [AuthGuard],
+     children: [
+      {
+        path: '', // child route path
+        component: ContentComponent, // child route component that the router renders
+      }
+    ]
   },
   {
     path: 'dashboard',
-     component: DashboardComponent,
+     component: AppComponent,
      canActivate: [AuthGuard],
      children: [
       {
@@ -40,11 +48,11 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-     component: ProfileComponent,
+     component: AppComponent,
      canActivate: [AuthGuard],
      children: [
       {
-        path: 'profile', // child route path
+        path: '', // child route path
         component: ProfileComponent, // child route component that the router renders
       }
     ]

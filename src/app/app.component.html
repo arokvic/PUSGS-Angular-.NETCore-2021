@@ -12,7 +12,7 @@
 
       </div>
       -->
-     
+     <div *ngIf = '!isAdmin' >
       <mat-toolbar class="topnav" fxLayout="row" color="primary">
         <span fxFlex></span>
        
@@ -48,43 +48,45 @@
             </mat-menu>
         </ng-container>
     </mat-toolbar>
+    </div>
 
-    <a *ngIf='isAdmin' mat-list-item href="/profile">Requests<mat-icon class="icon">verified_user</mat-icon></a>
-
-    <mat-toolbar class="topnav" fxLayout="row" color="primary" *ngIf='isAdmin'>
-        <span fxFlex></span>
-       
-            <button class="dugme" mat-button *ngFor="let item of menuItems"
-            (click) = "clickMenuItem1(item)"
-            [fxShow]="item.showOnDesktop" 
-            [fxShow.xs]="item.showOnMobile"
-            [fxShow.sm]="item.showOnTablet">
-            <mat-icon class="mr">{{item.icon}}</mat-icon>
-            {{item.label}}
-        </button>
-      
-        <ng-container>
-            <button mat-icon-button [matMenuTriggerFor]="dropMenu">
-                <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #dropMenu="matMenu">
-                <ng-container *ngFor="let item of menuItems">
-                    <div [fxShow]="!item.showOnDesktop" 
-                         [fxShow.sm]="!item.showOnTablet" 
-                         [fxShow.xs]="!item.showOnMobile">
-                        <button mat-menu-item
-                        (click) = "clickMenuItem1(item)">
+    <div *ngIf = 'isAdmin' >
+        <mat-toolbar class="topnav" fxLayout="row" color="primary">
+          <span fxFlex></span>
+         
+              <button class="dugme" mat-button *ngFor="let item of menuItemsLogged"
+              (click) = "clickMenuItem2(item)"
+              [fxShow]="item.showOnDesktop" 
+              [fxShow.xs]="item.showOnMobile"
+              [fxShow.sm]="item.showOnTablet">
+              <mat-icon class="mr">{{item.icon}}</mat-icon>
+              {{item.label}}
+          </button>
         
-                            <mat-icon class="mr">{{item.icon}}</mat-icon>
-                            {{item.label}}
-                        </button>
-                        <mat-divider></mat-divider>
-
-                    </div>
-                </ng-container>
-            </mat-menu>
-        </ng-container>
-    </mat-toolbar>
+          <ng-container>
+              <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+                  <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #dropMenu="matMenu">
+                  <ng-container *ngFor="let item of menuItemsLogged">
+                      <div [fxShow]="!item.showOnDesktop" 
+                           [fxShow.sm]="!item.showOnTablet" 
+                           [fxShow.xs]="!item.showOnMobile">
+                          <button mat-menu-item
+                          (click) = "clickMenuItem2(item)">
+          
+                              <mat-icon class="mr">{{item.icon}}</mat-icon>
+                              {{item.label}}
+                          </button>
+                          <mat-divider></mat-divider>
+  
+                      </div>
+                  </ng-container>
+  
+              </mat-menu>
+          </ng-container>
+      </mat-toolbar>
+      </div>
 
       <router-outlet></router-outlet>
       
