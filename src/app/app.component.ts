@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms'
 import { MenuItem } from './menu-item';
 import { Router, RouterLink }  from '@angular/router';
-
+import { LoginService } from './services/login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,7 +23,7 @@ export class AppComponent{
     },
     {
       label: 'Profile',
-      icon: 'profile',
+      icon: 'people',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
@@ -31,23 +31,30 @@ export class AppComponent{
     {
       label: 'Dashboard',
       icon: 'dashboard',
-      showOnMobile: false,
-      showOnTablet: false,
+      showOnMobile: true,
+      showOnTablet: true,
       showOnDesktop: true
     },  
     {
       label: 'Showcase',
       icon: 'slideshow',
-      showOnMobile: false,
-      showOnTablet: false,
+      showOnMobile: true,
+      showOnTablet: true,
       showOnDesktop: true
     },
     {
       label: 'Blog',
       icon: 'rss_feed',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: false
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Logout',
+      icon: 'sentiment_very_dissatisfied',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
     }
   ]
 
@@ -77,7 +84,7 @@ export class AppComponent{
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private loginService: LoginService) {}
 
   ngOnInit(): void {
     const type = localStorage.getItem('type');
@@ -137,6 +144,7 @@ clickMenuItem1(menuItem : MenuItem){
   {
     this.router.navigate(['/profile']);
   }
+  
 }
 
 clickMenuItem2(menuItemsLogged : MenuItem){
@@ -161,9 +169,19 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   {
     this.router.navigate(['/profile']);
   }
+  if(menuItemsLogged.label ==='Logout')
+  {
+    this.logOut();
+  }
   
 
 }
+logOut(): void {
 
+  this.loginService.logOut();
+  this.isAdmin = false;
+
+
+  }
 }
 

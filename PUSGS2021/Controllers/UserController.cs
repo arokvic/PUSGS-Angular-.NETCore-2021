@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,12 +107,44 @@ namespace PUSGS2021.Controllers
       return Unauthorized();
     }
 
+    [HttpPost, DisableRequestSizeLimit]
+    [Route("Upload")]
+    public IActionResult Upload()
+    {
+      try
+      {
+        var file = Request.Form.Files[0];
+        var folderName = Path.Combine("Resources", "Images");
+        var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+        if (file.Length > 0)
+        {
+          var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+          var fullPath = Path.Combine(pathToSave, fileName);
+
+          var dbPath = Path.Combine(folderName, fileName);
+          using (var stream = new FileStream(fullPath, FileMode.Create))
+          {
+            file.CopyTo(stream);
+          }
+          return Ok(new { dbPath });
+        }
+        else
+        {
+          return BadRequest();
+        }
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(500, $"Internal server error: {ex}");
+      }
+    }
+
     [HttpPut]
     [Route("ChangeProfile")]
     public async Task<ActionResult<UserModel>> ChangeProfile([FromBody] UserModel userF)
     {
-      if (ModelState.IsValid)
-      {
+      if(ModelState.IsValid)
+            {
         string username = HttpContext.User.FindFirst(ClaimTypes.Name).Value;
 
 
@@ -134,8 +168,12 @@ namespace PUSGS2021.Controllers
         {
           u1.Username = userF.Username;
           u1.NameAndLastname = userF.NameAndLastname;
+          u1.Email = userF.Email;
           u1.Address = userF.Address;
-         
+          if (userF.ImageData != null)
+          {
+            u1.ImageData = userF.ImageData;
+          }
 
           await _context.SaveChangesAsync();
           return CreatedAtAction("ChangeProfile", u1);
@@ -144,12 +182,15 @@ namespace PUSGS2021.Controllers
         {
           u1.Username = userF.Username;
           u1.NameAndLastname = userF.NameAndLastname;
+          u1.Email = userF.Email;
           u1.Address = userF.Address;
           UserRequestModel newRequest = new UserRequestModel
           {
             Username = userF.Username,
             NameAndLastname = userF.NameAndLastname,
+            Email = userF.Email,
             Address = userF.Address,
+            BirthDate = userF.BirthDate,
             UserType = userF.UserType
           };
 
@@ -159,11 +200,10 @@ namespace PUSGS2021.Controllers
           return CreatedAtAction("ChangeProfile", u1);
         }
       }
-      else
+            else
       {
         return BadRequest();
       }
-
     }
 
     [HttpGet("username")]

@@ -18,16 +18,22 @@ namespace PUSGS2021.Models
        
         public string Address { get; set; }
 
-      public string UserType { get; set; }
-    public UserModel()
-        {
-            Username = "+";
-            Password = "+";
-            NameAndLastname = "+";
-            BirthDate = DateTime.Now;
-            Address = "+";
-            UserType = "+";
+        public string UserType { get; set; }
 
+        public string ImageData { get; set; }
+
+        public string Email { get; set; }
+
+        public UserModel()
+            {
+                Username = "+";
+                Password = "+";
+                NameAndLastname = "+";
+                BirthDate = DateTime.Now;
+                Address = "+";
+                UserType = "+";
+                Email = "+";
+                ImageData = "+";
+          }
     }
-  }
 }

@@ -4,6 +4,7 @@ import {UserService } from '../services/user.service';
 import { User } from '../entities/user';
 import { HttpClient, HttpHeaders, HttpParams, HttpEventType } from '@angular/common/http';
 import { AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -47,9 +48,12 @@ export class ProfileComponent implements OnInit {
     username: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
     nameAndLastname: new FormControl('', Validators.required), 
     address: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    userType: new FormControl('', Validators.required),
+    imageData: new FormControl('')
   });
   
-  constructor(private userService: UserService, private http: HttpClient) { }
+  constructor(private userService: UserService, private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -60,7 +64,11 @@ export class ProfileComponent implements OnInit {
           username: data.username,
           nameAndLastname: data.nameAndLastname,
           address: data.address,
+          email: data.email,
+          userType: data.userType,
+          imageData: data.imageData
         })
+        this.date = data.birthdate;
         console.log(this.profileForm.value.path);
       }, 
       err => {
@@ -73,13 +81,14 @@ export class ProfileComponent implements OnInit {
     if(this.validate()){
       this.user = new User(
         this.profileForm.controls.username.value,
-        this.profileForm.controls.password.value,
         this.profileForm.controls.email.value,
         'a',
         this.profileForm.controls.nameAndLastname.value,
         this.profileForm.controls.address.value,
+        this.date,
+        this.profileForm.controls.userType.value,
       );
-
+      this.user.imageData = this.image;
       this.userService.changeProfile(this.user);
 
     }
@@ -106,7 +115,24 @@ export class ProfileComponent implements OnInit {
     }else{
       this.addressR = false;
     }
-    
+    if(this.profileForm.controls.email.hasError('required')){
+      this.emailR = true;
+      retVal = false;
+    }else{
+      this.emailR = false;
+    }
+    if(this.profileForm.controls.email.hasError('email') && !this.emailR){
+      this.emailV = true;
+      retVal = false;
+    }else{
+      this.emailV = false;
+    }
+    if(this.profileForm.controls.userType.hasError('required')){
+      this.userTypeR = true;
+      retVal = false;
+    }else{
+      this.userTypeR = false;
+    }
     const str = this.profileForm.controls.username.value;
     const regex = /^$|\s+/
     const invalid = regex.test(str);
@@ -171,12 +197,15 @@ export class ProfileComponent implements OnInit {
       }
         else if (event.type === HttpEventType.Response) {
           console.log(event.body);
-         
+          this.imagePath1 = event.body as {dbPath: ''};
+          this.image = this.imagePath1.dbPath;
+          this.profileForm.value.imageData = this.image;         
         }
     });
 
 
   }
+
 
 
 }

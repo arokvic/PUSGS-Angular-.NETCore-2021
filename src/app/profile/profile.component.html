@@ -9,7 +9,7 @@
         </tr>
         <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
         <tr id="usernameInput">
-            <td> <input type="text" placeholder="Username" id="username-input" class ="form-control"formControlName = 'username' ></td>
+            <td> <input type="text" placeholder="Username" id="username-input" class ="form-control"formControlName = 'username' readonly ></td>
         </tr>            
             <span *ngIf="usernameR" class="error">Username required</span>
             <span *ngIf="usernameS" class="error">Username too short</span>
@@ -21,13 +21,51 @@
             </tr>  
             <span *ngIf="fullnameR" class="error">Fullname required</span>
 
+            <tr id="emailInput">
+                <td><input type="email" placeholder="Email" id="email-input" class ="form-control"formControlName = 'email'></td>
+            </tr>
+            <span *ngIf="emailR" class="error">Email required</span>
+            <span *ngIf="emailV" class="error">Wrong email</span>
+
             <tr id="addressInput">
                 <td><input type="address" name="address" class="form-control" id="address-input" placeholder="Adress" formControlName='address'></td> 
              </tr>         
             <span *ngIf="addressR" class="error">Address required</span>
+
+             <tr>
+                 <td>
+                    <label for="inputState">Role</label>
+                    <select formControlName='userType' id="inputState" class="form-control">
+                      <option *ngFor="let opt of selectOptions" [value]="opt">
+                        {{opt}}
+                      </option>
+                    </select>
+                    <span *ngIf="userTypeR" class="error">UserType required</span>
+                </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     <label for="inputImage" style="width: 100%;">Image</label>
+                    <input type="file" #file (change)="uploadFile(file.files)" name="image" class="form-control" accept="image/*">
+                </td>
+             </tr>
+            
+             <tr>
+                 <td>
+                    <img  width="300" height="400" [src]="imagePath(image)">
+                   
+                      <span class="upload" *ngIf="progress > 0">
+                        {{progress}}%
+                      </span>
+                      <span class="upload" *ngIf="message">
+                        {{message}}
+                      </span>
+                 </td>
+             </tr>
             <tr>
                 <td>
-                    <input type="submit" id="submitBtn" value="Submit">
+                    <input type="submit" id="submitBtn" value="Change profile">
                 </td>
             </tr>
         </table>

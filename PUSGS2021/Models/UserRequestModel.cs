@@ -15,5 +15,9 @@ namespace PUSGS2021.Models
     public string NameAndLastname { get; set; }
     public string Address { get; set; }
     public string UserType { get; set; }
+    public string Email { get; set; }
+    public string ImageData { get; set; }
+
+    public DateTime BirthDate { get; set; }
   }
 }
