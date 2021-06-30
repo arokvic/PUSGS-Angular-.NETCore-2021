@@ -16,5 +16,13 @@ namespace PUSGS2021.Data
 
         public DbSet<UserRequestModel> UserRequests { get; set; }
 
+        public DbSet<SwitchingPlanModel> SwitchingPlans { get; set; }
+
+        public DbSet<NotificationsModel> Notifications { get; set; }
+
+        public DbSet<InstructionModel> Instructions { get; set; }
+
+        public DbSet<SwitchingPlanHistoryModel> SwitchingPlanHistory { get; set; }
+
   }
 }

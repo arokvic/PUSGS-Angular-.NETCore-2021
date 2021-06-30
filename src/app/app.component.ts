@@ -50,6 +50,13 @@ export class AppComponent{
       showOnDesktop: true
     },
     {
+      label: 'Switching plan',
+      icon: 'developer_board',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
       label: 'Logout',
       icon: 'sentiment_very_dissatisfied',
       showOnMobile: true,
@@ -168,6 +175,10 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   if(menuItemsLogged.label ==='Profile')
   {
     this.router.navigate(['/profile']);
+  }
+  if(menuItemsLogged.label ==='Switching plan')
+  {
+    this.router.navigate(['/switching-plan']);
   }
   if(menuItemsLogged.label ==='Logout')
   {

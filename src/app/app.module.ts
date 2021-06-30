@@ -21,6 +21,26 @@ import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { JwtModule } from "@auth0/angular-jwt";
+import { SwitchingPlanComponent } from './switching-plan/switching-plan.component';
+import { NewSpComponent } from './switching-plan/new-sp/new-sp.component';
+import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
+import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSortModule } from '@angular/material/sort';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -33,9 +53,27 @@ export function getToken() {
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
+    SwitchingPlanComponent,
+    NewSpComponent,
+    BasicInfoSpComponent,
+    NavbarSpComponent,
   ],
   imports: [
     BrowserModule,
+    NgbModule,
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatSortModule,
+    MatInputModule,
+    MatDialogModule,
+    MatSidenavModule,
+    MatListModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -49,6 +87,8 @@ export function getToken() {
     RouterModule,
     ReactiveFormsModule,    
     HttpClientModule,
+    MatDatepickerModule,
+    MatCardModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken, 

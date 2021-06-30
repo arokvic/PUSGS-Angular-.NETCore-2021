@@ -7,6 +7,9 @@ import { RegisterComponent} from './register/register.component'
 import { LoginComponent } from './login/login.component'
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { SwitchingPlanComponent } from './switching-plan/switching-plan.component';
+import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
+import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
 
 const routes: Routes = [
  
@@ -54,6 +57,32 @@ const routes: Routes = [
       {
         path: '', // child route path
         component: ProfileComponent, // child route component that the router renders
+      }
+    ]
+  
+  },
+  {
+    path: 'switching-plan',
+     component: AppComponent,
+     canActivate: [AuthGuard],
+     children: [
+      {
+        path: '', // child route path
+        component: SwitchingPlanComponent, // child route component that the router renders
+        canActivate: [AuthGuard],
+
+      },
+      {
+        path: 'new', // child route path
+           canActivate: [AuthGuard],
+           component: NavbarSpComponent, // child route component that the router renders
+           children: [
+             {
+               path: 'basic-info',
+               canActivate: [AuthGuard],
+               component: BasicInfoSpComponent
+             }
+            ]
       }
     ]
   
