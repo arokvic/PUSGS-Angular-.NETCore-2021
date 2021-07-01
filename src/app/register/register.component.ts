@@ -27,7 +27,7 @@ name : any;
   constructor(private router: Router, private http: HttpClient, private fb: FormBuilder) { 
     this.profileForm = this.fb.group({
       username: ['', Validators.required],
-      password1: ['', Validators.required],   
+      password: ['', Validators.required],   
       password2: ['', Validators.required],
         address: ['', Validators.required],
         birth: ['', Validators.required],
@@ -50,7 +50,7 @@ name : any;
     }
     
     
-    console.log( "eee"+ this.profileForm.value.password1);
+    console.log( "eee"+ this.profileForm.value.password);
     console.log( "eee"+ this.profileForm.value.password2);
     console.log( "eee"+ this.profileForm.value.address);
     console.log( "eee"+ this.profileForm.value.birth);
