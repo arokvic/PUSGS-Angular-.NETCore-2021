@@ -107,6 +107,62 @@ namespace PUSGS2021.Controllers
       return Unauthorized();
     }
 
+    [HttpPost]
+    [Route("Register")]
+    public async Task<ActionResult<UserModel>> Register([FromBody] UserModel userF)
+    {
+
+      if (userF == null)
+      {
+        return BadRequest("Invalid client request");
+      }
+      UserModel u1 = new UserModel();
+      u1 = userF;
+
+      _context.Users.Add(u1);
+      await _context.SaveChangesAsync();
+
+      var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretKeysdfsdfsdf"));
+      var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+      var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Role, getRole(userF))
+            };
+
+      var tokenOptions = new JwtSecurityToken(
+          issuer: "https://localhost:5001",
+          audience: "https://localhost:5001",
+          claims: claims,
+          expires: DateTime.Now.AddMinutes(60),
+          signingCredentials: signingCredentials
+          );
+
+      var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+
+
+
+
+      CurrentUserModel loggedInUser = new CurrentUserModel
+      {
+        Token = tokenString,
+        Username = userF.Username,
+        NameAndLastname = userF.NameAndLastname,
+        Type = userF.UserType
+      };
+
+      return Ok(loggedInUser);
+
+
+
+
+
+
+
+    }
+
+
+
     [HttpPost, DisableRequestSizeLimit]
     [Route("Upload")]
     public IActionResult Upload()

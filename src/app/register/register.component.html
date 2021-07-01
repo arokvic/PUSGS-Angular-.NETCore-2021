@@ -1,30 +1,51 @@
 
-<div class="registerDiv">
-    <form class="register-form">
+<div class="registerDiv" >
+    <form class="register-form" #registerForm="ngForm" (ngSubmit)="register(profileForm)" [formGroup]="profileForm">
         <table id="registerTable">
             <tr>
                 <td id="registerLabel">
-                    Fill out the following form to register
+                    
                 </td>
             </tr>
             <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
             <tr id="usernameInput">
-                <td> <input type="text" placeholder="Username" id="username-input" ></td>
+                <td> <input type="text" placeholder="Username" id="username-input"  name="username" required class="form-control" formControlName="username" ></td>
             </tr>
             
             <tr id="passwordInput">
-               <td><input type="password" placeholder=" Password" id="password-input"></td> 
+               <td><input type="password" placeholder=" Password" id="password-input"  [(ngModel)]="pass1" ngModel name="password" required class="form-control" formControlName="password1" ></td> 
             </tr>
 
+            <tr id="passwordInput2">
+                <td><input type="password" placeholder="Confirm password" id="password-input"  [(ngModel)]="pass2" ngModel name="password2" required class="form-control" formControlName="password2" ></td> 
+                <div  *ngIf=confirmPass><p class="text-danger">Passwords must match</p></div>
+             </tr>
+
             <tr id="emailInput">
-                <td><input type="email" placeholder="Email" id="email-input"></td> 
+                <td><input type="email" placeholder="Email" id="email-input" class="form-control" ngModel required  formControlName="email"  ></td> 
              </tr>
 
              <tr id="nameInput">
-                <td><input type="name" placeholder="Name" id="name-input"></td> 
+                <td><input type="text" placeholder="Name" id="name-input" name="nameandlastname" class="form-control" required formControlName="name" ></td> 
              </tr>
              <tr id="addressInput">
-                <td><input type="address" placeholder="Adress" id="address-input"></td> 
+                <td><input type="text" placeholder="Adress" id="address-input" ngModel name="address" class="form-control" required formControlName="address" ></td> 
+             </tr>
+
+             <tr id="birthDate">
+                <td><input type="date" placeholder="Birth date" id="birth-date" ngModel name="birthdate" class="form-control" required formControlName="birth" ></td>
+               
+             </tr>
+
+             <tr id="role">
+                <td> 
+                    <select id="inputState" ngModel class="form-control" name="usertype" formControlName="usertype">
+                    <option selected>Worker</option>
+                    <option>Team member</option>
+                    <option>Dispatcher</option>
+                    
+                  </select>
+                </td> 
              </tr>
              
              <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
@@ -33,6 +54,8 @@
                     <input id="submitBtn" type="submit" value="Submit">
                 </td>
             </tr>
-        </table>       
-    </form>
+        </table>   
+        <p>{{name}}</p>          
+    </form>  
 </div>
+
