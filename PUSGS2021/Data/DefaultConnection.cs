@@ -24,5 +24,7 @@ namespace PUSGS2021.Data
 
         public DbSet<SwitchingPlanHistoryModel> SwitchingPlanHistory { get; set; }
 
+        public DbSet<IncidentInfo> Incidents { get; set; }
+
   }
 }

@@ -41,6 +41,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IncidentsComponent } from './incidents/incidents.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -57,6 +58,7 @@ export function getToken() {
     NewSpComponent,
     BasicInfoSpComponent,
     NavbarSpComponent,
+    IncidentsComponent,
   ],
   imports: [
     BrowserModule,

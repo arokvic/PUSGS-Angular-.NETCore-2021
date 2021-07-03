@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SwitchingPlanComponent } from './switching-plan/switching-plan.component';
 import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
 import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
+import { IncidentsComponent } from './incidents/incidents.component';
 
 const routes: Routes = [
  
@@ -87,6 +88,14 @@ const routes: Routes = [
     ]
   
   },
+  {
+    path: 'incidents',
+    component: IncidentsComponent
+
+
+
+
+  }
 ];
 
 @NgModule({
