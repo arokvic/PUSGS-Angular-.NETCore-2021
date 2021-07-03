@@ -3,6 +3,8 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 import { MenuItem } from './menu-item';
 import { Router, RouterLink }  from '@angular/router';
 import { LoginService } from './services/login.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -98,17 +100,16 @@ export class AppComponent{
     }
   ];
 
-  constructor(private router: Router,private loginService: LoginService) {}
+  constructor(private jwtHelper: JwtHelperService,private router: Router,private loginService: LoginService) {}
 
   ngOnInit(): void {
-    const type = localStorage.getItem('type');
-    if(type === 'Admin'){
+    const token: string = localStorage.getItem("jwt")!;
+    if (token && !this.jwtHelper.isTokenExpired(token)) {
       this.isAdmin = true;
-    }else{
-      
-      this.isAdmin = false;      
     }
-    console.log(this.isAdmin);
+    else {
+      this.isAdmin = false;
+    }
   }
 
   clickMenuItem(menuItem : MenuItem){

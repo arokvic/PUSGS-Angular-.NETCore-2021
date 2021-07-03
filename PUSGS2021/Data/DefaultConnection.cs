@@ -26,5 +26,8 @@ namespace PUSGS2021.Data
 
         public DbSet<IncidentInfo> Incidents { get; set; }
 
+        public DbSet<IncidentModel> IncidentModels { get; set; }
+        public DbSet<SafetyDocumentModel> SafetyDocuments { get; set; }
+
   }
 }

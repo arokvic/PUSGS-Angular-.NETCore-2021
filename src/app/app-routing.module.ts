@@ -108,21 +108,20 @@ const routes: Routes = [
                component: InstructionsSpComponent
              }
             ]
-      },
-      {
-        path: 'safety-documents',
-         component: AppComponent,
-         canActivate: [AuthGuard],
-          children: [
-            {
-              path: '', // child route path
-            component: SafetyDocumentsComponent,
-            }
-          ]
-        }
-    ]
-  
+      }      
+    ] 
   },
+  {
+    path: 'safety-documents',
+     component: AppComponent,
+     canActivate: [AuthGuard],
+      children: [
+        {
+          path: '', // child route path
+        component: SafetyDocumentsComponent,
+        }
+      ]
+    },
   {
     path: 'incidents',
     component: IncidentsComponent

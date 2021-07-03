@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SafetyDocument } from 'src/app/entities/safety-document';
-import { Incident } from 'src/app/entities/incident';
+import { IncidentModel } from 'src/app/entities/incidentModel';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class SafetyDocumentsService {
   }
 
 
-  saveIncident(incident: Incident){
+  saveIncident(incident: IncidentModel){
 
     /*const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -43,8 +43,8 @@ export class SafetyDocumentsService {
   );
   }
 
-  loadIncident(): Observable<Incident[]>{
-    return this.http.get<Incident[]>("https://localhost:44364/api/Incidents");
+  loadIncident(): Observable<IncidentModel[]>{
+    return this.http.get<IncidentModel[]>("https://localhost:44364/api/Incidents");
   }
 
 }
