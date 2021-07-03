@@ -26,6 +26,7 @@ import { NewSpComponent } from './switching-plan/new-sp/new-sp.component';
 import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
 import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -42,6 +43,12 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IncidentsComponent } from './incidents/incidents.component';
+import { HistorySpComponent } from './switching-plan/history-sp/history-sp.component';
+import { MultimediaSpComponent } from './switching-plan/multimedia-sp/multimedia-sp.component';
+import { EquipmentSpComponent } from './switching-plan/equipment-sp/equipment-sp.component';
+import { CreateInstructionSpComponent } from './switching-plan/create-instruction-sp/create-instruction-sp.component';
+import { InstructionsSpComponent } from './switching-plan/instructions-sp/instructions-sp.component';
+import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -59,6 +66,12 @@ export function getToken() {
     BasicInfoSpComponent,
     NavbarSpComponent,
     IncidentsComponent,
+    HistorySpComponent,
+    MultimediaSpComponent,
+    EquipmentSpComponent,
+    CreateInstructionSpComponent,
+    InstructionsSpComponent,
+    SafetyDocumentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +103,7 @@ export function getToken() {
     ReactiveFormsModule,    
     HttpClientModule,
     MatDatepickerModule,
+    NgSelectModule,
     MatCardModule,
     JwtModule.forRoot({
       config: {

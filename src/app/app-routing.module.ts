@@ -11,7 +11,11 @@ import { SwitchingPlanComponent } from './switching-plan/switching-plan.componen
 import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
 import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
 import { IncidentsComponent } from './incidents/incidents.component';
-
+import { HistorySpComponent } from './switching-plan/history-sp/history-sp.component';
+import { MultimediaSpComponent } from './switching-plan/multimedia-sp/multimedia-sp.component';
+import { EquipmentSpComponent } from './switching-plan/equipment-sp/equipment-sp.component';
+import { InstructionsSpComponent } from './switching-plan/instructions-sp/instructions-sp.component';
+import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
 const routes: Routes = [
  
   {
@@ -63,7 +67,7 @@ const routes: Routes = [
   
   },
   {
-    path: 'switching-plan',
+    path: 'switching-plans',
      component: AppComponent,
      canActivate: [AuthGuard],
      children: [
@@ -82,9 +86,40 @@ const routes: Routes = [
                path: 'basic-info',
                canActivate: [AuthGuard],
                component: BasicInfoSpComponent
+             },
+             {
+               path: 'history-state',
+               canActivate: [AuthGuard],
+               component: HistorySpComponent
+             },
+             {
+               path: 'multimedia',
+               canActivate: [AuthGuard],
+               component: MultimediaSpComponent
+             },
+             {
+               path: 'equipment',
+               canActivate: [AuthGuard],
+               component: EquipmentSpComponent
+             },
+             {
+               path: 'instructions',
+               canActivate: [AuthGuard],
+               component: InstructionsSpComponent
              }
             ]
-      }
+      },
+      {
+        path: 'safety-documents',
+         component: AppComponent,
+         canActivate: [AuthGuard],
+          children: [
+            {
+              path: '', // child route path
+            component: SafetyDocumentsComponent,
+            }
+          ]
+        }
     ]
   
   },

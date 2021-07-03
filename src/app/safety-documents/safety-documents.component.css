@@ -1,0 +1,32 @@
+button {
+    position: relative;
+    text-align: center;
+     height: 30px;
+ }
+ 
+ mat-icon {
+     position: absolute;
+ }
+
+
+ .container__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.table--modifiers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+    

@@ -57,6 +57,13 @@ export class AppComponent{
       showOnDesktop: true
     },
     {
+      label: 'Safety document',
+      icon: 'developer_board',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
       label: 'Logout',
       icon: 'sentiment_very_dissatisfied',
       showOnMobile: true,
@@ -178,7 +185,11 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   }
   if(menuItemsLogged.label ==='Switching plan')
   {
-    this.router.navigate(['/switching-plan']);
+    this.router.navigate(['/switching-plans']);
+  }
+  if(menuItemsLogged.label ==='Safety document')
+  {
+    this.router.navigate(['/safety-documents']);
   }
   if(menuItemsLogged.label ==='Logout')
   {

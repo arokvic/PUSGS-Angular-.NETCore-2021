@@ -1,6 +1,6 @@
 
-
-<button (click)="new()">New</button>
+<br><br><br>
+<button mat-stroked-button color="warn" (click)="new()">New</button>
 
 <div class="container">
   
@@ -21,7 +21,7 @@
           <td>{{switchingPlan.phone}}</td>
           <td>{{switchingPlan.status}}</td>
           <td>{{switchingPlan.street}}</td>
-          <td><button [(ngModel)]="switchingPlan.id" ngDefaultControl class (click)="openDocument(switchingPlan.id)">Open</button></td>
+          <td><button mat-stroked-button color="#001133" [(ngModel)]="switchingPlan.id" ngDefaultControl class (click)="openDocument(switchingPlan.id)">Open</button></td>
         </tr>
       </tbody>
       </table>

@@ -1,0 +1,29 @@
+
+<ng-container [formGroup]="form">
+    <mat-card class="form-container">
+    <div>
+      <mat-card-title class="title">Equipment for switching plan</mat-card-title>
+    </div>
+    <div>
+  
+      
+        <ng-select style="margin-top: 5%;" [items]="elements"
+                       bindLabel="name"
+                       placeholder="Select Elements"
+                       bindValue="id"
+                       appendTo="body"
+                       [compareWith]="compareWith"
+                       formControlName='equipmentId'>
+        </ng-select>
+    
+    
+    </div>
+    
+    <div class="button">
+        <button (click)="back()" class="btn btn-primary button">Back</button>
+        <button (click)="save()" class="btn btn-primary button">Next</button>
+    </div>
+    </mat-card>
+  </ng-container>
+  
+  
