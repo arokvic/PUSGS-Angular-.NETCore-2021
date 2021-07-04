@@ -16,6 +16,8 @@ import { MultimediaSpComponent } from './switching-plan/multimedia-sp/multimedia
 import { EquipmentSpComponent } from './switching-plan/equipment-sp/equipment-sp.component';
 import { InstructionsSpComponent } from './switching-plan/instructions-sp/instructions-sp.component';
 import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
+import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
+import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
 const routes: Routes = [
  
   {
@@ -122,14 +124,57 @@ const routes: Routes = [
         }
       ]
     },
-  {
-    path: 'incidents',
-    component: IncidentsComponent
-
-
-
-
-  }
+    {
+      path: 'incidents',
+       component: AppComponent,
+       
+       children: [
+          {
+        path: '',
+        component: IncidentsComponent 
+          },
+          {
+        path : "new" ,
+        component : NavbarIncidentComponent,
+        children : [
+          {
+            path: 'basic-info',         
+            component: IncidentBasicInfoComponent
+          }
+          /*
+          {
+            path: 'history-state',
+            canActivate: [AuthGuard],
+            component: HistorySpComponent
+          },
+          {
+            path: 'multimedia',
+            canActivate: [AuthGuard],
+            component: MultimediaSpComponent
+          },
+          {
+            path: 'equipment',
+            canActivate: [AuthGuard],
+            component: EquipmentSpComponent
+          },
+          {
+            path: 'instructions',
+            canActivate: [AuthGuard],
+            component: InstructionsSpComponent
+          }*/
+  
+  
+          ]
+  
+          }
+       ]
+  
+  
+     
+  
+       
+  
+    }
 ];
 
 @NgModule({

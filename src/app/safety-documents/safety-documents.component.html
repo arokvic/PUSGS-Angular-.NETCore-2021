@@ -22,7 +22,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let document of allSafetyDocuments | slice: (page-1) * pageSize : page * pageSize">
-            <td>{{document.safetyDocumentId.toString()}}</td>
+                <td>{{document.safetyDocumentId}}</td>
             <td>{{document.dateCreated}}</td>
             <td>{{document.phoneNum}}</td>
             <td>{{document.status}}</td>

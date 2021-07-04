@@ -1,6 +1,6 @@
 
 export class Incident {
-    id: string;
+    id!: string;
     typeOfInc: string;
     priority: number;
     confirmed: boolean;
@@ -13,8 +13,9 @@ export class Incident {
     calls: number;
     voltageLevel: number;
     scheduledTime: string;
+    assignedTo : string;
 
-    constructor(id: string,
+    constructor(
         typeOfInc: string,
         priority: number,
         confirmed: boolean,
@@ -26,9 +27,10 @@ export class Incident {
         affectedCustomers: number,
         calls: number,
         voltageLevel: number,
-        scheduledTime: string)       
+        scheduledTime: string,
+        assignedTo : string)       
     {
-        this.id= id;
+        
         this.typeOfInc= typeOfInc;
         this.priority= priority;
         this.confirmed= confirmed;
@@ -41,5 +43,7 @@ export class Incident {
         this.calls= calls;
         this.voltageLevel= voltageLevel;
         this.scheduledTime= scheduledTime;
+        this.assignedTo = assignedTo;
+        this.id = "4";
     }
 }

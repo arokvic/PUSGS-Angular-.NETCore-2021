@@ -26,57 +26,55 @@ namespace PUSGS2021.Controllers
 
     [HttpPost]
     [Route("AddIncident")]
-    public async Task<ActionResult<IncidentModel>> AddIncident(IncidentModel inc)
+    public async Task<ActionResult<IncidentInfo>> AddIncident([FromBody] IncidentInfo inc)
     {
+      /* Console.WriteLine(inc.ATA);
+       Console.WriteLine(inc.TypeOfInc);
+       Console.WriteLine(inc.Priority);
+       Console.WriteLine(inc.Confirmed);*/
 
+      IncidentInfo inc2 = new IncidentInfo();
 
-      //IncidentInfo incident = new IncidentInfo()
-      //{
-      //  ID = Guid.NewGuid().ToString(),
-      //  TypeOfInc = inc.TypeOfInc,
-      //  Priority = inc.Priority,
-      //  Confirmed = inc.Confirmed,
-      //  Status = inc.Status,
-      //  ETA = inc.ETA,
-      //  ETR = inc.ETR,
-      //  ATA = inc.ATA,
-      //  AffectedCustomers = inc.AffectedCustomers,
-      //  Calls = inc.Calls,
-      //  VoltageLevel = inc.VoltageLevel,
-      //  ScheduledTime = inc.ScheduledTime,
-      //  OutageTime = inc.OutageTime
-
-
-      //};
-
-
-
-
-      //_context.Incidents.Add(incident);
-
-      //await _context.SaveChangesAsync();
-
-
-
-      //return CreatedAtAction("GetIncidents", incident);
-
-      IncidentModel incident = new IncidentModel()
+      IncidentInfo incident = new IncidentInfo()
       {
-        IncidentID = Guid.NewGuid().ToString(),
-        StartDate = inc.StartDate,
-        Status = inc.Status
+        ID = Guid.NewGuid().ToString(),
+        TypeOfInc = inc.TypeOfInc,
+        Priority = inc.Priority,
+        Confirmed = inc.Confirmed,
+        Status = inc.Status,
+        Eta = inc.Eta,
+        Etr = inc.Etr,
+        Ata = inc.Ata,
+        AffectedCustomers = inc.AffectedCustomers,
+        Calls = inc.Calls,
+        VoltageLevel = inc.VoltageLevel,
+        ScheduledTime = inc.ScheduledTime,
+        OutageTime = inc.OutageTime,
+        AssignedTo = inc.AssignedTo
+
+
+
       };
+      inc2 = incident;
+
+      /*  if (inc == null)
+        {
+          return BadRequest("Invalid client request");
+        }
+
+        IncidentInfo i = new IncidentInfo();
+        i = inc;*/
 
 
 
 
-      _context.IncidentModels.Add(incident);
+      _context.Incidents.Add(inc2);
 
       await _context.SaveChangesAsync();
 
-      //SaveStreet("sdfsdf");
 
-      return CreatedAtAction("GetIncidents", incident);
+
+      return CreatedAtAction("AddIncident", incident);
 
     }
 

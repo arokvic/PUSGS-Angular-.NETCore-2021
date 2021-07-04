@@ -49,6 +49,8 @@ import { EquipmentSpComponent } from './switching-plan/equipment-sp/equipment-sp
 import { CreateInstructionSpComponent } from './switching-plan/create-instruction-sp/create-instruction-sp.component';
 import { InstructionsSpComponent } from './switching-plan/instructions-sp/instructions-sp.component';
 import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
+import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
+import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -72,6 +74,8 @@ export function getToken() {
     CreateInstructionSpComponent,
     InstructionsSpComponent,
     SafetyDocumentsComponent,
+    NavbarIncidentComponent,
+    IncidentBasicInfoComponent,
   ],
   imports: [
     BrowserModule,

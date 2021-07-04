@@ -10,31 +10,51 @@ namespace PUSGS2021.Models
   {
     [Key]
     public string ID { get; set; }
+    [ConcurrencyCheck]
     public string TypeOfInc { get; set; }
-
-    public int Priority { get; set; }
-
-    public bool Confirmed { get; set; }
-
+    [ConcurrencyCheck]
+    public string Priority { get; set; }
+    [ConcurrencyCheck]
+    public string Confirmed { get; set; }
+    [ConcurrencyCheck]
     public string Status { get; set; }
-
-    public DateTime ETA { get; set; }
-
-    public DateTime ATA { get; set; }
-
-    public DateTime OutageTime { get; set; }
-
-    public DateTime ETR { get; set; }
-
-    public int AffectedCustomers { get; set; }
-
-    public int Calls { get; set; }
-
-    public double VoltageLevel { get; set; }
-
-    public DateTime ScheduledTime { get; set; }
-
+    [ConcurrencyCheck]
+    public string Eta { get; set; }
+    [ConcurrencyCheck]
+    public string Ata { get; set; }
+    [ConcurrencyCheck]
+    public string OutageTime { get; set; }
+    [ConcurrencyCheck]
+    public string Etr { get; set; }
+    [ConcurrencyCheck]
+    public string AffectedCustomers { get; set; }
+    [ConcurrencyCheck]
+    public string Calls { get; set; }
+    [ConcurrencyCheck]
+    public string VoltageLevel { get; set; }
+    [ConcurrencyCheck]
+    public string ScheduledTime { get; set; }
+    [ConcurrencyCheck]
     public string AssignedTo { get; set; }
+
+
+    public IncidentInfo()
+    {
+      /*TypeOfInc = "+";
+      Priority = 1;
+      Confirmed = "+";
+      TypeOfInc = "+";
+      ETA = "+";
+      ATA = "+";
+      ETR = "+";
+      AffectedCustomers = "1";
+      Calls = "1";
+      VoltageLevel ="1";
+      ScheduledTime = "me";
+      AssignedTo = "+";
+      OutageTime = "+";
+      */
+    }
 
 
   }

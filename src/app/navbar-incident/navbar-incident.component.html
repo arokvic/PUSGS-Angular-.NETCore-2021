@@ -1,0 +1,40 @@
+<p>navbar-incident works!</p>
+<ng-container [formGroup]="IncForm">
+
+    <br>
+    <br>
+    
+    
+    
+    
+    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+     
+        <li [ngbNavItem]="1">
+          <a ngbNavLink class="inactiveLink" routerLink="" > Basic information</a>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbNavLink class="inactiveLink" routerLink=""> Devices</a>
+        </li>
+        <li ngbNavItem [ngbNavItem]="3">
+          <a ngbNavLink class="inactiveLink" routerLink=""> Resolution</a>
+        </li>
+        <li ngbNavItem [ngbNavItem]="4">
+          <a ngbNavLink class="inactiveLink" routerLink=""> Calls</a>
+        </li>
+        
+        <li ngbNavItem [ngbNavItem]="5">
+          <a ngbNavLink class="inactiveLink" routerLink=""> Crew</a>
+        </li>
+        <li ngbNavItem [ngbNavItem]="6">
+            <a ngbNavLink class="inactiveLink" routerLink=""> Multimedia attachments</a>
+          </li>
+          
+          <li ngbNavItem [ngbNavItem]="7">
+            <a ngbNavLink class="inactiveLink" routerLink=""> Equipment</a>
+          </li>
+        
+      </ul>
+      
+      <div [ngbNavOutlet]="nav"></div>
+      <router-outlet></router-outlet>
+    </ng-container>
