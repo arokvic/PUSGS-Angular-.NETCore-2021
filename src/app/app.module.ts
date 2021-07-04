@@ -51,6 +51,7 @@ import { InstructionsSpComponent } from './switching-plan/instructions-sp/instru
 import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
 import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
 import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -76,6 +77,7 @@ export function getToken() {
     SafetyDocumentsComponent,
     NavbarIncidentComponent,
     IncidentBasicInfoComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,

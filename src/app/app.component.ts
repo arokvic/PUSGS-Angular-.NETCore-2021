@@ -66,6 +66,13 @@ export class AppComponent{
       showOnDesktop: true
     },
     {
+      label: 'Notifications',
+      icon: 'notification',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
       label: 'Logout',
       icon: 'sentiment_very_dissatisfied',
       showOnMobile: true,
@@ -103,6 +110,7 @@ export class AppComponent{
   constructor(private jwtHelper: JwtHelperService,private router: Router,private loginService: LoginService) {}
 
   ngOnInit(): void {
+    
     const token: string = localStorage.getItem("jwt")!;
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       this.isAdmin = true;
@@ -110,6 +118,7 @@ export class AppComponent{
     else {
       this.isAdmin = false;
     }
+
   }
 
   clickMenuItem(menuItem : MenuItem){
@@ -191,6 +200,10 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   if(menuItemsLogged.label ==='Safety document')
   {
     this.router.navigate(['/safety-documents']);
+  }
+  if(menuItemsLogged.label ==='Notifications')
+  {
+    this.router.navigate(['/notifications']);
   }
   if(menuItemsLogged.label ==='Logout')
   {

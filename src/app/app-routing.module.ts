@@ -18,6 +18,7 @@ import { InstructionsSpComponent } from './switching-plan/instructions-sp/instru
 import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
 import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
 import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 const routes: Routes = [
  
   {
@@ -31,7 +32,13 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: ContentComponent
+    component: ContentComponent,
+    children: [
+      {
+        path: '', // child route path
+        component: AppComponent, // child route component that the router renders
+      }
+    ]
   },
   {
     path: "home",
@@ -174,7 +181,19 @@ const routes: Routes = [
   
        
   
-    }
+    },
+    {
+      path: 'notifications',
+       component:AppComponent,
+       canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          component: NotificationsComponent, // child route component that the router renders
+        }
+      ]
+    
+    },
 ];
 
 @NgModule({

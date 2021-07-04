@@ -26,7 +26,7 @@ export class ContentComponent implements OnInit {
   public logOut = () => {
     localStorage.removeItem("jwt");
   }
-
+  
   ngOnInit(): void {
   }
 
