@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Component,Type } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent} from './dashboard/dashboard.component'
@@ -23,6 +23,9 @@ import { NewSafetyDocumentComponent } from './new-safety-document/new-safety-doc
 import { BasicInformationComponent } from './basic-information/basic-information.component';
 import { HistoryOfStateChangesComponent } from './history-of-state-changes/history-of-state-changes.component';
 import { MultimediaAttachmentsComponent } from './multimedia-attachments/multimedia-attachments.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SettingsAdminComponent } from './settings-admin/settings-admin.component';
+import { ViewGuard } from './view.guard';
 
 const routes: Routes = [
  
@@ -219,6 +222,31 @@ const routes: Routes = [
       ]
     
     },
+
+    {
+      path: 'settings',
+       component:AppComponent,
+       canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          component: SettingsComponent, // child route component that the router renders
+        }
+      ]
+    
+    },
+    {
+      path: 'admin-settings',
+       component:AppComponent,
+       canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          component: SettingsAdminComponent, // child route component that the router renders
+        }
+      ]
+    
+    },
 ];
 
 @NgModule({
@@ -226,3 +254,18 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export function isSettingsAdmin(): Type<Component> {
+
+  if(ViewGuard.prototype.canActivate()){
+
+    return <Type<Component>>SettingsAdminComponent;
+
+  }else{
+
+    return <Type<Component>>SettingsComponent;
+
+  }
+
+
+}

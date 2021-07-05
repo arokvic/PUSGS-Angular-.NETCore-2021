@@ -58,6 +58,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SafetyDocumentsPageComponent } from './safety-documents-page/safety-documents-page.component';
 import { HistoryOfStateChangesComponent } from './history-of-state-changes/history-of-state-changes.component';
 import { MultimediaAttachmentsComponent } from './multimedia-attachments/multimedia-attachments.component';
+import { SettingsComponent } from './settings/settings.component';
+import { SettingsAdminComponent } from './settings-admin/settings-admin.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -90,6 +92,8 @@ export function getToken() {
     SafetyDocumentsPageComponent,
     HistoryOfStateChangesComponent,
     MultimediaAttachmentsComponent,
+    SettingsComponent,
+    SettingsAdminComponent,
   ],
   imports: [
     BrowserModule,

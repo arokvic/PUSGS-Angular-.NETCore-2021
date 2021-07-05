@@ -30,5 +30,20 @@ export class UserService {
     .subscribe(
       error=>console.log("oops", error)
     );
+
+    
   }
+
+  changeUserPassword(credentials:any){
+    const params = new HttpParams().append('password', credentials.password);
+    console.log("kod metode" + credentials);
+    this.http.put("https://localhost:44364/api/User/ChangePassword", credentials, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })})
+      .subscribe(
+        error => console.log('oops', error)
+      );
+  }
+
 }

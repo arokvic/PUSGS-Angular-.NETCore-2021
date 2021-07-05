@@ -278,6 +278,43 @@ namespace PUSGS2021.Controllers
       return BadRequest("Wrong username");
     }
 
+    [HttpPut]
+    [Route("ChangePassword")]
+    public async Task<ActionResult<UserModel>> ChangePassword([FromBody] LoginModel passwordForm)
+    {
+      string username = HttpContext.User.FindFirst(ClaimTypes.Name).Value;
+
+      UserModel u1 = new UserModel();
+      foreach (UserModel user in _context.Users)
+      {
+        if (user.Username == username)
+        {
+          u1 = user;
+          break;
+
+        }
+      }
+      u1.Password = passwordForm.Password;
+
+      //string username = HttpContext.User.FindFirst(ClaimTypes.Name).Value;
+
+      NotificationsModel notification = new NotificationsModel()
+      {
+        Type = "Success",
+        Text = "Password changed",
+        Status = "Unread",
+        TimeStamp = DateTime.Now.ToString(),
+        User = _context.Users.FirstOrDefault(u => u.Username == username),
+        Visible = true
+      };
+
+      _context.Notifications.Add(notification);
+
+      await _context.SaveChangesAsync();
+      return CreatedAtAction("ChangePassword", u1);
+
+    }
+
     private string getRole(UserModel user)
     {
 

@@ -1,0 +1,13 @@
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    justify-content: flex-start;
+    width: 30%;
+}
