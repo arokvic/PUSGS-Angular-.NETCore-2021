@@ -27,6 +27,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { SettingsAdminComponent } from './settings-admin/settings-admin.component';
 import { ViewGuard } from './view.guard';
 import { CrewComponent } from './crew/crew.component';
+import { DevicesComponent } from './devices/devices.component';
+import { ChecklistComponent } from './checklist/checklist.component';
 const routes: Routes = [
  
   {
@@ -61,6 +63,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    
      component: AppComponent,
      canActivate: [AuthGuard],
      children: [
@@ -132,7 +135,7 @@ const routes: Routes = [
     path: 'safety-documents',
      component: AppComponent,
 
-     //canActivate: [AuthGuard],
+     canActivate: [AuthGuard],
       children: [
         {
           path: '', // child route path
@@ -153,6 +156,14 @@ const routes: Routes = [
             {
               path: 'multimedia-attachments',
               component: MultimediaAttachmentsComponent
+            },
+            {
+              path: 'document-devices',
+              component: DevicesComponent
+            },
+            {
+              path: 'checklist',
+              component: ChecklistComponent
             }
           ]
         }]

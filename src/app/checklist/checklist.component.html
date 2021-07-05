@@ -1,0 +1,39 @@
+<form [formGroup]="checklistForm">
+    <div class="container">
+        <div class="container__center">
+    <mat-slide-toggle formControlName="operationsCompleted"
+              class="example-margin"
+              [color]="color"
+              [checked]="checked"
+              [disabled]="disabled">
+            All work operations completed?
+    </mat-slide-toggle>
+    <mat-slide-toggle formControlName="tagsRemoved"
+              class="example-margin"
+              [color]="color"
+              [checked]="checked"
+              [disabled]="disabled">
+            All tags removed?
+    </mat-slide-toggle>
+    <mat-slide-toggle formControlName="groundingRemoved"
+              class="example-margin"
+              [color]="color"
+              [checked]="checked"
+              [disabled]="disabled">
+            Grounding removed?
+    </mat-slide-toggle>
+    <mat-slide-toggle formControlName="readyForService"
+              class="example-margin"
+              [color]="color"
+              [checked]="checked"
+              [disabled]="disabled">
+            Ready for service?
+    </mat-slide-toggle>
+    
+    
+    <button class="table--modifiers__btn" (click)="onSave()" type="button"> <!--type=button-->
+        <mat-icon id="icon-absolute" class="icon">save</mat-icon>
+    </button>
+        </div>
+    </div>
+    </form>

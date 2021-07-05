@@ -61,6 +61,8 @@ import { MultimediaAttachmentsComponent } from './multimedia-attachments/multime
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsAdminComponent } from './settings-admin/settings-admin.component';
 import { CrewComponent } from './crew/crew.component';
+import { DevicesComponent } from './devices/devices.component';
+import { ChecklistComponent } from './checklist/checklist.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -96,6 +98,8 @@ export function getToken() {
     SettingsComponent,
     SettingsAdminComponent,
     CrewComponent,
+    DevicesComponent,
+    ChecklistComponent,
   ],
   imports: [
     BrowserModule,
