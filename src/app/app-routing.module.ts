@@ -21,6 +21,8 @@ import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NewSafetyDocumentComponent } from './new-safety-document/new-safety-document.component';
 import { BasicInformationComponent } from './basic-information/basic-information.component';
+import { HistoryOfStateChangesComponent } from './history-of-state-changes/history-of-state-changes.component';
+import { MultimediaAttachmentsComponent } from './multimedia-attachments/multimedia-attachments.component';
 
 const routes: Routes = [
  
@@ -126,6 +128,7 @@ const routes: Routes = [
   {
     path: 'safety-documents',
      component: AppComponent,
+
      //canActivate: [AuthGuard],
       children: [
         {
@@ -138,6 +141,15 @@ const routes: Routes = [
             {
               path: 'basic-info',
               component: BasicInformationComponent
+            },
+            {
+              path: 'history-of-state-changes',
+              component: HistoryOfStateChangesComponent
+            }
+            ,
+            {
+              path: 'multimedia-attachments',
+              component: MultimediaAttachmentsComponent
             }
           ]
         }]

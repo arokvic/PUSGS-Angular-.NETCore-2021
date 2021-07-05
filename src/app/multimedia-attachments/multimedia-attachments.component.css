@@ -1,0 +1,18 @@
+.button{
+    width: 50%;
+  }
+  
+  .buttonImage{
+    border: 0;
+  padding: 20px 40px;
+  background-color: transparent;
+  border-radius: 10px;  
+  color: #fff;
+    
+  }
+  .upload {
+  font-weight:bold;
+  color:#28a745;
+  margin-left: 15px;
+  line-height: 36px;
+  }

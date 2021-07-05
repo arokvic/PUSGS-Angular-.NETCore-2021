@@ -1,0 +1,32 @@
+<p></p>
+<form [formGroup]="multimediaForm">
+    <div class="container">
+  
+  <div  class="row">
+    <div class="form-group col-md-4">
+      <label for="inputImage"  style="width: 100%;">Image</label>
+      <input type="file" (change)="uploadFile(file.files)" formControlName="file" #file  accept="image/*"  name="imagedata" class="form-control"  (change)="handleFileInput($event)" required>
+    </div>
+    <div class="col-md-8">
+      <div class="col align-self-end">
+        <img  width="300" height="400" [src]="imageUrl">
+        <div class="col-md-12">
+          <span class="upload" *ngIf="progress > 0">
+            {{progress}}%
+          </span>
+          <span class="upload" *ngIf="message">
+            {{message}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label></label>
+    <button class="table--modifiers__btn" (click)="onSave()" type="button"> <!--type=button-->
+        <mat-icon id="icon-absolute" class="icon">save</mat-icon>
+    </button>
+  </div>
+  </div>
+  </form>
+  

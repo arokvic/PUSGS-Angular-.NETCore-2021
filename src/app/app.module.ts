@@ -56,6 +56,8 @@ import { NewSafetyDocumentComponent } from './new-safety-document/new-safety-doc
 import { BasicInformationComponent } from './basic-information/basic-information.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SafetyDocumentsPageComponent } from './safety-documents-page/safety-documents-page.component';
+import { HistoryOfStateChangesComponent } from './history-of-state-changes/history-of-state-changes.component';
+import { MultimediaAttachmentsComponent } from './multimedia-attachments/multimedia-attachments.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -86,6 +88,8 @@ export function getToken() {
     BasicInformationComponent,
     NavBarComponent,
     SafetyDocumentsPageComponent,
+    HistoryOfStateChangesComponent,
+    MultimediaAttachmentsComponent,
   ],
   imports: [
     BrowserModule,
