@@ -26,7 +26,7 @@ import { MultimediaAttachmentsComponent } from './multimedia-attachments/multime
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsAdminComponent } from './settings-admin/settings-admin.component';
 import { ViewGuard } from './view.guard';
-
+import { CrewComponent } from './crew/crew.component';
 const routes: Routes = [
  
   {
@@ -247,6 +247,10 @@ const routes: Routes = [
       ]
     
     },
+    {
+      path: "crew",
+      component: CrewComponent
+    }
 ];
 
 @NgModule({

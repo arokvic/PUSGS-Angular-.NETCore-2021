@@ -1,0 +1,75 @@
+
+<div class = "register-form">
+
+    <form class="diver" #registerForm="ngForm" [formGroup]="crewForm">
+        <table id="registerTable">
+            <tr>
+                <td id="registerLabel">
+                    
+                </td>
+            </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr id="name">
+                <td> <input type="text" placeholder="crew name" id="name"  name="name" required class="form-control" formControlName="name" ></td>
+            </tr>
+            
+
+        </table>
+    </form>
+
+<h2>Potential crew members</h2>
+
+      
+    <br>
+  
+      <table class="table table-dark">
+        <thead class="thead-dark">
+          <tr>
+              
+              <th scope="col">Username</th>             
+              <th scope="col">Name and lastname</th>
+              <th scope="col">Type</th>
+                        
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" >          
+          <td>{{user.username}}</td>
+          <td>{{user.nameAndLastname}}</td>
+          <td>{{user.userType}}</td>  
+          <td><button class="icon" (click)="addCrewMember(user.username, $event)"></button></td>
+        </tr> 
+      </tbody>
+     </table>
+     <div class="form-group col align-self-center">
+  
+        <button type="submit" (click)="addCrew()" class="icon" [disabled]="crewForm.invalid"></button>
+      </div>
+
+
+<br>
+<br>
+<h2>All crews</h2>
+<div class = "container">
+<table class="table table-dark" >
+    <thead class="thead-dark">
+      <tr>
+          
+          <th scope="col">Id</th>             
+          <th scope="col">Crew name</th>
+          <th scope="col">Members</th>
+                    
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let crew of allCrews" >          
+      <td>{{crew.id}}</td>
+      <td>{{crew.name}}</td>
+      <td>{{crew.members}}</td>  
+      <td><button class="icon2" (click)="DeleteCrew(crew.id)"></button></td>
+    </tr> 
+  </tbody>
+ </table>
+</div>
+</div>
+

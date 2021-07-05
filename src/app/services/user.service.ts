@@ -46,4 +46,9 @@ export class UserService {
       );
   }
 
+  AllWorkers(): Observable<User[]>{
+    return this.http.get<User[]>("https://localhost:44364/api/User/AllWorkers")
+  }
+
+
 }

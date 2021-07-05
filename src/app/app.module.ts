@@ -60,6 +60,7 @@ import { HistoryOfStateChangesComponent } from './history-of-state-changes/histo
 import { MultimediaAttachmentsComponent } from './multimedia-attachments/multimedia-attachments.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsAdminComponent } from './settings-admin/settings-admin.component';
+import { CrewComponent } from './crew/crew.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -94,6 +95,7 @@ export function getToken() {
     MultimediaAttachmentsComponent,
     SettingsComponent,
     SettingsAdminComponent,
+    CrewComponent,
   ],
   imports: [
     BrowserModule,

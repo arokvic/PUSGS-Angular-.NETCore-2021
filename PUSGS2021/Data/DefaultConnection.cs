@@ -32,6 +32,7 @@ namespace PUSGS2021.Data
         public DbSet<ElementModel> Elements { get; set; }
         public DbSet<StreetModel> Streets { get; set; }
         public DbSet<ConsumerModel> Consumers { get; set; }
+        public DbSet<CrewModel> Crews { get; set; }
   
 
   }

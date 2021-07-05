@@ -339,5 +339,24 @@ namespace PUSGS2021.Controllers
         return "User";
       }
     }
+
+    [HttpGet]
+    [Route("AllWorkers")]
+    public ActionResult<IEnumerable<UserModel>> GetUsers()
+    {
+      List<UserModel> memberUsers = new List<UserModel>();
+      foreach (var item in _context.Users)
+      {
+
+        if (item.UserType == "Worker")
+        {
+          memberUsers.Add(item);
+          Console.WriteLine(item.Username);
+        }
+
+      }
+      return memberUsers;
+    }
+
   }
 }
