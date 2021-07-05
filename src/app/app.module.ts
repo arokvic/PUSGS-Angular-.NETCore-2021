@@ -55,6 +55,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { NewSafetyDocumentComponent } from './new-safety-document/new-safety-document.component';
 import { BasicInformationComponent } from './basic-information/basic-information.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SafetyDocumentsPageComponent } from './safety-documents-page/safety-documents-page.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -84,6 +85,7 @@ export function getToken() {
     NewSafetyDocumentComponent,
     BasicInformationComponent,
     NavBarComponent,
+    SafetyDocumentsPageComponent,
   ],
   imports: [
     BrowserModule,

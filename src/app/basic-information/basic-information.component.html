@@ -1,1 +1,78 @@
-<p>basic-information works!</p>
+<br>
+<br>
+
+<form [formGroup]="basicInfoForm">
+    <div class="main-container">
+    
+    <div class="container">
+        <div class="container__element">
+        <label>Type:
+        </label>
+        <select name="types" id="types" class="container__element" formControlName="elementType">
+            <option value="planiraniRad">Planirani rad</option>
+            <option value="neplaniraniRad">Neplanirani rad</option>
+            
+          </select>
+        </div>
+        <div class="container__element">
+        <label>Status:
+            
+        </label>
+        <span class="span-bold">Draft</span>
+        </div>
+
+        <div class="container__element">
+            <label>Switching plan:
+            </label>
+            <label> kad odradi tacku plan <button>...</button></label>
+        </div>
+            <!--<div class="container__element">
+            <label>Safety doc type:
+            </label>
+            <input type="text" formControlName="safetyDocType">
+        </div>-->
+
+        <!--<div class="container__element">
+            <label>Date/time created: 
+            </label>
+            <input type="text" formControlName="dateCreated">
+        </div>-->
+        <div class="container__element">
+            <label>Created by:
+            </label>
+            <input type="text" [value]="userCreated"  formControlName="createdByUser" readonly >
+        </div>
+
+        <div class="container__element">
+            <label>Phone No: 
+            </label>
+            <input type="text" formControlName="phoneNum">
+        </div>
+        <div class="container__element">
+            <label>Field Crew:
+            </label>
+            <label>kad uradi tacku field crew</label>
+        </div>  
+
+        <div class="container__element">
+            <label>Details: 
+            </label>
+            <input type="text" formControlName="details">
+        </div>
+        <div class="container__element">
+            <label>Notes:
+            </label>
+            <input type="text" formControlName="notes">
+        </div>  
+
+        <br><br>
+        <div class="container__element">
+            <label></label>
+            <button class="table--modifiers__btn" (click)="onSave()" type="button"> <!--type=button-->
+                <mat-icon id="icon-absolute" class="icon">save</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    </div>
+</form>
