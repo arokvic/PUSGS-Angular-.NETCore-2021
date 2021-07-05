@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SafetyDocument } from 'src/app/entities/safety-document';
 import { IncidentModel } from 'src/app/entities/incidentModel';
+import { SafetyDocument } from 'src/app/entities/safety-document';
 
 @Injectable({
   providedIn: 'root'

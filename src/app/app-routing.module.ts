@@ -19,6 +19,9 @@ import { SafetyDocumentsComponent } from './safety-documents/safety-documents.co
 import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
 import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { NewSafetyDocumentComponent } from './new-safety-document/new-safety-document.component';
+import { BasicInformationComponent } from './basic-information/basic-information.component';
+
 const routes: Routes = [
  
   {
@@ -123,11 +126,21 @@ const routes: Routes = [
   {
     path: 'safety-documents',
      component: AppComponent,
-     canActivate: [AuthGuard],
+     //canActivate: [AuthGuard],
       children: [
         {
           path: '', // child route path
         component: SafetyDocumentsComponent,
+        children:[{
+          path: 'new',
+          component: NewSafetyDocumentComponent,
+          children:[
+            {
+              path: 'basic-info',
+              component: BasicInformationComponent
+            }
+          ]
+        }]
         }
       ]
     },

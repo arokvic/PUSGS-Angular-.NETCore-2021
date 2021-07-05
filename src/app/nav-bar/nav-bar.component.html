@@ -1,0 +1,24 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+ 
+    <li [ngbNavItem]="1">
+      <a ngbNavLink class="inactiveLink" routerLink="/safety-documents/new/basic-info" > Basic information</a>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink class="inactiveLink" routerLink="/safety-documents/new/history-of-state-changes"> History of state changes</a>
+    </li>
+    <li ngbNavItem [ngbNavItem]="3">
+      <a ngbNavLink class="inactiveLink" routerLink="/safety-documents/new/multimedia-attachments"> Multimedia attachments</a>
+    </li>
+    <li ngbNavItem [ngbNavItem]="4">
+      <a ngbNavLink class="inactiveLink" routerLink="/safety-documents/new/devices"> Devices</a>
+    </li>
+    
+    <li ngbNavItem [ngbNavItem]="5">
+      <a ngbNavLink class="inactiveLink" routerLink="/safety-documents/new/checklist"> Checklist</a>
+    </li>
+    
+  </ul>
+  
+  <div [ngbNavOutlet]="nav"></div>
+  <router-outlet></router-outlet>
+  
