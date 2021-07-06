@@ -19,37 +19,37 @@ export class SafetyDocumentsComponent implements OnInit {
 
   constructor(private navigationService: NavigationService, private cdref: ChangeDetectorRef, private _safetyDocumentsService: SafetyDocumentsService) { }
 
-  ngOnInit(): void {
-    this._safetyDocumentsService.loadSafetyDocuments()
-                                .subscribe(data => this.allSafetyDocuments = data);
-
-  }
-
+  
   ngAfterContentChecked() {
-
+    
     this.onGetDisplayContent();
     this.cdref.detectChanges();
     
   }
-
-
+  
+  
   onGetDisplayContent(){
     //console.log("kliknuo");
     this.navigationService.navigation$.subscribe((isreached)=>{
       if(isreached){
-         this.displaySafetyDocumentContent = false;
-         //console.log('isreached je true i emitovao sam observable')
+        this.displaySafetyDocumentContent = false;
+        //console.log('isreached je true i emitovao sam observable')
       } else 
       {
         this.displaySafetyDocumentContent = true;
         //
         this._safetyDocumentsService.loadSafetyDocuments()
-                                .subscribe(data => this.allSafetyDocuments = data);
-
+        .subscribe(data => this.allSafetyDocuments = data);
+        
       }
     });
   }
- 
+  
+  ngOnInit(): void {
+    this._safetyDocumentsService.loadSafetyDocuments()
+                                .subscribe(data => this.allSafetyDocuments = data);
 
-
+  }
+  
+  
 }

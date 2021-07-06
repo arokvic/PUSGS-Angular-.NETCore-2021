@@ -21,6 +21,28 @@ export class UserService {
     httpOptions.params = param;
     return this.http.get("https://localhost:44364/api/User/CurrentUser", httpOptions);
   }
+  loadUsers(): Observable<IUser[]>{
+    return this.http.get<IUser[]>("https://localhost:44364/api/User")
+  }
+  activateUser(username:string) {
+    const params = new HttpParams().append('username',username);
+   
+    this.http.put("https://localhost:44364/api/User/Verification",null,{params: params})
+    .subscribe(
+      error=>console.log('oops',error)
+    );
+  
+    return;
+  }
+  declineUser(username:string) {
+    const params = new HttpParams().append('username',username);
+    this.http.put("https://localhost:44364/api/User/Declineverification",null,{params: params})
+    .subscribe(
+      error=>console.log('oops',error)
+    );
+  
+    return;
+  }
   changeProfile(user:User){
     console.log(JSON.stringify(user));
     this.http.put<User>("https://localhost:44364/api/User/ChangeProfile", JSON.stringify(user), {
@@ -32,6 +54,19 @@ export class UserService {
     );
 
     
+  }
+
+  loadUserRequests(): Observable<any>{
+    return this.http.get<any>("https://localhost:44364/api/User/UserRequests")
+  }
+  
+  confirmUserRequest(username:string) {
+    const params = new HttpParams().append('username',username);
+   
+    this.http.put("https://localhost:44364/api/User/UserRequest",null,{params: params})
+    .subscribe(
+      error=>console.log('oops',error)
+    );
   }
 
   changeUserPassword(credentials:any){
@@ -51,4 +86,17 @@ export class UserService {
   }
 
 
+}
+
+export interface IUser{
+  username: string;
+  password: string;
+  nameAndLastname: string;
+  birthDate: string;
+  address: string;
+  imageData: any;
+  email: string;
+  userType: string;
+  notifications: Array<Notification>;
+  activeStatus: string;
 }

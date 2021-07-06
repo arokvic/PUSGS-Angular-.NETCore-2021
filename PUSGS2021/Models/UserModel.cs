@@ -31,7 +31,12 @@ namespace PUSGS2021.Models
         [ConcurrencyCheck]
         public string Email { get; set; }
 
-        public UserModel()
+
+        public List<NotificationsModel> Notifications { get; set; }
+
+        public string ActiveStatus { get; set; }
+
+    public UserModel()
             {
                 Username = "+";
                 Password = "+";
@@ -41,6 +46,8 @@ namespace PUSGS2021.Models
                 UserType = "+";
                 Email = "+";
                 ImageData = "+";
-          }
+                ActiveStatus = "Pending";
+
     }
+  }
 }

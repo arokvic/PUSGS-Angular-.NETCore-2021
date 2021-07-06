@@ -9,7 +9,8 @@ export class User {
     imageData: any;
     email: string; 
     userType: string;
-
+    notifications: Array<Notification>;
+    activeStatus: string;
    
     constructor(username: string, email: string, password: string, nameAndLastname: string, addr: string, birthDate: string, userType: string){
     
@@ -20,5 +21,7 @@ export class User {
         this.nameAndLastname = nameAndLastname;
         this.address = addr;
         this.userType = userType;  
+        this.activeStatus = 'false';
+        this.notifications = new Array<Notification>();
     }
 }

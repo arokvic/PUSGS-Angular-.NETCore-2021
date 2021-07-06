@@ -1,0 +1,67 @@
+<ng-container [formGroup]="consumerForm">
+    <mat-card class="form-container">
+    <div>
+      <mat-card-title class="title">New Consumer</mat-card-title>
+    </div>
+    <div>
+  
+      <!-- Type -->
+      <mat-form-field>
+        <mat-select placeholder="Select type" formControlName="type">
+            <mat-option value="Resident">Resident</mat-option>
+            <mat-option value="Commercial">Commercial</mat-option>
+        </mat-select>
+        <mat-hint *ngIf="typeR">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Type -->
+  
+      <!-- Work Request -->
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="John"   formControlName="name" />
+        <mat-hint *ngIf="nameR">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Work Request -->
+  
+  
+      <!-- Status -->
+      <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input matInput placeholder="Stones"  formControlName="surname"/>
+        <mat-hint *ngIf="surnameR">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Status -->
+    </div>
+    <div>
+      <!-- Incident -->
+      <mat-form-field>
+        <mat-label>Street</mat-label>
+        <input matInput placeholder="Bul Cara Lazara 34" formControlName="street" />
+        <mat-hint *ngIf="streetR">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Incident -->
+  
+      <!-- Street -->
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input matInput placeholder="Novi Sad" formControlName="city" />
+        <mat-hint *ngIf="cityR">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Street -->
+  
+      <!-- Street -->
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="973-342-461" formControlName="phone" />
+        <mat-hint *ngIf="phoneR">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Street -->
+  
+  
+    </div>
+    <div class="button">
+        <button (click)="save()" class="btn btn-primary button">Create</button>
+    </div>
+    </mat-card>
+  </ng-container>
+  

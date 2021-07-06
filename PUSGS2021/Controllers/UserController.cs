@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PUSGS2021.Data;
 using PUSGS2021.Models;
@@ -58,6 +59,60 @@ namespace PUSGS2021.Controllers
     public void Delete(int id)
     {
     }
+
+
+    [HttpGet]
+    [Route("UserRequests")]
+    public async Task<ActionResult<IEnumerable<UserRequestModel>>> GetUnverifiedUsers()
+    {
+
+
+      return await _context.UserRequests.ToListAsync();
+    }
+
+
+    [HttpPut]
+    [Route("Verification")]
+    public async Task<ActionResult<UserModel>> Verification(string username)
+    {
+      UserModel u1 = new UserModel();
+      foreach (UserModel user in _context.Users)
+      {
+        if (user.Username == username)
+        {
+          u1 = user;
+          break;
+
+        }
+      }
+      u1.ActiveStatus = "Accepted";
+      await _context.SaveChangesAsync();
+      //sendEmail(u1.Email, "Accepted");
+      return CreatedAtAction("GetUsers", u1);
+
+    }
+    [HttpPut]
+    [Route("Declineverification")]
+    public async Task<ActionResult<UserModel>> Declineverification(string username)
+    {
+      UserModel u1 = new UserModel();
+      foreach (UserModel user in _context.Users)
+      {
+        if (user.Username == username)
+        {
+          u1 = user;
+          break;
+
+        }
+      }
+      u1.ActiveStatus = "Refused";
+      await _context.SaveChangesAsync();
+      //sendEmail(u1.Email, "Refused");
+      return CreatedAtAction("GetUsers", u1);
+
+    }
+
+
 
     [HttpPost]
     [Route("Login")]
@@ -193,6 +248,38 @@ namespace PUSGS2021.Controllers
       {
         return StatusCode(500, $"Internal server error: {ex}");
       }
+    }
+
+    [HttpPut]
+    [Route("UserRequest")]
+    public async Task<ActionResult<UserModel>> UserRequest(string username)
+    {
+      UserModel u1 = new UserModel();
+      foreach (UserModel user in _context.Users)
+      {
+        if (user.Username == username)
+        {
+          u1 = user;
+          break;
+
+        }
+      }
+
+      UserRequestModel ur1 = new UserRequestModel();
+      foreach (UserRequestModel ur in _context.UserRequests)
+      {
+        if (ur.Username == username)
+        {
+          ur1 = ur;
+          break;
+        }
+      }
+
+      u1.UserType = ur1.UserType;
+      _context.UserRequests.Remove(ur1);
+      await _context.SaveChangesAsync();
+      return CreatedAtAction("GetUsers", u1);
+
     }
 
     [HttpPut]

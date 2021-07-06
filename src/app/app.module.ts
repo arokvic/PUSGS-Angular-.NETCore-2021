@@ -27,7 +27,7 @@ import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-
 import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgSelectModule } from '@ng-select/ng-select';
-
+import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -63,6 +63,11 @@ import { SettingsAdminComponent } from './settings-admin/settings-admin.componen
 import { CrewComponent } from './crew/crew.component';
 import { DevicesComponent } from './devices/devices.component';
 import { ChecklistComponent } from './checklist/checklist.component';
+import { ConsumersComponent } from './consumer/consumers/consumers.component';
+import { NewConsumerComponent } from './consumer/new-consumer/new-consumer.component';
+import { ModifyConsumerComponent } from './consumer/modify-consumer/modify-consumer.component';
+import { RequestsComponent } from './requests/requests.component';
+import { RegistrationVerificationComponent } from './registration-verification/registration-verification.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -100,6 +105,13 @@ export function getToken() {
     CrewComponent,
     DevicesComponent,
     ChecklistComponent,
+    ConsumersComponent,
+    NewConsumerComponent,
+    ModifyConsumerComponent,
+    RequestsComponent,
+    RegistrationVerificationComponent,
+    TableFilterPipe,
+
   ],
   imports: [
     BrowserModule,

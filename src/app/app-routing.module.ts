@@ -29,6 +29,11 @@ import { ViewGuard } from './view.guard';
 import { CrewComponent } from './crew/crew.component';
 import { DevicesComponent } from './devices/devices.component';
 import { ChecklistComponent } from './checklist/checklist.component';
+import { ConsumersComponent } from './consumer/consumers/consumers.component';
+import { NewConsumerComponent } from './consumer/new-consumer/new-consumer.component';
+import { ModifyConsumerComponent } from './consumer/modify-consumer/modify-consumer.component';
+import { RequestsComponent } from './requests/requests.component';
+
 const routes: Routes = [
  
   {
@@ -261,7 +266,61 @@ const routes: Routes = [
     {
       path: "crew",
       component: CrewComponent
-    }
+    },
+    {
+
+      path: 'consumers',
+       component:AppComponent,
+       canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          canActivate: [AuthGuard],
+          component: ConsumersComponent, // child route component that the router renders
+        }
+      ]
+    },
+    {
+   
+      path: 'newConsumer',
+       component:AppComponent,
+       canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          canActivate: [AuthGuard],
+          component: NewConsumerComponent, // child route component that the router renders
+        }
+      ]
+    },
+    {
+   
+        path: 'modifyConsumer',
+         component:AppComponent,
+         canActivate: [AuthGuard],
+         children: [
+          {
+            path: '', // child route path
+            canActivate: [AuthGuard],
+            component: ModifyConsumerComponent, // child route component that the router renders
+          }
+        ]
+      
+    },
+    {
+   
+      path: 'requests',
+       component:AppComponent,
+       canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          canActivate: [AuthGuard],
+          component: RequestsComponent, // child route component that the router renders
+        }
+      ]
+    
+  },
 ];
 
 @NgModule({

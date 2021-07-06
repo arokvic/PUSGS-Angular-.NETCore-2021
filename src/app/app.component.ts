@@ -4,6 +4,7 @@ import { MenuItem } from './menu-item';
 import { Router, RouterLink }  from '@angular/router';
 import { LoginService } from './services/login.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Console } from 'node:console';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AppComponent{
   title = 'PUSGSprojekat';
   isAdmin:boolean = true;
-
+  isLogged:boolean = true;
   menuItemsLogged: MenuItem[] = [
     {
       label: 'Home',
@@ -80,6 +81,103 @@ export class AppComponent{
       showOnDesktop: true
     },
     {
+      label: 'Consumer',
+      icon: 'consumers',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+  
+    {
+      label: 'Logout',
+      icon: 'sentiment_very_dissatisfied',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    }
+  ]
+
+  menuItemsAdmin: MenuItem[] = [
+    {
+      label: 'Home',
+      icon: 'home',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+      
+    },
+    {
+      label: 'Profile',
+      icon: 'people',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Dashboard',
+      icon: 'dashboard',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },  
+    {
+      label: 'Showcase',
+      icon: 'slideshow',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Blog',
+      icon: 'rss_feed',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Switching plan',
+      icon: 'developer_board',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Safety document',
+      icon: 'developer_board',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Notifications',
+      icon: 'notification',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Settings',
+      icon: 'settings',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Consumer',
+      icon: 'consumers',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+  
+    {
+      label: 'Requests',
+      icon: 'requests',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
       label: 'Logout',
       icon: 'sentiment_very_dissatisfied',
       showOnMobile: true,
@@ -117,17 +215,23 @@ export class AppComponent{
   constructor(private jwtHelper: JwtHelperService,private router: Router,private loginService: LoginService) {}
 
   ngOnInit(): void {
-    
     const token: string = localStorage.getItem("jwt")!;
     if (token && !this.jwtHelper.isTokenExpired(token)) {
-      this.isAdmin = true;
-      console.log("admin");
+        this.isLogged = true;
+        console.log("logovan");  
     }
     else {
-      this.isAdmin = false;
-      console.log("nije admin");
+      this.isLogged = false;
+      console.log("nije logovan");
 
     }
+      const type = localStorage.getItem("type");
+      if(type === 'Admin'){
+        this.isAdmin =  true;
+      }else{
+        this.isAdmin = false;
+      }
+    
 
   }
 
@@ -224,6 +328,11 @@ clickMenuItem2(menuItemsLogged : MenuItem){
 
     }
   }
+  if(menuItemsLogged.label ==='Consumer')
+  {
+    this.router.navigate(['/consumers']);
+  }
+
   if(menuItemsLogged.label ==='Logout')
   {
     this.logOut();
@@ -231,11 +340,70 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   
 
 }
+
+clickMenuItem3(menuItemsLogged : MenuItem){
+  console.log(menuItemsLogged);
+  if(menuItemsLogged.label ==='Register')
+  {
+    this.router.navigate(['/register']);
+  }
+  if(menuItemsLogged.label ==='Log in')
+  {
+    this.router.navigate(['/login']);
+  }
+  if(menuItemsLogged.label ==='Home')
+  {
+    this.router.navigate(['/home']);
+  }
+  if(menuItemsLogged.label ==='Dashboard')
+  {
+    this.router.navigate(['/dashboard']);
+  }
+  if(menuItemsLogged.label ==='Profile')
+  {
+    this.router.navigate(['/profile']);
+  }
+  if(menuItemsLogged.label ==='Switching plan')
+  {
+    this.router.navigate(['/switching-plans']);
+  }
+  if(menuItemsLogged.label ==='Safety document')
+  {
+    this.router.navigate(['/safety-documents']);
+  }
+  if(menuItemsLogged.label ==='Notifications')
+  {
+    this.router.navigate(['/notifications']);
+  }
+  if(menuItemsLogged.label ==='Settings')
+  {
+    if(this.isAdmin){
+    this.router.navigate(['/admin-settings']);
+    }else{
+      this.router.navigate(['/settings']);
+
+    }
+  }
+  if(menuItemsLogged.label ==='Consumer')
+  {
+    this.router.navigate(['/consumers']);
+  }
+
+  if(menuItemsLogged.label ==='Requests')
+  {
+    this.router.navigate(['/requests']);
+  }
+
+  if(menuItemsLogged.label ==='Logout')
+  {
+    this.logOut();
+  }
+}
 logOut(): void {
 
   this.loginService.logOut();
   this.isAdmin = false;
-
+  this.isLogged = false;
 
   }
 }

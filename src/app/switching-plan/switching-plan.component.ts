@@ -84,5 +84,4 @@ export class SwitchingPlanComponent implements OnInit {
     return retVal.toLocaleString().split(',')[0];
   }
 
-
 }

@@ -454,6 +454,9 @@ namespace PUSGS2021.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("ActiveStatus")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Address")
                         .IsConcurrencyToken()
                         .IsRequired()
@@ -530,10 +533,15 @@ namespace PUSGS2021.Migrations
             modelBuilder.Entity("PUSGS2021.Models.NotificationsModel", b =>
                 {
                     b.HasOne("PUSGS2021.Models.UserModel", "User")
-                        .WithMany()
+                        .WithMany("Notifications")
                         .HasForeignKey("Username");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("PUSGS2021.Models.UserModel", b =>
+                {
+                    b.Navigation("Notifications");
                 });
 #pragma warning restore 612, 618
         }
