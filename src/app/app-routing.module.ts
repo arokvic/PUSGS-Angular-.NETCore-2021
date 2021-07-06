@@ -33,6 +33,9 @@ import { ConsumersComponent } from './consumer/consumers/consumers.component';
 import { NewConsumerComponent } from './consumer/new-consumer/new-consumer.component';
 import { ModifyConsumerComponent } from './consumer/modify-consumer/modify-consumer.component';
 import { RequestsComponent } from './requests/requests.component';
+import { WorkRequestsComponent } from './work-requests/work-requests.component';
+import { NavbarWrComponent } from './work-requests/navbar-wr/navbar-wr.component';
+import { BasicInfWrComponent } from './work-requests/basic-inf-wr/basic-inf-wr.component';
 
 const routes: Routes = [
  
@@ -172,6 +175,27 @@ const routes: Routes = [
             }
           ]
         }]
+        }
+      ]
+    },
+    {
+      path: 'work-requests',
+      component:AppComponent,
+      canActivate: [AuthGuard],
+      children: [
+        {
+          path: '',
+          component:WorkRequestsComponent,
+        },
+        {
+          path: 'new',
+          component: NavbarWrComponent,
+          children:[
+            {
+              path:'basic-info',
+              component: BasicInfWrComponent
+            }
+          ]
         }
       ]
     },

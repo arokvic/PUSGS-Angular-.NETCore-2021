@@ -68,6 +68,9 @@ import { NewConsumerComponent } from './consumer/new-consumer/new-consumer.compo
 import { ModifyConsumerComponent } from './consumer/modify-consumer/modify-consumer.component';
 import { RequestsComponent } from './requests/requests.component';
 import { RegistrationVerificationComponent } from './registration-verification/registration-verification.component';
+import { WorkRequestsComponent } from './work-requests/work-requests.component';
+import { NavbarWrComponent } from './work-requests/navbar-wr/navbar-wr.component';
+import { BasicInfWrComponent } from './work-requests/basic-inf-wr/basic-inf-wr.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -111,6 +114,9 @@ export function getToken() {
     RequestsComponent,
     RegistrationVerificationComponent,
     TableFilterPipe,
+    WorkRequestsComponent,
+    NavbarWrComponent,
+    BasicInfWrComponent,
 
   ],
   imports: [
