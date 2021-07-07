@@ -37,6 +37,9 @@ import { WorkRequestsComponent } from './work-requests/work-requests.component';
 import { NavbarWrComponent } from './work-requests/navbar-wr/navbar-wr.component';
 import { BasicInfWrComponent } from './work-requests/basic-inf-wr/basic-inf-wr.component';
 import { CallsComponent } from './calls/calls.component';
+import { HistoryWrComponent } from './work-requests/history-wr/history-wr.component';
+import { MultimediaWrComponent } from './work-requests/multimedia-wr/multimedia-wr.component';
+import { EquipmentWrComponent } from './work-requests/equipment-wr/equipment-wr.component';
 
 const routes: Routes = [
  
@@ -195,6 +198,21 @@ const routes: Routes = [
             {
               path:'basic-info',
               component: BasicInfWrComponent
+            },
+            {
+              path: 'history-state',
+              canActivate: [AuthGuard],
+              component: HistoryWrComponent
+            },
+            {
+              path: 'multimedia',
+              canActivate: [AuthGuard],
+              component: MultimediaWrComponent
+            },
+            {
+              path: 'equipment',
+              canActivate: [AuthGuard],
+              component: EquipmentWrComponent
             }
           ]
         }
