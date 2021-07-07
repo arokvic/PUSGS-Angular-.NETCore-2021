@@ -67,6 +67,13 @@ export class AppComponent{
       showOnDesktop: true
     },
     {
+      label: 'Work request',
+      icon: 'developer_board',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
       label: 'Notifications',
       icon: 'notification',
       showOnMobile: true,
@@ -143,6 +150,13 @@ export class AppComponent{
     },
     {
       label: 'Safety document',
+      icon: 'developer_board',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Work request',
       icon: 'developer_board',
       showOnMobile: true,
       showOnTablet: true,
@@ -311,6 +325,10 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   {
     this.router.navigate(['/switching-plans']);
   }
+  if(menuItemsLogged.label ==='Work request')
+  {
+    this.router.navigate(['/work-requests']);
+  }
   if(menuItemsLogged.label ==='Safety document')
   {
     this.router.navigate(['/safety-documents']);
@@ -366,6 +384,10 @@ clickMenuItem3(menuItemsLogged : MenuItem){
   if(menuItemsLogged.label ==='Switching plan')
   {
     this.router.navigate(['/switching-plans']);
+  }
+  if(menuItemsLogged.label ==='Work request')
+  {
+    this.router.navigate(['/work-requests']);
   }
   if(menuItemsLogged.label ==='Safety document')
   {
