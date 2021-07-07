@@ -1,4 +1,3 @@
-
 export class Incident {
     id!: string;
     typeOfInc: string;
@@ -14,7 +13,18 @@ export class Incident {
     voltageLevel: number;
     scheduledTime: string;
     assignedTo : string;
-
+    cause : string;
+    subcause : string;
+    material : string;
+    constructionType : string;
+    consumerId : string;
+    comment : string;
+    hazard : string;
+    reason : string;
+    deviceId : string;
+    equipmentId : string;
+    imageData : any;
+    crewId : string;
     constructor(
         typeOfInc: string,
         priority: number,
@@ -28,7 +38,20 @@ export class Incident {
         calls: number,
         voltageLevel: number,
         scheduledTime: string,
-        assignedTo : string)       
+        assignedTo : string,
+        cause : string,
+    subcause : string,
+    material : string,
+    constType : string,
+    consId : string,
+    comment : string,
+    hazard : string,
+    reason : string,
+    deviceId : string,
+    equipmentId : string,
+    imageData : any,
+    crewId : string
+    )
     {
         
         this.typeOfInc= typeOfInc;
@@ -45,5 +68,17 @@ export class Incident {
         this.scheduledTime= scheduledTime;
         this.assignedTo = assignedTo;
         this.id = "4";
+        this.cause = cause;
+        this.subcause = subcause;
+        this.material = material;
+        this.constructionType = constType;
+        this.consumerId = consId;
+        this.comment = comment;
+        this.hazard = hazard;
+        this.reason = reason;
+        this.deviceId = deviceId;
+        this.imageData = imageData;
+        this.equipmentId = equipmentId;
+        this.crewId = crewId;
     }
 }

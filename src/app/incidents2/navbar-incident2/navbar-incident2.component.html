@@ -1,0 +1,47 @@
+<br>
+<br>
+<div style="width: 100%;">
+    <div style =  "width: 80%; height: 100px; float: left;">
+<ng-container [formGroup]="IncForm">
+
+
+    <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+     
+        <li [ngbNavItem]="1">
+            <a ngbNavLink class="inactiveLink" routerLink="" > Basic information</a>
+          </li>
+          <li [ngbNavItem]="2">
+            <a ngbNavLink class="inactiveLink" routerLink=""> Devices</a>
+          </li>
+          <li ngbNavItem [ngbNavItem]="3">
+            <a ngbNavLink class="inactiveLink" routerLink=""> Resolution</a>
+          </li>
+          <li ngbNavItem [ngbNavItem]="4">
+            <a ngbNavLink class="inactiveLink" routerLink=""> Calls</a>
+          </li>
+          
+          <li ngbNavItem [ngbNavItem]="5">
+            <a ngbNavLink class="inactiveLink" routerLink=""> Crew</a>
+          </li>
+          <li ngbNavItem [ngbNavItem]="6">
+              <a ngbNavLink class="inactiveLink" routerLink=""> Multimedia attachments</a>
+            </li>
+            
+            <li ngbNavItem [ngbNavItem]="7">
+              <a ngbNavLink class="inactiveLink" routerLink=""> Equipment</a>
+            </li>
+        
+      </ul>
+      
+      <div [ngbNavOutlet]="nav"></div>
+      <router-outlet></router-outlet>
+    </ng-container>
+    
+</div>
+  <div  style="margin-left: 80%; height: 500px;">
+    <pre style="margin-top:50px; border: 1px solid red; width: fit-content; color: white;">
+        {{IncForm.value | json}}
+      </pre>
+  </div>
+
+</div>

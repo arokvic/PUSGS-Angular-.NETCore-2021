@@ -223,6 +223,13 @@ export class AppComponent{
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
+    },
+    {
+      label: 'New incident',
+      icon: 'sentiment_very_dissatisfied',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
     }
   ];
 
@@ -270,6 +277,10 @@ export class AppComponent{
     if(menuItem.label ==='Profile')
     {
       this.router.navigate(['/profile']);
+    }
+    if(menuItem.label ==='New incident')
+    {
+      this.router.navigate(['/incidents/new']);
     }
     
   

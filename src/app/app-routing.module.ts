@@ -40,6 +40,14 @@ import { CallsComponent } from './calls/calls.component';
 import { HistoryWrComponent } from './work-requests/history-wr/history-wr.component';
 import { MultimediaWrComponent } from './work-requests/multimedia-wr/multimedia-wr.component';
 import { EquipmentWrComponent } from './work-requests/equipment-wr/equipment-wr.component';
+import { Incidents2Component } from './incidents2/incidents2.component';
+import { NavbarIncident2Component } from './incidents2/navbar-incident2/navbar-incident2.component';
+import { BasicInfoIncident2Component } from './incidents2/basic-info-incident2/basic-info-incident2.component';
+import { ResolutionIncident2Component } from './incidents2/resolution-incident2/resolution-incident2.component';
+import { CallsIncident2Component } from './incidents2/calls-incident2/calls-incident2.component';
+import { MultimediaIncident2Component } from './incidents2/multimedia-incident2/multimedia-incident2.component';
+import { CrewIncident2Component } from './incidents2/crew-incident2/crew-incident2.component';
+import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
 
 const routes: Routes = [
  
@@ -220,54 +228,76 @@ const routes: Routes = [
     },
     {
       path: 'incidents',
-       component: AppComponent,
-       
-       children: [
-          {
-        path: '',
-        component: IncidentsComponent 
-          },
-          {
-        path : "new" ,
-        component : NavbarIncidentComponent,
-        children : [
-          {
-            path: 'basic-info',         
-            component: IncidentBasicInfoComponent
-          }
-          /*
-          {
-            path: 'history-state',
-            canActivate: [AuthGuard],
-            component: HistorySpComponent
-          },
-          {
-            path: 'multimedia',
-            canActivate: [AuthGuard],
-            component: MultimediaSpComponent
-          },
-          {
-            path: 'equipment',
-            canActivate: [AuthGuard],
-            component: EquipmentSpComponent
-          },
-          {
-            path: 'instructions',
-            canActivate: [AuthGuard],
-            component: InstructionsSpComponent
-          }*/
-  
-  
-          ]
-  
-          }
-       ]
-  
-  
-     
-  
-       
-  
+      component:AppComponent,
+      
+      children: [
+        { 
+          path: 'all',
+          component:Incidents2Component,
+        },
+        {
+          path: 'new',
+          component: NavbarIncident2Component,
+          children:[
+            {
+              path:'basic-info',
+              component: BasicInfoIncident2Component
+            },
+            {
+              path:'resolution',
+              component: ResolutionIncident2Component
+            },
+            {
+              path:'calls',
+              component: CallsIncident2Component
+            }
+            ,
+            {
+              path:'multimedia',
+              component: MultimediaIncident2Component
+            }   ,
+            {
+              path:'crew',
+              component: CrewIncident2Component
+            } ,
+            {
+              path:'equipment',
+              component: EquipmentIncident2Component
+            }          
+        
+        /*
+        {
+          path: 'history-state',
+          canActivate: [AuthGuard],
+          component: HistorySpComponent
+        },
+        {
+          path: 'multimedia',
+          canActivate: [AuthGuard],
+          component: MultimediaSpComponent
+        },
+        {
+          path: 'equipment',
+          canActivate: [AuthGuard],
+          component: EquipmentSpComponent
+        },
+        {
+          path: 'instructions',
+          canActivate: [AuthGuard],
+          component: InstructionsSpComponent
+        }*/
+
+
+        ]
+
+        }
+     ]
+
+
+   
+
+      
+
     },
     {
       path: 'notifications',

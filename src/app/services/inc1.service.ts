@@ -14,7 +14,7 @@ export class Inc1Service {
 
   constructor(private http: HttpClient) { }
 
-  getSwitchingPlans(): Observable<Incident[]>{
+  getIncidents(): Observable<Incident[]>{
     return this.http.get<Incident[]>("https://localhost:44364/api/Incident/GetIncidents"); 
   }
 

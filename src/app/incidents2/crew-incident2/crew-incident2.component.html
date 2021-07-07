@@ -1,0 +1,55 @@
+<ng-container [formGroup]="crewsForm">
+    <div class = "container">
+        <table class="table table-dark" >
+            <thead class="thead-dark">
+              <tr>
+                  
+                  <th scope="col">Id</th>             
+                  <th scope="col">Crew name</th>
+                  <th scope="col">Members</th>
+                            
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let crew of allCrews" >          
+              <td>{{crew.id}}</td>
+              <td>{{crew.name}}</td>
+              <td>{{crew.members}}</td>  
+              <td><button class="icon2" (click)="SelectCrew(crew.name)"></button></td>
+            </tr> 
+          </tbody>
+         </table>
+        </div>
+        <div class="button">
+            
+            <button (click)="Save()" class="btn btn-primary button">Next</button>
+        </div>
+    </ng-container>
+    <!--
+    <ng-container [formGroup]="crewsForm">
+        <mat-card class="form-container">
+        <div>
+          <mat-card-title class="title">Equipment for switching plan</mat-card-title>
+        </div>
+        <div>
+      
+          
+            <ng-select style="margin-top: 5%;" [items]="allCrews"
+                           bindLabel="name"
+                           placeholder="Select Elements"
+                           bindValue="id"
+                           appendTo="body"
+                           [compareWith]="compareWith"
+                           formControlName='equipmentId'>
+            </ng-select>
+        
+        
+        </div>
+        
+        <div class="button">
+            <button (click)="SelectCrew()" class="btn btn-primary button">Back</button>
+            <button (click)="SelectCrew()" class="btn btn-primary button">Next</button>
+        </div>
+        </mat-card>
+      </ng-container>-->
+    

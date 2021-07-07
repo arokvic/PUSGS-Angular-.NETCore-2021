@@ -45,12 +45,12 @@ export class IncidentBasicInfoComponent implements OnInit {
   save(){
 
    
-    let inc = new Incident(this.basicInfo.controls.typeOfInc.value,  this.basicInfo.controls.priority.value, this.basicInfo.controls.confirmed.value, this.basicInfo.controls.status.value,
-      "123", "123","123", "123",
-      this.basicInfo.controls.affectedCustomers.value, this.basicInfo.controls.calls.value, this.basicInfo.controls.voltageLevel.value , "123",
-      this.basicInfo.controls.assignedTo.value);
+  //  let inc = new Incident(this.basicInfo.controls.typeOfInc.value,  this.basicInfo.controls.priority.value, this.basicInfo.controls.confirmed.value, this.basicInfo.controls.status.value,
+    //  "123", "123","123", "123",
+  //    this.basicInfo.controls.affectedCustomers.value, this.basicInfo.controls.calls.value, this.basicInfo.controls.voltageLevel.value , "123",
+ //     this.basicInfo.controls.assignedTo.value);
 
-      console.log(inc);
+  //    console.log(inc);
      /* console.log(inc.calls);
       console.log(inc.typeOfInc);
       console.log(inc.affectedCustomers);
@@ -60,7 +60,7 @@ export class IncidentBasicInfoComponent implements OnInit {
 
 
 
-    this.incService.saveIncident(inc)
+   /* this.incService.saveIncident(inc)
     .subscribe(
       data => {
       //  id = data.id;
@@ -76,7 +76,7 @@ export class IncidentBasicInfoComponent implements OnInit {
       //  this.saveInstruction(id);
       }
     )
-
+*/
 
   }
 }

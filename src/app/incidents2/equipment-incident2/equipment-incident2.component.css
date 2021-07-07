@@ -1,0 +1,25 @@
+
+
+html body {
+    overflow: visible;
+    padding-bottom: 20%;
+    }
+
+    .diver {
+        overflow: auto;
+    }
+.container{
+
+    overflow : visible;
+
+}
+
+
+.register-form{
+    height: 100%;
+    position: relative;
+    top: 0%;
+    overflow: auto;
+   
+   
+}

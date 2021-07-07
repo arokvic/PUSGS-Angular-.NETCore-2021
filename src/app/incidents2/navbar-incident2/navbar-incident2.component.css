@@ -1,0 +1,9 @@
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+    color:  whitesmoke;
+ }
+
+ .aaa {
+     height:  100%;
+ }

@@ -75,6 +75,14 @@ import { CallsComponent } from './calls/calls.component';
 import { HistoryWrComponent } from './work-requests/history-wr/history-wr.component';
 import { MultimediaWrComponent } from './work-requests/multimedia-wr/multimedia-wr.component';
 import { EquipmentWrComponent } from './work-requests/equipment-wr/equipment-wr.component';
+import { Incidents2Component } from './incidents2/incidents2.component';
+import { BasicInfoIncident2Component } from './incidents2/basic-info-incident2/basic-info-incident2.component';
+import { ResolutionIncident2Component } from './incidents2/resolution-incident2/resolution-incident2.component';
+import { CallsIncident2Component } from './incidents2/calls-incident2/calls-incident2.component';
+import { MultimediaIncident2Component } from './incidents2/multimedia-incident2/multimedia-incident2.component';
+import { CrewIncident2Component } from './incidents2/crew-incident2/crew-incident2.component';
+import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
+import { NavbarIncident2Component } from './incidents2/navbar-incident2/navbar-incident2.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -125,6 +133,14 @@ export function getToken() {
     HistoryWrComponent,
     MultimediaWrComponent,
     EquipmentWrComponent,
+    Incidents2Component,
+    BasicInfoIncident2Component,
+    ResolutionIncident2Component,
+    CallsIncident2Component,
+    MultimediaIncident2Component,
+    CrewIncident2Component,
+    EquipmentIncident2Component,
+    NavbarIncident2Component,
 
   ],
   imports: [

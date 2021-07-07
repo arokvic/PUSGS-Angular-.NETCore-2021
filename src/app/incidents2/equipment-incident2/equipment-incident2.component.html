@@ -1,0 +1,35 @@
+<ng-container [formGroup]="elementsForm">
+    <div class = "container">
+        <table class="table table-dark" >
+            <thead class="thead-dark">
+              <tr>
+                  
+                  <th scope="col">Id</th>             
+                  <th scope="col">Name</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Coordinates</th>
+                  <th scope="col">Address</th>
+
+
+                            
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let equip of allEelements" >          
+              <td>{{equip.id}}</td>
+              <td>{{equip.name}}</td>
+              <td>{{equip.type}}</td>  
+              <td>{{equip.coordinates}}</td>  
+              <td>{{equip.address}}</td>  
+
+              <td><button class="icon2" (click)="Add(equip.id.toString())"></button></td>
+              <td><button class="icon2" (click)="Remove(equip.id.toString())"></button></td>
+            </tr> 
+          </tbody>
+         </table>
+        </div>
+        <div class="button">
+            
+            <button (click)="Save()" class="btn btn-primary button">Next</button>
+        </div>
+    </ng-container>
