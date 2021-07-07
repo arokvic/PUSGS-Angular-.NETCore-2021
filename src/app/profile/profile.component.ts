@@ -90,7 +90,8 @@ export class ProfileComponent implements OnInit {
       );
       this.user.imageData = this.image;
       this.userService.changeProfile(this.user);
-
+      this.router.navigate(["dashboard"]);
+   
     }
 
   }

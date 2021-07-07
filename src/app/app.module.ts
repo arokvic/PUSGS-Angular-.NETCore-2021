@@ -71,6 +71,7 @@ import { RegistrationVerificationComponent } from './registration-verification/r
 import { WorkRequestsComponent } from './work-requests/work-requests.component';
 import { NavbarWrComponent } from './work-requests/navbar-wr/navbar-wr.component';
 import { BasicInfWrComponent } from './work-requests/basic-inf-wr/basic-inf-wr.component';
+import { CallsComponent } from './calls/calls.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -117,6 +118,7 @@ export function getToken() {
     WorkRequestsComponent,
     NavbarWrComponent,
     BasicInfWrComponent,
+    CallsComponent,
 
   ],
   imports: [

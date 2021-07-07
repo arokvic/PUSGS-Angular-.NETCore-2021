@@ -36,6 +36,7 @@ import { RequestsComponent } from './requests/requests.component';
 import { WorkRequestsComponent } from './work-requests/work-requests.component';
 import { NavbarWrComponent } from './work-requests/navbar-wr/navbar-wr.component';
 import { BasicInfWrComponent } from './work-requests/basic-inf-wr/basic-inf-wr.component';
+import { CallsComponent } from './calls/calls.component';
 
 const routes: Routes = [
  
@@ -345,6 +346,20 @@ const routes: Routes = [
       ]
     
   },
+  {
+   
+    path: 'calls',
+     component:AppComponent,
+     canActivate: [AuthGuard],
+     children: [
+      {
+        path: '', // child route path
+        canActivate: [AuthGuard],
+        component: CallsComponent, // child route component that the router renders
+      }
+    ]
+  
+},
 ];
 
 @NgModule({
