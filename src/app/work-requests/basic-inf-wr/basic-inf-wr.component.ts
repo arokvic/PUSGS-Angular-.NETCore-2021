@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { Router } from '@angular/router';
+import { WorkRequest } from 'src/app/entities/workRequest';
 //import { SwpInteractionService } from 'src/app/services/switching-plan/swp-interaction.service';
 import { WrInteractionService } from 'src/app/services/wr-interaction.service';
 
@@ -35,9 +36,19 @@ export class BasicInfWrComponent implements OnInit {
 
   save(){
     if(this.validate()){
-      console.log("tu sam, saljem poruku na navbar");
+      //console.log("tu sam, saljem poruku na navbar");
       this.wrService.sendMessage(2);
+      //console.log(this.form.controls);
+      var workRequest = new WorkRequest(this.form.controls.type?.value, this.form.controls.workRequest?.value, this.form.controls.status?.value, 
+        this.form.controls.incident?.value,
+        this.form.controls.street?.value, this.form.controls.startDate?.value,
+         this.form.controls.endDate?.value, this.form.controls.crew?.value, 
+         this.form.controls.createdBy?.value, this.form.controls.notes?.value, this.form.controls.company?.value,
+          this.form.controls.phone?.value, Date.now.toString(),
+        "", "");
+        localStorage.setItem("wrID", JSON.stringify(workRequest));
       this.router.navigate(['/work-requests/new/history-state']);
+      console.log(workRequest);
     }
     else{
       

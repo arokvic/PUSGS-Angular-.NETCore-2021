@@ -49,8 +49,8 @@ export class WorkRequest {
     this.company = company;
     this.phone = phone;
     this.dateCreated = dateCreated;
-    this.imageData = imageData;
-    this.equipment = equipment;
+    this.imageData = "";
+    this.equipment = "";
 
        
    }
