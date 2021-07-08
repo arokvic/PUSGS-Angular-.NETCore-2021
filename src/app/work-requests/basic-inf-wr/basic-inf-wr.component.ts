@@ -35,7 +35,7 @@ export class BasicInfWrComponent implements OnInit {
   
 
   save(){
-    if(this.validate()){
+    //if(this.validate()){
       //console.log("tu sam, saljem poruku na navbar");
       this.wrService.sendMessage(2);
       //console.log(this.form.controls);
@@ -44,15 +44,14 @@ export class BasicInfWrComponent implements OnInit {
         this.form.controls.street?.value, this.form.controls.startDate?.value,
          this.form.controls.endDate?.value, this.form.controls.crew?.value, 
          this.form.controls.createdBy?.value, this.form.controls.notes?.value, this.form.controls.company?.value,
-          this.form.controls.phone?.value, Date.now.toString(),
-        "", "");
+          "063958412", "", this.form.controls.imageData?.toString(), this.form.controls.equipment?.toString());
         localStorage.setItem("wrID", JSON.stringify(workRequest));
       this.router.navigate(['/work-requests/new/history-state']);
       console.log(workRequest);
-    }
-    else{
+  //  }
+   // else{
       
-    }
+   // }
 
   }
 
@@ -92,6 +91,7 @@ export class BasicInfWrComponent implements OnInit {
     }else{
       this.companyF = false;
     }
+    
     if(this.form.controls.phoneNo.hasError('required')){
       this.phoneF = true;
       retVal = false;

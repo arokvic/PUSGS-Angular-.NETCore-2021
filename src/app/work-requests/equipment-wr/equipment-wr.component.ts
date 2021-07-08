@@ -5,7 +5,7 @@ import { Element } from '../../entities/element';
 import { ElementsService } from 'src/app/services/elements.service';
 import { WrInteractionService } from 'src/app/services/wr-interaction.service';
 import { WorkRequest } from 'src/app/entities/workRequest';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -23,11 +23,14 @@ export class EquipmentWrComponent implements OnInit {
   constructor(private rootFormGroup: FormGroupDirective, private router:Router, private elementService:ElementsService, private wrService:WrInteractionService, private http:HttpClient) { }
 
   ngOnInit(): void {
+    
     this.form = this.rootFormGroup.control.get('equipment') as FormGroup;
+    /*
     this.elementService.loadElements().subscribe(data =>
       this.elements = data
       );
       this.selection = this.form.controls.equipmentId.value;
+      */
   }
 
 
@@ -39,9 +42,37 @@ export class EquipmentWrComponent implements OnInit {
       //URADITI STA TREBA KAD SAVE POSLEDNJU TACKU!
     //}
     //var workRequest = new WorkRequest()
+    /*
     var workRequest = localStorage.getItem("wrID");
     this.router.navigate(['/work-requests']);
     this.http.post('https://localhost:44364/api/DocumentWr/SaveWorkRequest', workRequest);
+    */
+    var workRequest = localStorage.getItem("wrID");
+    //this.router.navigate(['/work-requests']);
+    
+    const headerDict ={
+      'Content-Type': 'application/json',
+      'Accept' : 'application/json',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    }
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    }
+    
+    const data = JSON.stringify(workRequest);
+    //console.log(data);
+    console.log(workRequest)
+    this.http.post('https://localhost:44364/api/DocumentWr/SaveWorkRequest', workRequest, requestOptions).subscribe();
+    this.router.navigate(['/work-requests']);
+    /*
+     this.credentials = JSON.stringify(this.profileForm.value);
+
+    this.http.post("https://localhost:44364/api/User/Register", this.credentials, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }).subscribe
+    */
    
   }
 

@@ -12,52 +12,52 @@ namespace PUSGS2021.Models
       [Key]
       public long Id { get; set; }
       [Required]
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Type { get; set; }
 
      
-      [ConcurrencyCheck]
+      //[ConcurrencyCheck]
       public string Status { get; set; }
 
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Incident { get; set; }
 
       [Required]
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Street { get; set; }
 
       [Required]
-      [ConcurrencyCheck]
-      public string startDate { get; set; }
+     // [ConcurrencyCheck]
+      public string StartDate { get; set; }
 
       [Required]
-      [ConcurrencyCheck]
-      public string endDate { get; set; }
+     // [ConcurrencyCheck]
+      public string EndDate { get; set; }
 
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Crew { get; set; }
 
       [Required]
-      [ConcurrencyCheck]
+//[ConcurrencyCheck]
       public string CreatedBy { get; set; }
 
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Notes { get; set; }
       [Required]
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Company { get; set; }
 
       [Required]
-      [ConcurrencyCheck]
+     // [ConcurrencyCheck]
       public string Phone { get; set; }
 
-      [ConcurrencyCheck]
+      //[ConcurrencyCheck]
       public string DateCreated { get; set; }
 
-      [ConcurrencyCheck]
+      //ConcurrencyCheck]
       public string ImageData { get; set; }
 
-      [ConcurrencyCheck]
+      //[ConcurrencyCheck]
       public string Equipment { get; set; }
 
 

@@ -11,18 +11,19 @@ using System.Threading.Tasks;
 namespace PUSGS2021.Controllers
 {
   [Route("api/[controller]")]
+  //[Consumes("application/json")]
   [ApiController]
-  public class DocumentWrContoller : ControllerBase
+  public class DocumentWrController : ControllerBase
   {
     private readonly DefaultConnection _context;
-    public DocumentWrContoller(DefaultConnection context)
+    public DocumentWrController(DefaultConnection context)
     {
       _context = context;
     }
 
     [HttpPost]
     [Route("SaveWorkRequest")]
-    public async Task<ActionResult<WorkRequestModel>> SaveSwitchingPlan(WorkRequestModel workRequest)
+    public async Task<ActionResult<WorkRequestModel>> SaveWorkRequest(WorkRequestModel workRequest)
     {
       if (ModelState.IsValid)
       {
@@ -36,20 +37,21 @@ namespace PUSGS2021.Controllers
             Status = workRequest.Status,
             Incident = workRequest.Incident,
             Street = workRequest.Street,
-            startDate = workRequest.startDate,
-            endDate = workRequest.endDate,
+            StartDate = workRequest.StartDate,
+            EndDate = workRequest.EndDate,
             Crew = workRequest.Crew,
             CreatedBy = workRequest.CreatedBy,
             Notes = workRequest.Notes,
             Company = workRequest.Company,
             Phone = workRequest.Phone,
-            DateCreated = workRequest.DateCreated,
+            DateCreated = DateTime.Now.ToString(),
             ImageData = workRequest.ImageData,
             Equipment = workRequest.Equipment,
 
           };
           wrPlan = wr;
           _context.WorkRequests.Add(wr);
+          await _context.SaveChangesAsync();
         }
         else
         {
@@ -67,24 +69,26 @@ namespace PUSGS2021.Controllers
           workingP.Status = workRequest.Status;
           workingP.Incident = workRequest.Incident;
           workingP.Street = workRequest.Street;
-          workingP.startDate = workRequest.startDate;
-          workingP.endDate = workRequest.endDate;
+          workingP.StartDate = workRequest.StartDate;
+          workingP.EndDate = workRequest.EndDate;
           workingP.Crew = workRequest.Crew;
           workingP.CreatedBy = workRequest.CreatedBy;
           workingP.Notes = workRequest.Notes;
           workingP.Company = workRequest.Company;
           workingP.Phone = workRequest.Phone;
-          workingP.DateCreated = workRequest.DateCreated;
+          workingP.DateCreated = DateTime.Now.ToString();
           workingP.ImageData = workRequest.ImageData;
           workingP.Equipment = workRequest.Equipment;
 
           wrPlan = workingP;
-
+          _context.WorkRequests.Add(wrPlan);
+          await _context.SaveChangesAsync();
         }
 
 
         string username = HttpContext.User.FindFirst(ClaimTypes.Name).Value;
 
+        /*
         NotificationsModel notification = new NotificationsModel()
         {
           Type = "Success",
@@ -99,6 +103,7 @@ namespace PUSGS2021.Controllers
 
 
         await _context.SaveChangesAsync();
+        */
 
         return CreatedAtAction("SaveWorkRequest", wrPlan);
       }
