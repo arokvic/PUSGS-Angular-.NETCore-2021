@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PUSGS2021.Data;
 
 namespace PUSGS2021.Migrations
 {
     [DbContext(typeof(DefaultConnection))]
-    partial class DefaultConnectionModelSnapshot : ModelSnapshot
+    [Migration("20210708182458_new inc")]
+    partial class newinc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
