@@ -155,6 +155,7 @@ const routes: Routes = [
       }      
     ] 
   },
+
   {
     path: 'safety-documents',
      component: AppComponent,
