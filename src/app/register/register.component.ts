@@ -23,6 +23,7 @@ name : any;
 message : any;
 progress : any;
 fileToUpload: any;
+succes!: boolean;
 
  
 @Output() public onUploadFinished = new EventEmitter();
@@ -69,7 +70,7 @@ fileToUpload: any;
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
-    }).subscribe(response => {
+    }).subscribe( /*response => {
       const token = (<any>response).token;
       localStorage.setItem("jwt", token);
       const username = (<any>response).username;
@@ -77,6 +78,11 @@ fileToUpload: any;
       this.invalidLogin = false;
       this.router.navigate(["home"]);
     }, err => {
+      this.invalidLogin = true;
+    }*/ respones => {
+      this.succes = true;
+
+    },err => {
       this.invalidLogin = true;
     });
   }

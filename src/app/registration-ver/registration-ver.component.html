@@ -1,0 +1,30 @@
+
+        <h2>Potential crew members</h2>
+
+        <div class = "register-form"> 
+    <br>
+  
+      <table class="table table-dark">
+        <thead class="thead-dark">
+          <tr>
+              
+            <th scope="col">Id</th>             
+            <th scope="col">Crew name</th>
+            <th scope="col">Members</th>
+            <th scope="col">Active</th>
+                        
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersToBeVerified" >          
+            <td>{{user.username}}</td>
+            <td>{{user.userType}}</td>
+            <td>{{user.nameAndLastname}}</td>
+            <td>{{user.activeStatus}}</td>  
+            <td><button class="icon" (click)="activate(user.username)"></button></td>
+            <td><button class="icon2" (click)="decline(user.username)"></button></td>
+  
+          </tr> 
+      </tbody>
+     </table>     
+        </div>

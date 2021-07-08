@@ -48,9 +48,13 @@ import { CallsIncident2Component } from './incidents2/calls-incident2/calls-inci
 import { MultimediaIncident2Component } from './incidents2/multimedia-incident2/multimedia-incident2.component';
 import { CrewIncident2Component } from './incidents2/crew-incident2/crew-incident2.component';
 import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
-
+import { RegistrationVerComponent } from './registration-ver/registration-ver.component';
 const routes: Routes = [
  
+//  {
+ //   path: "verify",
+  //  component: RegistrationVerComponent
+ // },
   {
     path: "register",
     component: RegisterComponent
@@ -299,6 +303,7 @@ const routes: Routes = [
       
 
     },
+    
     {
       path: 'notifications',
        component:AppComponent,
@@ -389,7 +394,13 @@ const routes: Routes = [
         {
           path: '', // child route path
           canActivate: [AuthGuard],
-          component: RequestsComponent, // child route component that the router renders
+          component: RequestsComponent,
+          children : [
+            {
+              path: "",
+              component: RegistrationVerComponent
+            }
+          ] // child route component that the router renders
         }
       ]
     
@@ -407,7 +418,8 @@ const routes: Routes = [
       }
     ]
   
-},
+  },
+  
 ];
 
 @NgModule({

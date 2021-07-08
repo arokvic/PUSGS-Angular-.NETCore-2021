@@ -1,5 +1,6 @@
 
 <div class="registerDiv" >
+    <div *ngIf="succes" class="alert alert-success">Registration request sent</div>
     <form class="register-form" #registerForm="ngForm" (ngSubmit)="register(profileForm)" [formGroup]="profileForm">
         <table id="registerTable">
             <tr>

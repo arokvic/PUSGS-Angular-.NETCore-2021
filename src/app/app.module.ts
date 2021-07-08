@@ -83,6 +83,7 @@ import { MultimediaIncident2Component } from './incidents2/multimedia-incident2/
 import { CrewIncident2Component } from './incidents2/crew-incident2/crew-incident2.component';
 import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
 import { NavbarIncident2Component } from './incidents2/navbar-incident2/navbar-incident2.component';
+import { RegistrationVerComponent } from './registration-ver/registration-ver.component';
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -141,6 +142,7 @@ export function getToken() {
     CrewIncident2Component,
     EquipmentIncident2Component,
     NavbarIncident2Component,
+    RegistrationVerComponent,
 
   ],
   imports: [

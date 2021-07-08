@@ -34,7 +34,7 @@ export class UserService {
   
     return;
   }
-  declineUser(username:string) {
+  declineUsers(username:string) {
     const params = new HttpParams().append('username',username);
     this.http.put("https://localhost:44364/api/User/Declineverification",null,{params: params})
     .subscribe(
@@ -83,6 +83,32 @@ export class UserService {
 
   AllWorkers(): Observable<User[]>{
     return this.http.get<User[]>("https://localhost:44364/api/User/AllWorkers")
+  }
+
+
+  GetPendingUsers() : Observable<User[]>{
+
+    return this.http.get<User[]>("https://localhost:44364/api/User/UsersToBeVerified")    
+  }
+
+  acceptUser(username:string) {
+    const params = new HttpParams().append('username',username);
+   
+    this.http.put("https://localhost:44364/api/User/Accept",null,{params: params})
+    .subscribe(
+     error => console.log(error)
+    );
+  
+    return;
+  }
+  declineUser(username:string) {
+    const params = new HttpParams().append('username',username);
+    this.http.put("https://localhost:44364/api/User/Decline",null,{params: params})
+    .subscribe(
+      error => console.log(error)
+    );
+  
+    return;
   }
 
 

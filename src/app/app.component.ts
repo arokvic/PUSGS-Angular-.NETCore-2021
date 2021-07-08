@@ -230,6 +230,13 @@ export class AppComponent{
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
+    },
+    {
+      label: 'Verify',
+      icon: 'sentiment_very_dissatisfied',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
     }
   ];
 
@@ -281,6 +288,10 @@ export class AppComponent{
     if(menuItem.label ==='New incident')
     {
       this.router.navigate(['/incidents/new']);
+    }
+    if(menuItem.label ==='Verify')
+    {
+      this.router.navigate(['/verify']);
     }
     
   

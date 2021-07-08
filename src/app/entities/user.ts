@@ -21,7 +21,7 @@ export class User {
         this.nameAndLastname = nameAndLastname;
         this.address = addr;
         this.userType = userType;  
-        this.activeStatus = 'false';
+        this.activeStatus = 'Inactive';
         this.notifications = new Array<Notification>();
     }
 }
