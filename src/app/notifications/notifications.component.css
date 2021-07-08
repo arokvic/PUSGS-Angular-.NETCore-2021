@@ -23,7 +23,7 @@
     display: flex;
     width: fit-content;
     min-width: 40%;
-    height: 90%;
+    height: 50%;
     color: black;
     justify-content: space-between;
     width: 100%;
@@ -33,6 +33,7 @@
 .paginator{
     display: flex;
     justify-content: center;
+    color: black;
 }
 
 
@@ -44,8 +45,25 @@
     display: grid;
     width: 60%;
 }
-.buttons{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+
+#submitBtn{
+    background-color: #45a29e;
+    color: rgb(238, 238, 238);
+    height: 4vw;
+    width: 10vw;
+    margin-top: 2%;
+    font-size: 1.0vw;
+
+}
+
+#uip{
+    font-family: Arial, Helvetica, sans-serif;
+     font-size: 0.9vw;
+     font-weight: bold;
+     margin-left: 16px;
+     text-align: center;    
+     color: black;
+     
+    
 }
