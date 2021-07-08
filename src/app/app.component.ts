@@ -230,14 +230,8 @@ export class AppComponent{
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
-    },
-    {
-      label: 'Verify',
-      icon: 'sentiment_very_dissatisfied',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
     }
+  
   ];
 
   constructor(private jwtHelper: JwtHelperService,private router: Router,private loginService: LoginService) {}
@@ -289,10 +283,7 @@ export class AppComponent{
     {
       this.router.navigate(['/incidents/new']);
     }
-    if(menuItem.label ==='Verify')
-    {
-      this.router.navigate(['/verify']);
-    }
+  
     
   
 }
