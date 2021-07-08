@@ -18,13 +18,17 @@ namespace PUSGS2021.Data
 
         public DbSet<SwitchingPlanModel> SwitchingPlans { get; set; }
 
-        public DbSet<NotificationsModel> Notifications { get; set; }
+
+    public DbSet<WorkRequestModel> WorkRequests { get; set; }
+    public DbSet<NotificationsModel> Notifications { get; set; }
 
         public DbSet<InstructionModel> Instructions { get; set; }
 
         public DbSet<SwitchingPlanHistoryModel> SwitchingPlanHistory { get; set; }
 
-        public DbSet<IncidentInfo> Incidents { get; set; }
+    public DbSet<WorkRequestHistoryModel> WorkRequestHistory { get; set; }
+
+    public DbSet<IncidentInfo> Incidents { get; set; }
 
         public DbSet<IncidentModel> IncidentModels { get; set; }
         public DbSet<SafetyDocumentModel> SafetyDocuments { get; set; }

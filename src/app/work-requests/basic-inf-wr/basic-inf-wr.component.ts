@@ -39,7 +39,7 @@ export class BasicInfWrComponent implements OnInit {
       //console.log("tu sam, saljem poruku na navbar");
       this.wrService.sendMessage(2);
       //console.log(this.form.controls);
-      var workRequest = new WorkRequest(this.form.controls.type?.value, this.form.controls.workRequest?.value, this.form.controls.status?.value, 
+      var workRequest = new WorkRequest(this.form.controls.type?.value, this.form.controls.status?.value, 
         this.form.controls.incident?.value,
         this.form.controls.street?.value, this.form.controls.startDate?.value,
          this.form.controls.endDate?.value, this.form.controls.crew?.value, 

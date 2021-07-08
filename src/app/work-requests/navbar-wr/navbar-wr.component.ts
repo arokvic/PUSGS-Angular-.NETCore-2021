@@ -74,7 +74,6 @@ export class NavbarWrComponent implements OnInit {
             basicInfo: {
               id: this.workRequest.id,
               type: this.workRequest.type,
-              workRequest: this.workRequest.workRequest,
               status: this.workRequest.status,
               incident: this.workRequest.incident,
               street: this.workRequest.street,

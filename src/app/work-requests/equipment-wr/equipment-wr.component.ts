@@ -40,8 +40,8 @@ export class EquipmentWrComponent implements OnInit {
     //}
     //var workRequest = new WorkRequest()
     var workRequest = localStorage.getItem("wrID");
-    this.router.navigate(['/work-requests/new/work-requests']);
-    this.http.post('https://localhost:44364/api/WorkRequest/AddIncident', workRequest);
+    this.router.navigate(['/work-requests']);
+    this.http.post('https://localhost:44364/api/DocumentWr/SaveWorkRequest', workRequest);
    
   }
 

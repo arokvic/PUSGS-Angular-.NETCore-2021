@@ -1,7 +1,6 @@
 export class WorkRequest {
     id!:number;
     type:string;
-    workRequest:string;
     status:string;
     incident:string;
     street:string;
@@ -19,7 +18,6 @@ export class WorkRequest {
    
     constructor(
         type:string,
-        workRequest:string,
         status:string,
         incident:string,
         street:string,
@@ -37,7 +35,6 @@ export class WorkRequest {
    {
       
     this.type = type;
-    this.workRequest = workRequest;
     this.status = status;
     this.incident = incident;
     this.street = street;
