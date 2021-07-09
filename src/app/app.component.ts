@@ -38,6 +38,7 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },  
+    /*
     {
       label: 'Showcase',
       icon: 'slideshow',
@@ -52,6 +53,7 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },
+    */
     {
       label: 'Switching plan',
       icon: 'developer_board',
@@ -75,7 +77,7 @@ export class AppComponent{
     },
     {
       label: 'Notifications',
-      icon: 'notification',
+      icon: 'notifications',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
@@ -89,7 +91,7 @@ export class AppComponent{
     },
     {
       label: 'Consumer',
-      icon: 'consumers',
+      icon: 'nature_people',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
@@ -127,6 +129,7 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },  
+    /*
     {
       label: 'Showcase',
       icon: 'slideshow',
@@ -141,6 +144,7 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },
+    */
     {
       label: 'Switching plan',
       icon: 'developer_board',
@@ -164,7 +168,7 @@ export class AppComponent{
     },
     {
       label: 'Notifications',
-      icon: 'notification',
+      icon: 'notifications',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
@@ -178,7 +182,7 @@ export class AppComponent{
     },
     {
       label: 'Consumer',
-      icon: 'consumers',
+      icon: 'nature_people',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
@@ -186,7 +190,7 @@ export class AppComponent{
   
     {
       label: 'Requests',
-      icon: 'requests',
+      icon: 'question_answer',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
