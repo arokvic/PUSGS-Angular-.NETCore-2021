@@ -18,8 +18,8 @@
   
       <!-- Work Request -->
       <mat-form-field>
-        <mat-label>Work request</mat-label>
-        <input matInput placeholder="Ex. 12" formControlName="workRequest" />
+        <mat-label>Incident</mat-label>
+        <input matInput placeholder="Ex. 12" formControlName="incident" />
       </mat-form-field>
       <!-- /Work Request -->
   
@@ -76,14 +76,14 @@
       <!-- Crew -->
       <mat-form-field>
         <mat-label>Crew</mat-label>
-        <input matInput placeholder="Ex. Acme" formControlName="crew" />
+        <input matInput placeholder="Crew" formControlName="crew" />
       </mat-form-field>
       <!-- /Crew -->
   
       <!-- CreatedBy -->
       <mat-form-field>
         <mat-label>CreatedBy</mat-label>
-        <input matInput placeholder="Bul Cara Lazara" formControlName="createdBy" readonly/>
+        <input matInput placeholder="Zivojina Misica" formControlName="createdBy" readonly/>
       </mat-form-field>
       <!-- /CreatedBy -->
     </div>
@@ -92,7 +92,7 @@
       <!-- Notes -->
       <mat-form-field>
         <mat-label>Notes</mat-label>
-        <input matInput placeholder="Ex. 12" formControlName="notes" />
+        <input matInput placeholder="Ex: this is a note" formControlName="notes" />
       </mat-form-field>
       <!-- /Notes -->
   
@@ -100,7 +100,7 @@
       <!-- Company -->
       <mat-form-field>
         <mat-label>Company</mat-label>
-        <input matInput placeholder="Ex. 12345" formControlName="company" />
+        <input matInput placeholder="Ex. My Company Name" formControlName="company" />
         <mat-hint *ngIf="companyF">Required</mat-hint>
       </mat-form-field>
       <!-- /Company -->
@@ -109,7 +109,7 @@
       <!-- PhoneNo -->
       <mat-form-field>
         <mat-label>Phone</mat-label>
-        <input matInput placeholder="Ex. Acme" formControlName="phoneNo" />
+        <input matInput placeholder="Ex. 064125444" formControlName="phoneNo" />
         <mat-hint *ngIf="phoneF">Required</mat-hint>
       </mat-form-field>
       <!-- /PhoneNo -->

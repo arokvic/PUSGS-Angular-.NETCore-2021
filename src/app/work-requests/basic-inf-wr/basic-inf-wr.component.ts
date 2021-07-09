@@ -44,7 +44,7 @@ export class BasicInfWrComponent implements OnInit {
         this.form.controls.street?.value, this.form.controls.startDate?.value,
          this.form.controls.endDate?.value, this.form.controls.crew?.value, 
          this.form.controls.createdBy?.value, this.form.controls.notes?.value, this.form.controls.company?.value,
-          "063958412", "", this.form.controls.imageData?.toString(), this.form.controls.equipment?.toString());
+         "064525203", "", this.form.controls.imageData?.toString(), this.form.controls.equipment?.toString());
         localStorage.setItem("wrID", JSON.stringify(workRequest));
       this.router.navigate(['/work-requests/new/history-state']);
       console.log(workRequest);
