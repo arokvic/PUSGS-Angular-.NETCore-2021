@@ -30,8 +30,8 @@
       </div>
     </div>
     
-    <div>
-    <ng-container [formGroup]="form">
+    <div class="drugiDiv">
+    <ng-container [formGroup]="form" class="noviDiv">
         <mat-card class="form-container mat-elevation-z0">
         <div>
           <mat-card-title class="title">Change state</mat-card-title>
@@ -40,7 +40,7 @@
       
           <!-- Type -->
           <div *ngIf="displayStateChange">
-          <mat-form-field>
+          <mat-form-field class="nmp">
             <mat-select placeholder="Select state" formControlName="newStatus">
                 <mat-option value="Issue">Issue</mat-option>
                 

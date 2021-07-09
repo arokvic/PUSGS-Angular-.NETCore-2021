@@ -3,8 +3,13 @@
     justify-content: center;
     display: grid;
     grid-template-rows: 5% 20% 20% 20% 20% 10%;
+    /*background-color: darkgreen;
+    */
 }
 
+.drugiDiv{
+    background-color: darkmagenta;
+}
 .button{
     display: flex;
     justify-content: center;
@@ -12,16 +17,24 @@
     margin-left: 2%;
 }
 
+.nmp{
+    background-color: darkgrey;
+    width: 60px;
+    height: 60px;
+}
+
 .mat-form-field{
     margin: 1%;
 }
 .history-table {
     margin-top: 40px;
+    background-color: coral;
 }
 .page{
     display: grid;
     grid-template-columns: 50% 50%;
     height: 80%;
+    background-color: blueviolet;
 }
 mat-card {
     margin-top: 30px;
