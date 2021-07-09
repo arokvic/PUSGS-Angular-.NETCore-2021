@@ -30,4 +30,8 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  report(){
+    this.router.navigate(['/incidents/new']);
+  }
+
 }
