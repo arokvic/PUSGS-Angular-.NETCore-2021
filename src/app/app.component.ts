@@ -76,6 +76,14 @@ export class AppComponent{
       showOnDesktop: true
     },
     {
+      label: 'Elements',
+      icon: 'home',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+      
+    },
+    {
       label: 'Notifications',
       icon: 'notifications',
       showOnMobile: true,
@@ -165,6 +173,14 @@ export class AppComponent{
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
+    },
+    {
+      label: 'Elements',
+      icon: 'home',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+      
     },
     {
       label: 'Notifications',
@@ -267,6 +283,10 @@ export class AppComponent{
     {
       this.router.navigate(['/register']);
     }
+    if(menuItem.label == "Elements")
+    {
+      this.router.navigate(['/devices']);
+    }
     if(menuItem.label ==='Log in')
     {
       this.router.navigate(['/login']);
@@ -305,6 +325,10 @@ clickMenuItem1(menuItem : MenuItem){
     {
       this.router.navigate(['/home']);
     }
+    if(menuItem.label == "Elements")
+    {
+      this.router.navigate(['/devices']);
+    }
   if(menuItem.label ==='Dashboard')
   {
     this.router.navigate(['/dashboard']);
@@ -338,6 +362,10 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   {
     this.router.navigate(['/profile']);
   }
+  if(menuItemsLogged.label == "Elements")
+    {
+      this.router.navigate(['/devices']);
+    }
   if(menuItemsLogged.label ==='Switching plan')
   {
     this.router.navigate(['/switching-plans']);
@@ -385,6 +413,10 @@ clickMenuItem3(menuItemsLogged : MenuItem){
   if(menuItemsLogged.label ==='Log in')
   {
     this.router.navigate(['/login']);
+  }
+  if(menuItemsLogged.label ==='Elements')
+  {
+    this.router.navigate(['/devices']);
   }
   if(menuItemsLogged.label ==='Home')
   {

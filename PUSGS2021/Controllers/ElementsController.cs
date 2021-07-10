@@ -92,7 +92,7 @@ namespace PUSGS2021.Controllers
 
       ElementModel element1 = new ElementModel()
       {
-        Address = "Bul Cara Lazara 39",
+        Address = "Vojvodjanska 65",
         Coordinates = "39193",
         Type = "prekidac",
         Name = "PRE1"
@@ -191,6 +191,8 @@ namespace PUSGS2021.Controllers
 
       return "ok";
     }
+
+
 
   }
 }

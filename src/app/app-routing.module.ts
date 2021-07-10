@@ -50,6 +50,7 @@ import { InstructionsComponent } from './switching-plans/instructions/instructio
 import { NavbarSpComponent } from './switching-plans/navbar-sp/navbar-sp.component';
 import { EquipmentComponent } from './switching-plans/equipment/equipment.component';
 import { MapComponent } from './map/map.component';
+import { ElementsPageComponent } from './elements-page/elements-page.component';
 const routes: Routes = [
  
 //  {
@@ -156,6 +157,18 @@ const routes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: 'devices',
+     component:AppComponent,
+   //  canActivate: [AuthGuard],
+      children: [
+        {
+          path: '', // child route path
+        component: ElementsPageComponent, // child route component that the router renders
+        }
+      ]
+  
   },
   {
     path: 'safety-documents',
