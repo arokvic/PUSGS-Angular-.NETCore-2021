@@ -3,7 +3,7 @@ import { Incident } from '../entities/incident';
 import { Router } from '@angular/router';
 import { Inc1Service } from '../services/inc1.service';
 import { WrInteractionService } from '../services/wr-interaction.service';
-
+import {Sort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-incidents2',
@@ -14,9 +14,15 @@ export class Incidents2Component implements OnInit {
 
 
   allIncidents : Incident [] = [];
- public page = 5;
- public pageSize = 3;
-  constructor(private router:Router, private  inc : Inc1Service, private wrService:WrInteractionService) { }
+  allIncidents2 : Incident [] = [];
+  sortedData: Incident[] = [];
+ public page = 10
+ public pageSize = 10;
+  constructor(private router:Router, private  inc : Inc1Service, private wrService:WrInteractionService) {
+
+    this.sortedData = this.allIncidents.slice();
+
+   }
 
   ngOnInit(): void {
     this.inc.getIncidents()
@@ -70,5 +76,30 @@ export class Incidents2Component implements OnInit {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
+  fieldsChange(values:any):void {
+
+    
+    this.allIncidents2 = this.allIncidents;
+    if (values.currentTarget.checked){
+      this.allIncidents = [];
+      this.inc.getMyIncidents().subscribe(data => { this.allIncidents = data;})
+      
+      
+    }
+    else{
+      this.inc.getIncidents()
+      .subscribe(
+        data=>{
+          this.allIncidents = data;
+        })
+      
+    }
+  }
+  
+
+  
 }
+
+
+
 

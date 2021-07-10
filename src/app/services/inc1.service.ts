@@ -41,6 +41,12 @@ export class Inc1Service {
     let options = { headers : headers };
     return this.http.post<Incident>("https://localhost:44364/api/Incident/AddIncident",JSON.stringify(incident), options);
   }
-  
+
+  getMyIncidents(): Observable<Incident[]>{
+    return this.http.get<Incident[]>("https://localhost:44364/api/Incident/GetMyIncidents"); 
+  }
+  getIncidentCoordinates(): Observable<number[]>{
+    return this.http.get<number[]>("https://localhost:44364/api/Incident/GetIncidentCoordinates"); 
+  }
 
 }

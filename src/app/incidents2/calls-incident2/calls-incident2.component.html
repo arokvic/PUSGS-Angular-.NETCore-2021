@@ -21,9 +21,30 @@
         <mat-label>Hazard</mat-label>
         <input matInput placeholder="" formControlName="hazard" />
       </mat-form-field>
-    
+      
+      <select class='select-option' formControlName="consumerId" 
+    #mySelect
+    (change)='onOptionsSelected(mySelect.value)'>
+   <option class='option' 
+   *ngFor='let option of allIncidents' 
+   [value]="option.name">{{option.name}}</option>
+    </select>
+  
     </div>
-    <div>      
+    
+    <div>    
+      <br>
+      <br><div class="card">
+        <div class="container">
+          <h2>Consumer info</h2>
+          <h4>name : {{consumer.name}}</h4> 
+          <p>surname : {{consumer.surname}}</p> 
+          <p>city : {{consumer.city}}</p> 
+          <p>street : {{consumer.street}}</p> 
+
+        </div>
+      </div>  
+      <br>
      
     <div class="button">
         <button (click)="save()" class="btn btn-primary button">Next</button>
@@ -31,3 +52,6 @@
     </div>
     </mat-card>
   </ng-container>
+
+  
+  

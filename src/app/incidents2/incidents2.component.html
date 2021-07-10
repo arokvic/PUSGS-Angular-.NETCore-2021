@@ -3,15 +3,15 @@
 
 
 <div class="container">
-  
+  <input (change)="fieldsChange($event)" value="angular" type="checkbox"/>
       <table class="table table-dark">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">Id</th>
+                <th  >Id</th>
                 <th scope="col">Type of inc</th>             
                 <th scope="col">Priority</th>
                 <th scope="col">Confirmed</th>
-                <th scope="col">Status</th>
+                <th  scope="col">Status</th>
                 <th scope="col">ETA</th>
                 <th scope="col">ATA</th>
                 <th scope="col">Outage time</th>
@@ -20,6 +20,18 @@
                 <th scope="col">Calls</th>
                 <th scope="col">Voltage leve</th>
                 <th scope="col">Scheduled time</th>
+                <th scope="col">Cause</th>             
+                <th scope="col">Subcause</th>
+                <th scope="col">Construction Type</th>
+                <th scope="col">Material </th>
+                <th scope="col">Hazard </th>
+                <th scope="col">Consumer Id </th>
+                <th scope="col">Comment </th>
+                <th   scope="col">Reason </th>
+                <th scope="col">Device Id </th>
+                <th scope="col">ImageData </th>              
+                <th scope="col">Crew Id </th>
+                <th scope="col">Made by </th>
   
   
   
@@ -27,7 +39,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let incident of allIncidents | slice: (page-1) * pageSize : page * pageSize">
-            <td>{{incident.id.toString()}}</td>
+            <td>{{incident.id}}</td>
             <td>{{incident.typeOfInc}}</td>
             <td>{{incident.priority}}</td>
             <td>{{incident.confirmed}}</td>
@@ -36,16 +48,30 @@
             <td>{{incident.ata}}</td>
             <td>{{incident.outageTime}}</td>
             <td>{{incident.etr}}</td>
-            <td>{{incident.affectedCustomers.toString()}}</td>
-            <td>{{incident.calls.toString()}}</td>
-            <td>{{incident.voltageLevel.toString()}}</td>
+            <td>{{incident.affectedCustomers}}</td>
+            <td>{{incident.calls}}</td>
+            <td>{{incident.voltageLevel}}</td>
             <td>{{incident.scheduledTime}}</td>
+
+
+            <td>{{incident.cause}}</td>
+            <td>{{incident.subcause}}</td>
+            <td>{{incident.constructionType}}</td>
+            <td>{{incident.material}}</td>
+            <td>{{incident.hazard}}</td>
+            <td>{{incident.consumerId}}</td>
+            <td>{{incident.comment}}</td>
+           
+            <td>{{incident.reason}}</td>
+            <td>{{incident.equipmentId}}</td>
+            <td>{{incident.imageData}}</td>
+            <td>{{incident.crewId}}</td>
+            <td>{{incident.assignedTo}}</td>
             
       
           </tr> 
       </tbody>
       </table>
-      <button (click)="new()">New</button>
       <br> <br>
     <div class="container__pagination">
       <ngb-pagination 

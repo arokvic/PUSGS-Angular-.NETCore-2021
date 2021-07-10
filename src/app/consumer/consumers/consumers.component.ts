@@ -19,7 +19,7 @@ export class ConsumersComponent implements OnInit {
   constructor(private router:Router, private consumerService: ConsumerService) { }
 
   ngOnInit(): void {
-  this.consumerService.getConsumers().subscribe(
+  this.consumerService.getconsumers().subscribe(
     data => {
       this.consumers = data as Consumer[];
     }
@@ -32,7 +32,7 @@ export class ConsumersComponent implements OnInit {
       console.log("Primljena");
       await this.delay(1000);
       console.log("Izvrsena")
-    this.consumerService.getConsumers().subscribe(
+    this.consumerService.getconsumers().subscribe(
       data => {
         this.consumers = data as Consumer[];
       }

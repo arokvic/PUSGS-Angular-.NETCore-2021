@@ -84,7 +84,8 @@ import { CrewIncident2Component } from './incidents2/crew-incident2/crew-inciden
 import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
 import { NavbarIncident2Component } from './incidents2/navbar-incident2/navbar-incident2.component';
 import { RegistrationVerComponent } from './registration-ver/registration-ver.component';
-
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './map/map.component';
 export function getToken() {
   return localStorage.getItem("jwt");
 }
@@ -143,6 +144,7 @@ export function getToken() {
     EquipmentIncident2Component,
     NavbarIncident2Component,
     RegistrationVerComponent,
+    MapComponent,
 
   ],
   imports: [
@@ -177,6 +179,7 @@ export function getToken() {
     MatDatepickerModule,
     NgSelectModule,
     MatCardModule,
+    LeafletModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken, 

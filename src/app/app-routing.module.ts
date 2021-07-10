@@ -49,6 +49,7 @@ import { MultimediaIncident2Component } from './incidents2/multimedia-incident2/
 import { CrewIncident2Component } from './incidents2/crew-incident2/crew-incident2.component';
 import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
 import { RegistrationVerComponent } from './registration-ver/registration-ver.component';
+import { MapComponent } from './map/map.component';
 const routes: Routes = [
  
 //  {
@@ -62,6 +63,11 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+    
+  },
+  {
+    path: "map",
+    component: MapComponent
     
   },
   {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Consumer } from 'src/app/entities/consumer';
 import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,8 +18,8 @@ export class ConsumerService {
     this.newCons.next(message);
   }
 
-  getConsumers(){
-    return this.http.get("https://localhost:44364/api/Consumer/GetConsumers");
+  getconsumers(): Observable<Consumer[]>{
+    return this.http.get<Consumer[]>("https://localhost:44364/api/Consumer/GetConsumers");
   }
 
   getConsumer(id:number){

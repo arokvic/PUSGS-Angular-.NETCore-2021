@@ -103,9 +103,70 @@ namespace PUSGS2021.Controllers
     }
 
     [HttpGet]
+    [Route("GetIncidents")]
     public async Task<ActionResult<IEnumerable<IncidentInfo2>>> GetIncidents()
     {
       return await _context.Incidentss.ToListAsync();
+    }
+
+
+    [HttpGet]
+    [Route("GetMyIncidents")]
+    public ActionResult<IEnumerable<IncidentInfo2>> GetMyIncidents()
+    {
+      List<IncidentInfo2> l = new List<IncidentInfo2>();
+      foreach (var item in _context.Incidentss)
+      {
+        if (item.AssignedTo == "Me")
+        {
+          l.Add(item);
+        }
+
+      }
+      return l;
+    }
+
+    [HttpGet]
+    [Route("GetIncidentCoordinates")]
+    public ActionResult<IEnumerable<double>> GetIncidentCoordinates()
+    {
+      //Console.WriteLine("usao1\n\n\n\n\n");
+      List<IncidentInfo2> incidents = new List<IncidentInfo2>();
+      List<ElementModel> elements = new List<ElementModel>();
+      elements = _context.Elements.ToList();
+      incidents = _context.Incidentss.ToList();
+      // Console.WriteLine(incidents.Count);
+      //Console.WriteLine(elements.Count);
+      List<double> ret = new List<double>();
+      List<int> ret2 = new List<int>();
+      //ret2.Add(1);
+
+      foreach (var item in incidents)
+      {
+        string str = item.EquipmentId;
+        foreach (var el in elements)
+        {
+
+          // Console.WriteLine(str);
+          if (el.Id == double.Parse(str))
+          {
+            Console.WriteLine("jednaki su");
+            string[] words = el.Coordinates.Split(' ');
+            foreach (var word in words)
+            {
+              System.Console.WriteLine(word);
+              if (word != ",")
+                ret.Add(double.Parse(word));
+            }
+
+          }
+        }
+
+      }
+      Console.WriteLine(ret);
+      return ret;
+
+
     }
 
 
