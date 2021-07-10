@@ -16,8 +16,19 @@
               <th scope="col">Address</th>
           </tr>
       </thead>
-      <tbody>
+     <!-- <tbody>
         <tr *ngFor="let switchingPlan of switchingPlans | slice: (page-1) * pageSize : page * pageSize">
+          <td>{{switchingPlan.id.toString()}}</td>
+          <td>{{formatDate(switchingPlan.startDate)}}</td>
+          <td>{{switchingPlan.phone}}</td>
+          <td>{{switchingPlan.status}}</td>
+          <td>{{switchingPlan.street}}</td>
+          <td><button [(ngModel)]="switchingPlan.id" ngDefaultControl class (click)="openDocument(switchingPlan.id)">Open</button></td>
+        </tr>
+      </tbody>-->
+
+      <tbody>
+        <tr *ngFor="let switchingPlan of switchingPlans | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
           <td>{{switchingPlan.id.toString()}}</td>
           <td>{{formatDate(switchingPlan.startDate)}}</td>
           <td>{{switchingPlan.phone}}</td>
@@ -27,14 +38,14 @@
         </tr>
       </tbody>
       </table>
-  
-      <br> <br>
-    <div class="container__pagination">
-      <ngb-pagination 
+      <pagination-controls (pageChange)="cp = $event"></pagination-controls>
+      <!--<div class="container__pagination">
+        <ngb-pagination 
         [(page)]="page"
         [pageSize]="pageSize"
         [collectionSize]="switchingPlans.length"></ngb-pagination>
-      </div>
+      </div>-->
     </div>
+    <br> <br>
     
   

@@ -1,15 +1,18 @@
+<br><br><br>
 <div class="settings">
     <div class="password-change">
-    <p class="title">Change password</p>
+    <p class="title">Change </p>
+    <p class="title">password</p>
+<br>
     <div class="form">
     <form #passwordForm="ngForm" (ngSubmit)="changePassword(passwordForm)">
         <div>
             <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" name="password" ngModel class="form-control" placeholder="New Password" required>
+            <input type="password" id="password-input" name="password" ngModel class="form-control" placeholder="New Password" required>
             <div *ngIf="minimumCharacters" class="alert alert-danger">Minimum 5 characters!</div>
             <div *ngIf="invalidPassword" class="alert alert-danger">Invalid password!</div>
             <br/>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Change password</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">Change password</button>
     
         </div>
     </form>
@@ -34,27 +37,29 @@
               {{opt}}
             </option>
           </select>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Save changes</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">Save changes</button>
       
       </form>
 
 </div>
 
 <div class="notifications">
-    <p class="title">Visible notifications</p>
-    <form [formGroup]="notForm" (ngSubmit)="onSubmit2()">
-    <ng-select [items]="options"
-               bindLabel="name"
-               placeholder="Select Category"
-               appendTo="body"
-               [multiple]="true"
-               formControlName='type'>
-</ng-select>
-<button class="btn btn-lg btn-primary btn-block" type="submit">Save Changes</button>
+    <p class="title">Visible </p>
+    <br>
+    <p class="title">notifications</p>
+<br><br>
+    <form [formGroup]="notForm" (ngSubmit)="onSubmit2()" id="userType-input">
+    
+<select formControlName='type' id="userType-input" class="form-control">
+  <option *ngFor="let opt of options" [value]="opt">
+    {{opt}}
+  </option>
+</select>
+<button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">Save Changes</button>
 </form>
   
 </div>
-<button class="btn btn-lg btn-primary btn-block" style="margin: 5%;" (click)="resetSettings()">Reset to default</button>
+<button class="btn btn-lg btn-primary btn-block" style="margin: 5%;" (click)="resetSettings()" id="submitBtn">Reset to default</button>
 </div>
 
 

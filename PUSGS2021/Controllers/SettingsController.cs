@@ -161,7 +161,6 @@ namespace PUSGS2021.Controllers
 
     [HttpPut]
     [Route("VisibleNotifications")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<string>> VisibleNotifications([FromBody] string[] str)
     {
 

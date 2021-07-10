@@ -14,7 +14,8 @@ export class SafetyDocumentsComponent implements OnInit {
 
   public page = 10;
   public pageSize = 3;
-  
+  cp: number = 1;
+
   
 
   constructor(private navigationService: NavigationService, private cdref: ChangeDetectorRef, private _safetyDocumentsService: SafetyDocumentsService) { }

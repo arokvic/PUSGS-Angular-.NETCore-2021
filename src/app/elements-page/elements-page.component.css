@@ -30,7 +30,10 @@ mat-icon {
     cursor: default;
 }
 
-    
+.listMargin{
+ 
+    margin : 5px;
+}
 
 
 /* PAGINATOR STYLING */

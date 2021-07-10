@@ -37,7 +37,8 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let element of allElements | tableFilter: type | slice: (page-1) * pageSize : page * pageSize">
+          <tr *ngFor="let element of allElements | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+
           <td>{{element.id.toString()}}</td>
           <td>{{element.name}}</td>
           <td>{{element.type}}</td>
@@ -48,13 +49,9 @@
       </tbody>
       </table>
   
+      
+      <pagination-controls (pageChange)="cp = $event"></pagination-controls>
       <br> <br>
-    <div class="container__pagination">
-      <ngb-pagination 
-        [(page)]="page"
-        [pageSize]="pageSize"
-        [collectionSize]="allElements.length"></ngb-pagination>
-      </div>
     </div>
     
   

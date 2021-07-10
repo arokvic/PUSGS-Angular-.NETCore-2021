@@ -9,24 +9,23 @@
   
   </div>
   <div class="sve">
-  <div class="not-content">
-  <div *ngFor="let notification of showNotifications | slice: (page-1) * pageSize : page * pageSize" ngDefaultControl>
-      <div [ngStyle]="getBackgroundColor(notification.type)" [(ngModel)]="notification.id" (click)="finish(notification.id)" ngDefaultControl class  class="notification"><div class="text" id = "uip">{{notification.text}}</div> <div class="date" id = "uip">{{notification.timeStamp}}</div></div>
-  </div>
-  <div class="paginator">
-      <ngb-pagination 
-        [(page)]="page"
-        [pageSize]="pageSize"
-        [collectionSize]="notifications.length">
-      </ngb-pagination>
+    <div class="not-content">
+  <!--<div *ngFor="let notification of showNotifications | slice: (page-1) * pageSize : page * pageSize" ngDefaultControl>-->
+    <div *ngFor="let notification of showNotifications | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin" >
+      <div [ngStyle]="getBackgroundColor(notification.type)" [(ngModel)]="notification.id" (click)="finish(notification.id)" ngDefaultControl class  class="notification">
+        <div class="text">{{notification.text}}</div> 
+        <div class="date">{{notification.timeStamp}}</div>
+      </div>
     </div>
-      <div class="buttons">
+  </div>
+    <div class="buttons">
         <button (click)="markAllAsRead()"  class="notButton" id = "submitBtn">Mark All As Read</button>
         <br>
         <button (click)="clearAll()"  class="notButton" id = "submitBtn">Clear All</button>
       
     </div>
+    <pagination-controls (pageChange)="cp = $event"></pagination-controls>
   </div>
-  </div>
-  </div>
+</div>
+
   

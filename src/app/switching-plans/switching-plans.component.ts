@@ -14,6 +14,7 @@ export class SwitchingPlansComponent implements OnInit {
   public page = 10;
   public pageSize = 10;
 
+  cp: number = 1;
 
   switchingPlans: SwitchingPlan[] = [];
 

@@ -13,6 +13,7 @@ export class ConsumersComponent implements OnInit {
 
   public page = 10;
   public pageSize = 5;
+  cp: number = 1;
 
   activeId!:number;
 

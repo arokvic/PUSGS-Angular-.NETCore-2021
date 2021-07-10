@@ -12,7 +12,8 @@
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let consumer of consumers | slice: (page-1) * pageSize : page * pageSize">
+        <tr *ngFor="let consumer of consumers | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+
         <td>{{consumer.name}}</td>
         <td>{{consumer.surname}}</td>
         <td>{{consumer.city}}</td>
@@ -27,12 +28,8 @@
   
     <br> <br>
 <div class="buttons">
-  <div class="container__pagination">
-    <ngb-pagination 
-      [(page)]="page"
-      [pageSize]="pageSize"
-      [collectionSize]="consumers.length"></ngb-pagination>
-    </div>
+  <pagination-controls (pageChange)="cp = $event"></pagination-controls>
+
 
   <button (click)="newConsumer()" style="margin-left: 10%;" class="btn btn-primary button">New Conusmer</button>
 

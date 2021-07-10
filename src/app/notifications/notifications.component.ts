@@ -14,6 +14,7 @@ export class NotificationsComponent implements OnInit {
   page = 10;
   pageSize = 4;
   option:string = "All";
+  cp: number = 1;
 
 
   constructor(private notService:NotificationService, private router:Router, private detector:ChangeDetectorRef) { }

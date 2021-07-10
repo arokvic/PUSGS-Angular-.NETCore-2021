@@ -22,7 +22,7 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let document of allSafetyDocuments | slice: (page-1) * pageSize : page * pageSize">
+        <tr *ngFor="let document of allSafetyDocuments | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
           <td>{{document.safetyDocumentId?.toString()}}</td>
           <td>{{document.dateCreated}}</td>
           <td>{{document.phoneNum}}</td>
@@ -32,22 +32,14 @@
         </tr> 
       </tbody>
       </table>
-  
-      <br> <br>
-    <div class="container__pagination">
-      <ngb-pagination 
-        [(page)]="page"
-        
-        [pageSize]="pageSize"
+      <pagination-controls (pageChange)="cp = $event"></pagination-controls>
 
-        
-        [collectionSize]="allSafetyDocuments.length"></ngb-pagination>
-      
-        </div>
+    
+   
   
     </div>
     
-  
+    <br> <br>
 
 </div>
 

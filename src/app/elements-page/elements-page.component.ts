@@ -15,6 +15,7 @@ export class ElementsPageComponent implements OnInit {
   public allElements : Element[] = [];
   public page = 10;
   public pageSize = 3;
+  cp: number = 1;
 
 
   constructor(private elementsService: ElementsService,  public dialog: MatDialog) { }
