@@ -26,9 +26,9 @@
     
     <br>
   
-      <table class="table table-dark">
-        <thead class="thead-dark">
-          <tr>
+      <table id="elementTabela" class="table ">
+        <thead >
+          <tr id="PrviRed">
               <th scope="col">Id</th>
               <th scope="col">Name</th>
               <th scope="col">Type</th>
@@ -37,7 +37,7 @@
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let element of allElements | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+          <tr *ngFor="let element of allElements | tableFilter: type| paginate: {itemsPerPage:2, currentPage: cp}" class="listMargin">
 
           <td>{{element.id.toString()}}</td>
           <td>{{element.name}}</td>
@@ -49,9 +49,12 @@
       </tbody>
       </table>
   
-      
-      <pagination-controls (pageChange)="cp = $event"></pagination-controls>
+      <div id="boja">
+        <pagination-controls  (pageChange)="cp = $event"></pagination-controls>
+
+      </div>
       <br> <br>
+      <input class="form-control" type="text" name="firstName" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="Enter element name to search">
     </div>
     
   

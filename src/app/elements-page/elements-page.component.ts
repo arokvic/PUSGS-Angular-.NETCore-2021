@@ -16,7 +16,7 @@ export class ElementsPageComponent implements OnInit {
   public page = 10;
   public pageSize = 3;
   cp: number = 1;
-
+  name: any;
 
   constructor(private elementsService: ElementsService,  public dialog: MatDialog) { }
 
@@ -34,6 +34,8 @@ export class ElementsPageComponent implements OnInit {
       
     });
 
+    
+
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log("/" + result.elementName + "/" + result.elementType + "/" + result.elementCoordinates + "/" + result.elementAddress);
@@ -45,5 +47,16 @@ export class ElementsPageComponent implements OnInit {
                           .subscribe(sEelement => this.allElements.push(sEelement));
 
     });
+  }
+
+
+  Search(){
+    if(this.name == ""){
+      this.ngOnInit();
+    }else{
+      this.allElements = this.allElements.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    }
   }
 }
