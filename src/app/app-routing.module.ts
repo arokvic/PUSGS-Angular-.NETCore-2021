@@ -7,14 +7,7 @@ import { RegisterComponent} from './register/register.component'
 import { LoginComponent } from './login/login.component'
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
-import { SwitchingPlanComponent } from './switching-plan/switching-plan.component';
-import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
-import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
 import { IncidentsComponent } from './incidents/incidents.component';
-import { HistorySpComponent } from './switching-plan/history-sp/history-sp.component';
-import { MultimediaSpComponent } from './switching-plan/multimedia-sp/multimedia-sp.component';
-import { EquipmentSpComponent } from './switching-plan/equipment-sp/equipment-sp.component';
-import { InstructionsSpComponent } from './switching-plan/instructions-sp/instructions-sp.component';
 import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
 import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
 import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
@@ -49,6 +42,13 @@ import { MultimediaIncident2Component } from './incidents2/multimedia-incident2/
 import { CrewIncident2Component } from './incidents2/crew-incident2/crew-incident2.component';
 import { EquipmentIncident2Component } from './incidents2/equipment-incident2/equipment-incident2.component';
 import { RegistrationVerComponent } from './registration-ver/registration-ver.component';
+import { SwitchingPlansComponent } from './switching-plans/switching-plans.component';
+import { BasicInfoSpComponent } from './switching-plans/basic-info-sp/basic-info-sp.component';
+import { HistoryComponent } from './switching-plans/history/history.component';
+import { MultimediaComponent } from './switching-plans/multimedia/multimedia.component';
+import { InstructionsComponent } from './switching-plans/instructions/instructions.component';
+import { NavbarSpComponent } from './switching-plans/navbar-sp/navbar-sp.component';
+import { EquipmentComponent } from './switching-plans/equipment/equipment.component';
 import { MapComponent } from './map/map.component';
 const routes: Routes = [
  
@@ -118,50 +118,45 @@ const routes: Routes = [
   },
   {
     path: 'switching-plans',
-     component: AppComponent,
-     canActivate: [AuthGuard],
-     children: [
+    component:AppComponent,
+    canActivate: [AuthGuard],
+    children: [
       {
-        path: '', // child route path
-        component: SwitchingPlanComponent, // child route component that the router renders
-        canActivate: [AuthGuard],
-
+        path: '',
+        component:SwitchingPlansComponent,
       },
       {
-        path: 'new', // child route path
-           canActivate: [AuthGuard],
-           component: NavbarSpComponent, // child route component that the router renders
-           children: [
-             {
-               path: 'basic-info',
-               canActivate: [AuthGuard],
-               component: BasicInfoSpComponent
-             },
-             {
-               path: 'history-state',
-               canActivate: [AuthGuard],
-               component: HistorySpComponent
-             },
-             {
-               path: 'multimedia',
-               canActivate: [AuthGuard],
-               component: MultimediaSpComponent
-             },
-             {
-               path: 'equipment',
-               canActivate: [AuthGuard],
-               component: EquipmentSpComponent
-             },
-             {
-               path: 'instructions',
-               canActivate: [AuthGuard],
-               component: InstructionsSpComponent
-             }
-            ]
-      }      
-    ] 
+        path: 'new',
+        component: NavbarSpComponent,
+        children:[
+          {
+            path:'basic-info',
+            component: BasicInfoSpComponent
+          },
+          {
+            path: 'history-state',
+            canActivate: [AuthGuard],
+            component: HistoryComponent
+          },
+          {
+            path: 'multimedia',
+            canActivate: [AuthGuard],
+            component: MultimediaComponent
+          },
+          {
+            path: 'equipment',
+            canActivate: [AuthGuard],
+            component: EquipmentComponent
+          },
+          {
+            path: 'instructions',
+            canActivate: [AuthGuard],
+            component: InstructionsComponent
+          }
+        ]
+      }
+    ]
   },
-
   {
     path: 'safety-documents',
      component: AppComponent,

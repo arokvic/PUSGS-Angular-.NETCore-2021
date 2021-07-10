@@ -21,10 +21,7 @@ import { Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { JwtModule } from "@auth0/angular-jwt";
-import { SwitchingPlanComponent } from './switching-plan/switching-plan.component';
-import { NewSpComponent } from './switching-plan/new-sp/new-sp.component';
-import { BasicInfoSpComponent } from './switching-plan/basic-info-sp/basic-info-sp.component';
-import { NavbarSpComponent } from './switching-plan/navbar-sp/navbar-sp.component';
+
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TableFilterPipe } from './pipes/table-filter.pipe';
@@ -43,11 +40,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IncidentsComponent } from './incidents/incidents.component';
-import { HistorySpComponent } from './switching-plan/history-sp/history-sp.component';
-import { MultimediaSpComponent } from './switching-plan/multimedia-sp/multimedia-sp.component';
-import { EquipmentSpComponent } from './switching-plan/equipment-sp/equipment-sp.component';
-import { CreateInstructionSpComponent } from './switching-plan/create-instruction-sp/create-instruction-sp.component';
-import { InstructionsSpComponent } from './switching-plan/instructions-sp/instructions-sp.component';
 import { SafetyDocumentsComponent } from './safety-documents/safety-documents.component';
 import { NavbarIncidentComponent } from './navbar-incident/navbar-incident.component';
 import { IncidentBasicInfoComponent } from './incident-basic-info/incident-basic-info.component';
@@ -86,6 +78,14 @@ import { NavbarIncident2Component } from './incidents2/navbar-incident2/navbar-i
 import { RegistrationVerComponent } from './registration-ver/registration-ver.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MapComponent } from './map/map.component';
+import { SwitchingPlansComponent } from './switching-plans/switching-plans.component';
+import { NavbarSpComponent } from './switching-plans/navbar-sp/navbar-sp.component';
+import { BasicInfoSpComponent } from './switching-plans/basic-info-sp/basic-info-sp.component';
+import { MultimediaComponent } from './switching-plans/multimedia/multimedia.component';
+import { InstructionsComponent } from './switching-plans/instructions/instructions.component';
+import { CreateInstructionComponent } from './switching-plans/create-instruction/create-instruction.component';
+import { HistoryComponent } from './switching-plans/history/history.component';
+import { EquipmentComponent } from './switching-plans/equipment/equipment.component';
 export function getToken() {
   return localStorage.getItem("jwt");
 }
@@ -97,16 +97,9 @@ export function getToken() {
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    SwitchingPlanComponent,
-    NewSpComponent,
-    BasicInfoSpComponent,
-    NavbarSpComponent,
+    HistoryComponent,
     IncidentsComponent,
-    HistorySpComponent,
-    MultimediaSpComponent,
-    EquipmentSpComponent,
-    CreateInstructionSpComponent,
-    InstructionsSpComponent,
+    
     SafetyDocumentsComponent,
     NavbarIncidentComponent,
     IncidentBasicInfoComponent,
@@ -145,6 +138,13 @@ export function getToken() {
     NavbarIncident2Component,
     RegistrationVerComponent,
     MapComponent,
+    SwitchingPlansComponent,
+    NavbarSpComponent,
+    BasicInfoSpComponent,
+    MultimediaComponent,
+    InstructionsComponent,
+    CreateInstructionComponent,
+    EquipmentComponent,
 
   ],
   imports: [

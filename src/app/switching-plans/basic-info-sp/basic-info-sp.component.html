@@ -1,0 +1,119 @@
+
+<ng-container [formGroup]="form">
+    <mat-card class="form-container">
+    <div>
+      <mat-card-title class="title">Basic Info</mat-card-title>
+    </div>
+    <div>
+  
+      <!-- Type -->
+      <mat-form-field>
+        <mat-select placeholder="Select type" formControlName="type">
+            <mat-option value="PlannedWork">Planned Work</mat-option>
+            <mat-option value="UnplanedWork">Unplanned Work</mat-option>
+        </mat-select>
+        <mat-hint *ngIf="typeF">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Type -->
+  
+      <!-- Work Request -->
+      <mat-form-field>
+        <mat-label>Work request</mat-label>
+        <input matInput placeholder="Ex. 12" formControlName="workRequest" />
+      </mat-form-field>
+      <!-- /Work Request -->
+  
+  
+      <!-- Status -->
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <input matInput placeholder="Ex. 12345" formControlName="status" readonly/>
+      </mat-form-field>
+      <!-- /Status -->
+    </div>
+    <div>
+      <!-- Incident -->
+      <mat-form-field>
+        <mat-label>Incident</mat-label>
+        <input matInput placeholder="Ex. Acme" formControlName="incident" />
+      </mat-form-field>
+      <!-- /Incident -->
+  
+      <!-- Street -->
+      <mat-form-field>
+        <mat-label>Street</mat-label>
+        <input matInput placeholder="Bul Cara Lazara" formControlName="street" />
+        <mat-hint *ngIf="streetF">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Street -->
+  
+      <!-- Start Date -->
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" formControlName="startDate" placeholder="Start Date">    
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    
+        <mat-datepicker touchUi="true" #picker></mat-datepicker>
+        <mat-hint *ngIf="startDateF">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Start Date -->
+    </div>
+    <div>
+  
+      <!-- End Date -->
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" formControlName="endDate" placeholder="End Date">    
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>    
+        <mat-datepicker touchUi="true" #picker1></mat-datepicker>
+        <mat-hint *ngIf="endDateF">Required</mat-hint>
+        <mat-hint *ngIf="badDate">Smaller than start</mat-hint>
+  
+      </mat-form-field>
+      <!-- /End Date -->
+  
+  
+      <!-- Crew -->
+      <mat-form-field>
+        <mat-label>Crew</mat-label>
+        <input matInput placeholder="Ex. Acme" formControlName="crew" />
+      </mat-form-field>
+      <!-- /Crew -->
+  
+      <!-- CreatedBy -->
+      <mat-form-field>
+        <mat-label>CreatedBy</mat-label>
+        <input matInput placeholder="Bul Cara Lazara" formControlName="createdBy" readonly/>
+      </mat-form-field>
+      <!-- /CreatedBy -->
+    </div>
+    <div>
+  
+      <!-- Notes -->
+      <mat-form-field>
+        <mat-label>Notes</mat-label>
+        <input matInput placeholder="Ex. 12" formControlName="notes" />
+      </mat-form-field>
+      <!-- /Notes -->
+  
+  
+      <!-- Company -->
+      <mat-form-field>
+        <mat-label>Company</mat-label>
+        <input matInput placeholder="Ex. 12345" formControlName="company" />
+        <mat-hint *ngIf="companyF">Required</mat-hint>
+      </mat-form-field>
+      <!-- /Company -->
+  
+  
+      <!-- PhoneNo -->
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Ex. Acme" formControlName="phoneNo" />
+        <mat-hint *ngIf="phoneF">Required</mat-hint>
+      </mat-form-field>
+      <!-- /PhoneNo -->
+  
+    </div>
+    <div class="button">
+        <button (click)="save()" class="btn btn-primary button">Next</button>
+    </div>
+    </mat-card>
+  </ng-container>
