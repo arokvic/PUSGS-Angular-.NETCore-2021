@@ -12,5 +12,7 @@ namespace PUSGS2021.Models
     public string NameAndLastname { get; set; }
     public string Type { get; set; }
 
+    public string ActiveStatus { get; set; }
+
   }
 }

@@ -118,6 +118,8 @@ namespace PUSGS2021.Controllers
     [Route("Login")]
     public IActionResult Login([FromBody] LoginModel loginForm)
     {
+
+      Console.WriteLine(loginForm.UserName + " " + loginForm.Password);
       if (loginForm == null)
       {
         return BadRequest("Invalid client request");
@@ -126,36 +128,44 @@ namespace PUSGS2021.Controllers
 
       foreach (UserModel user in _context.Users)
       {
+        /// Console.WriteLine(user.Activated);
         if (user.Username == loginForm.UserName && user.Password == loginForm.Password)
         {
-          var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretKeysdfsdfsdf"));
-          var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+          Console.WriteLine(user.ActiveStatus);
+          if (user.ActiveStatus.Trim(' ') == "Active")
+          {
+            Console.WriteLine("USAO SAM U LOGIN");
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretKeysdfsdfsdf"));
+            var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
-          var claims = new List<Claim>
+            var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Role, getRole(user)),
                         new Claim(ClaimTypes.Name, user.Username)
                     };
 
-          var tokenOptions = new JwtSecurityToken(
-              issuer: "https://localhost:5001",
-              audience: "https://localhost:5001",
-              claims: claims,
-              expires: DateTime.Now.AddMinutes(60),
-              signingCredentials: signingCredentials
-              );
+            var tokenOptions = new JwtSecurityToken(
+                issuer: "https://localhost:5001",
+                audience: "https://localhost:5001",
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(60),
+                signingCredentials: signingCredentials
+                );
 
-          var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
 
-          CurrentUserModel loggedInUser = new CurrentUserModel
-          {
-            Token = tokenString,
-            Username = user.Username,
-            NameAndLastname = user.NameAndLastname,
-            Type = user.UserType
-          };
+            CurrentUserModel loggedInUser = new CurrentUserModel
+            {
+              Token = tokenString,
+              Username = user.Username,
+              NameAndLastname = user.NameAndLastname,
+              Type = user.UserType,
+              ActiveStatus = user.ActiveStatus
+            };
+            Console.WriteLine(user.ActiveStatus);
 
-          return Ok(loggedInUser);
+            return Ok(loggedInUser);
+          }
         }
       }
 
@@ -173,7 +183,7 @@ namespace PUSGS2021.Controllers
       }
       UserModel u1 = new UserModel();
       u1 = userF;
-
+      u1.ActiveStatus = "Inactive";
       _context.Users.Add(u1);
       await _context.SaveChangesAsync();
 
@@ -203,7 +213,8 @@ namespace PUSGS2021.Controllers
         Token = tokenString,
         Username = userF.Username,
         NameAndLastname = userF.NameAndLastname,
-        Type = userF.UserType
+        Type = userF.UserType,
+        ActiveStatus = userF.ActiveStatus
       };
 
       return Ok(loggedInUser);
@@ -445,5 +456,78 @@ namespace PUSGS2021.Controllers
       return memberUsers;
     }
 
+    [HttpGet]
+    [Route("UsersToBeVerified")]
+    public ActionResult<IEnumerable<UserModel>> GetUsersToBeVerified()
+    {
+      List<UserModel> users = new List<UserModel>();
+      foreach (var item in _context.Users)
+      {
+        Console.WriteLine(item.ActiveStatus.Length);
+        if (item.ActiveStatus.Length == 10)
+        {
+          users.Add(item);
+          Console.WriteLine(item.Username);
+        }
+        Console.WriteLine(users.Count);
+      }
+      return users;
+    }
+
+
+    [HttpPut]
+    [Route("Accept")]
+    public async Task<ActionResult<UserModel>> Accept(string username)
+    {
+      Console.WriteLine("usao");
+
+      UserModel u1 = new UserModel();
+      foreach (UserModel user in _context.Users)
+      {
+        if (user.Username == username)
+        {
+          u1 = user;
+          user.ActiveStatus = "Active";
+          break;
+
+        }
+      }
+      u1.ActiveStatus = "Active";
+      await _context.SaveChangesAsync();
+      // sendEmail(u1.Email, "Accepted");
+      return CreatedAtAction("GetUsers", u1);
+
+    }
+    [HttpPut]
+    [Route("Decline")]
+    public async Task<ActionResult<UserModel>> Decline(string username)
+    {
+      Console.WriteLine("usao");
+      UserModel u1 = new UserModel();
+      foreach (UserModel user in _context.Users)
+      {
+        if (user.Username == username)
+        {
+          u1 = user;
+          user.ActiveStatus = "Refused";
+          break;
+
+        }
+      }
+      u1.ActiveStatus = "Refused";
+      await _context.SaveChangesAsync();
+      //  sendEmail(u1.Email, "Refused");
+      return CreatedAtAction("GetUsers", u1);
+
+    }
+
+
   }
+
+
+
+
+
+
 }
+
