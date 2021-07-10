@@ -3,7 +3,7 @@
     height: 100%;
     margin-top: 40px;
     margin-left: 20px;
-    position: relative;
+    position: absolute;
 }
 
 .tekst{
@@ -18,11 +18,44 @@
 
 .switchingPlans{
     height: 100px;
-    width: 50px;
-    position: fixed;
-    bottom: 200;
-    right: 220;
-    width: 300px;
+    position: absolute;
+    top: 150px;
+    left: 550px;
+    width: 240px;
     border: 3px solid #216ead;
     text-align: center;
+    background-color:antiquewhite ;
+}
+
+.safety-documents{
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    left: 850px;
+    width: 240px;
+    border: 3px solid #216ead;
+    text-align: center;
+    background-color:antiquewhite ;
+
+}.incidents{
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    width: 240px;
+    border: 3px solid #216ead;
+    text-align: center;
+    background-color:antiquewhite ;
+
+}
+.work-requests{
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    left: 850px;
+    width: 240px;
+    border: 3px solid #216ead;
+    text-align: center;
+    background-color:antiquewhite ;
+
 }

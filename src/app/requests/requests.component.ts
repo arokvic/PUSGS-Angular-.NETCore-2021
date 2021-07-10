@@ -11,6 +11,7 @@ export class RequestsComponent implements OnInit {
   public allUsers : UserRequest[] = [];
   public page = 10;
   public pageSize = 5;
+  cp: number = 1;
 
   constructor(private userService: UserService) { }
 

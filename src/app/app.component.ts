@@ -54,27 +54,7 @@ export class AppComponent{
       showOnDesktop: true
     },
     */
-    {
-      label: 'Switching plan',
-      icon: 'developer_board',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: 'Safety document',
-      icon: 'developer_board',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: 'Work request',
-      icon: 'developer_board',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
+    
     {
       label: 'Elements',
       icon: 'home',
@@ -153,27 +133,7 @@ export class AppComponent{
       showOnDesktop: true
     },
     */
-    {
-      label: 'Switching plan',
-      icon: 'developer_board',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: 'Safety document',
-      icon: 'developer_board',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: 'Work request',
-      icon: 'developer_board',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
+    
     {
       label: 'Elements',
       icon: 'home',
@@ -244,13 +204,7 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },
-    {
-      label: 'New incident',
-      icon: 'sentiment_very_dissatisfied',
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    }
+    
   
   ];
 

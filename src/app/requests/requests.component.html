@@ -12,7 +12,8 @@
       </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of allUsers | slice: (page-1) * pageSize : page * pageSize">
+      <tr *ngFor="let user of allUsers | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+
       <td>{{user.username}}</td>
       <td>{{user.nameAndLastname}}</td>
       <td>{{formatDate(user.birthDate)}}</td>
@@ -23,13 +24,9 @@
   </tbody>
   </table>
 
+  <pagination-controls (pageChange)="cp = $event"></pagination-controls>
+  
   <br> <br>
-<div class="container__pagination">
-  <ngb-pagination 
-    [(page)]="page"
-    [pageSize]="pageSize"
-    [collectionSize]="allUsers.length"></ngb-pagination>
-  </div>
 
   <div class="container">
 

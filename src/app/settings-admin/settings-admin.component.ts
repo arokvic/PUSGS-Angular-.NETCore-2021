@@ -37,6 +37,7 @@ export class SettingsAdminComponent implements OnInit {
   });
 
   selected:string[] = [];
+  select:string = "";
  
 
   constructor(private router:Router, private http:HttpClient, private userService:UserService, private settingsService:SettingsService) { }
@@ -84,9 +85,9 @@ export class SettingsAdminComponent implements OnInit {
 
   onSubmit2(){
     this.selected = this.notForm.value.type;
-    console.log(this.selected[0]);
-    this.settingsService.visibleNotifications(this.selected[0]);
-    console.log(this.selected);
+    this.select = this.notForm.value.type;
+
+    this.settingsService.visibleNotifications(this.select);
 
   }
 
