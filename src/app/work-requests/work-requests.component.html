@@ -14,7 +14,7 @@
               <th scope="col">Address</th>
           </tr>
         </thead>
-      <tbody>
+      <!--<tbody>
         <tr *ngFor="let workRequest of workRequests | slice: (page-1) * pageSize : page * pageSize">
           <td>{{workRequest.id.toString()}}</td>
           <td>{{formatDate(workRequest.startDate)}}</td>
@@ -23,16 +23,21 @@
           <td>{{workRequest.street}}</td>
         </tr>
       </tbody>
+    -->
+    <tbody>
+      <tr *ngFor="let workRequest of workRequests | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+        <td>{{workRequest.id.toString()}}</td>
+        <td>{{formatDate(workRequest.startDate)}}</td>
+        <td>{{workRequest.type}}</td>
+        <td>{{workRequest.status}}</td>
+        <td>{{workRequest.street}}</td>
+      </tr>
+    </tbody>
     </table>
-  
+    <pagination-controls (pageChange)="cp = $event"></pagination-controls>
+  </div>
       <br> <br>
-    <div class="container__pagination">
-      <ngb-pagination 
-        [(page)]="page"
-        [pageSize]="pageSize"
-        [collectionSize]="workRequests.length"></ngb-pagination>
-    </div>
-    </div>
+    
     
   
 

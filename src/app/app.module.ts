@@ -90,7 +90,10 @@ import { ElementsPageComponent } from './elements-page/elements-page.component';
 import { CreateElementComponent } from './create-element/create-element.component';
 export function getToken() {
   return localStorage.getItem("jwt");
+
 }
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -183,6 +186,7 @@ export function getToken() {
     MatDatepickerModule,
     NgSelectModule,
     MatCardModule,
+    NgxPaginationModule,
     LeafletModule,
     JwtModule.forRoot({
       config: {

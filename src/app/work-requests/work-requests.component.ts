@@ -12,12 +12,13 @@ import { WrInteractionService } from '../services/wr-interaction.service';
 })
 export class WorkRequestsComponent implements OnInit {
 
-  public page = 10;
-  public pageSize = 10;
+  public page = 3;
+  public pageSize = 3;
 
 
   workRequests: WorkRequest[] = [];
 
+  cp: number = 1;
   constructor(private router:Router, private documentService:DocumentWrService, private wrService:WrInteractionService) { }
 
   ngOnInit(): void {
