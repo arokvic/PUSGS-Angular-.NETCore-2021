@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SharedService } from '../services/shared.service';
+import { DocumentService } from '../services/document.service';
+import { SwitchingPlan } from '../entities/switchingPlan';
 
 @Component({
   selector: 'app-basic-information',
@@ -26,11 +28,19 @@ export class BasicInformationComponent implements OnInit {
   public userCreated = "";
   public component = "basic-info";
   public toNavbar = [this.basicInfoForm, this.component];
- 
+  public allSp: SwitchingPlan[] = [];
 
-  constructor(private router: Router, private _sharedService: SharedService) { }
+  constructor(private router: Router, private _sharedService: SharedService, private docService : DocumentService) { }
 
   ngOnInit(): void {
+
+    this.docService.getSwitchingPlans().subscribe(data=> {
+      this.allSp = data;
+      console.log(this.allSp);
+
+
+    })
+
      console.log(localStorage.username);
     this.userCreated = localStorage.username;
     

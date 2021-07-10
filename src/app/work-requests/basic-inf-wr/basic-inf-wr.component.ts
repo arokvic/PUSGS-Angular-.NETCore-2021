@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { WorkRequest } from 'src/app/entities/workRequest';
 //import { SwpInteractionService } from 'src/app/services/switching-plan/swp-interaction.service';
 import { WrInteractionService } from 'src/app/services/wr-interaction.service';
-
+import {Incident} from 'src/app/entities/incident';
+import { Inc1Service } from 'src/app/services/inc1.service';
 @Component({
   selector: 'app-basic-inf-wr',
   templateUrl: './basic-inf-wr.component.html',
@@ -24,11 +25,17 @@ export class BasicInfWrComponent implements OnInit {
   companyF:boolean = false;
   phoneF:boolean = false;
   badDate:boolean = false;
+  public allIncidents: Incident[] = [];
 
 
-  constructor(private rootFormGroup: FormGroupDirective, private router:Router, private wrService:WrInteractionService ) { }
+  constructor(private rootFormGroup: FormGroupDirective, private router:Router, private wrService:WrInteractionService,private  inc : Inc1Service ) { }
 
   ngOnInit(): void {
+    this.inc.getIncidents().subscribe(data=>{
+      this.allIncidents = data;
+      console.log(this.allIncidents);
+
+    })
     this.form = this.rootFormGroup.control.get('basicInfo') as FormGroup
   }
 

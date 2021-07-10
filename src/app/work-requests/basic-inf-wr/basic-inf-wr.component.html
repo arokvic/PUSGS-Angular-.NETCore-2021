@@ -41,6 +41,15 @@
         </mat-form-field>
       -->
       <!-- /Incident -->
+
+      <select class='select-option' formControlName="incident" 
+      #mySelect
+      >
+     <option class='option' 
+     *ngFor='let option of allIncidents' 
+     [value]="option.id">{{option.id}}</option>
+      </select>
+  
   
       <!-- Street -->
       <mat-form-field>

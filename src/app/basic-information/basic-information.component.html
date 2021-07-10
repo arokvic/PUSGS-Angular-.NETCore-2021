@@ -20,11 +20,27 @@
         <span class="mojaOpcija" class="span-bold">Draft</span>
         </div>
 
+
         <div class="container__element">
+            <label class="mojaLabela">Status:
+            
+            </label>
+            <select class='select-option' formControlName="switchingPlan" 
+            #mySelect
+            >
+           <option class='option' 
+           *ngFor='let option of allSp' 
+           [value]="option.id">{{option.id}}</option>
+            </select>
+
+
+        </div>
+
+      <!--   <div class="container__element">
             <label class="mojaLabela">Switching plan:
             </label>
             <input class="mojaOpcija" type="text">
-        </div>
+        </div>-->
             <!--<div class="container__element">
             <label>Safety doc type:
             </label>
