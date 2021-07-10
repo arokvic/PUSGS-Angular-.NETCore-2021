@@ -88,11 +88,14 @@ import { HistoryComponent } from './switching-plans/history/history.component';
 import { EquipmentComponent } from './switching-plans/equipment/equipment.component';
 import { ElementsPageComponent } from './elements-page/elements-page.component';
 import { CreateElementComponent } from './create-element/create-element.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 export function getToken() {
   return localStorage.getItem("jwt");
 
 }
-import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -188,6 +191,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatCardModule,
     NgxPaginationModule,
     LeafletModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: getToken, 

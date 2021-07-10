@@ -9,25 +9,29 @@
      
       <mat-form-field>
         <mat-label>Reason</mat-label>
-        <input matInput placeholder="Voltage problems" formControlName="reason" />
+        <input matInput placeholder="" formControlName="reason" required />
+        <mat-hint class="text-danger"  *ngIf="reasonF">Required</mat-hint>
       </mat-form-field>
      
       <mat-form-field>
         <mat-label>Comment</mat-label>
-        <input matInput placeholder="" formControlName="comment" />
+        <input matInput placeholder="" formControlName="comment" required />
+        <mat-hint class="text-danger"  *ngIf="commentF">Required</mat-hint>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Hazard</mat-label>
-        <input matInput placeholder="" formControlName="hazard" />
+        <input matInput placeholder="" formControlName="hazard" required />
+        <mat-hint class="text-danger"  *ngIf="hazardF">Required</mat-hint>
       </mat-form-field>
       
-      <select class='select-option' formControlName="consumerId" 
+      <select class='select-option' formControlName="consumerId" required
     #mySelect
     (change)='onOptionsSelected(mySelect.value)'>
    <option class='option' 
    *ngFor='let option of allIncidents' 
    [value]="option.name">{{option.name}}</option>
+   <mat-hint class="text-danger"  *ngIf="consumerIdF">Required</mat-hint>
     </select>
   
     </div>

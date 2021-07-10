@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { Inc1Service } from '../services/inc1.service';
 import { WrInteractionService } from '../services/wr-interaction.service';
 import {Sort} from '@angular/material/sort';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+
 
 @Component({
   selector: 'app-incidents2',
@@ -13,6 +16,7 @@ import {Sort} from '@angular/material/sort';
 export class Incidents2Component implements OnInit {
 
 
+  cause : any;
   allIncidents : Incident [] = [];
   allIncidents2 : Incident [] = [];
   sortedData: Incident[] = [];
@@ -97,7 +101,30 @@ export class Incidents2Component implements OnInit {
   }
   
 
-  
+ 
+  Search(){
+    console.log("asdaddadasa");
+    console.log(this.cause);
+    if (this.cause === ''){
+      console.log ("prazno");
+      this.ngOnInit();
+    } 
+    else {
+      console.log ("nije prazno");
+      this.allIncidents = this.allIncidents.filter(res => {
+        return res.cause.toLocaleLowerCase().match(this.cause.toLocaleLowerCase());
+        
+      });
+      console.log(this.allIncidents);
+    }
+  }
+  key  : string= 'id';
+  reverse : boolean = false;
+  sort (key : any){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
 }
 
 

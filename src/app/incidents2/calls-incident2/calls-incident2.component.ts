@@ -20,6 +20,11 @@ export class CallsIncident2Component implements OnInit {
    private router:Router
    ,private swp:SwpInteractionService, private consumerService : ConsumerService) { }
 
+
+   hazardF:boolean = false;
+   commentF:boolean = false;
+   consumerIdF:boolean = false;
+   reasonF:boolean = false;
    callsForm!:FormGroup
    public allIncidents: Consumer[] = [];
   
@@ -49,9 +54,10 @@ export class CallsIncident2Component implements OnInit {
 
    // console.log(this.basicform.controls.typeOfInc.value + this.basicform.controls.Id.value);
    // console.log(this.resolutionForm.controls.cause.value + this.basicform.controls.subcause.value);
-
+    if (this.validate()){
     this.wrservice.sendMessage(4);
     this.router.navigate(['/incidents/new/multimedia']);
+    }
 
   }
 
@@ -82,6 +88,39 @@ export class CallsIncident2Component implements OnInit {
         console.log(this.consumer);
     
 }
+
+
+validate():boolean {
+  let retVal = true;
+  if(this.callsForm.controls.reason.hasError('required')){
+    this.reasonF = true;
+    retVal = false;
+  }else{
+    this.reasonF = false;
+  }
+  if(this.callsForm.controls.hazard.hasError('required')){
+    this.hazardF = true;
+    retVal = false;
+  }else{
+    this.hazardF = false;
+  }
+  if(this.callsForm.controls.consumerId.hasError('required')){
+    this.consumerIdF = true;
+    retVal = false;
+  }else{
+    this.consumerIdF = false;
+  }
+  if(this.callsForm.controls.comment.hasError('required')){
+    this.commentF = true;
+    retVal = false;
+  }else{
+    this.commentF = false;
+  }
+
+
+  return retVal;
+
 }
 
 
+}

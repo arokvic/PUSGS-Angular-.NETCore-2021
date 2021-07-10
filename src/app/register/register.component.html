@@ -1,6 +1,7 @@
 
 <div class="registerDiv" >
     <div *ngIf="succes" class="alert alert-success">Registration request sent</div>
+   
     <form class="register-form" #registerForm="ngForm" (ngSubmit)="register(profileForm)" [formGroup]="profileForm">
         <table id="registerTable">
             <tr>
@@ -10,45 +11,95 @@
             </tr>
             <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
             <tr id="usernameInput">
-                <td> <input type="text" placeholder="Username" id="username-input"  name="username" required class="form-control" formControlName="username" ></td>
-            </tr>
+                <div>
+                <td> <input type="text" placeholder="Username" id="username-input"  name="username" required class="form-control" formControlName="username" minlength="4" [ngClass]="{'is-invalid' : profileForm.get('username').touched && profileForm.get('username').invalid}" ></td>
+                                             
+            <div class="text-danger" *ngIf = "profileForm.get('username').touched && profileForm.get('username').invalid" >
+                
+               <div>Username is required</div>   
+               <div *ngIf="invalidLogin">Username already exists</div>  
+            </div>
+            <div  class="text-danger" *ngIf="invalidLogin">Username already exists</div>  
+        </div>
+      
+    
             
+          
             <tr id="passwordInput">
-               <td><input type="password" placeholder=" Password" id="password-input"  [(ngModel)]="pass1" ngModel name="password" required class="form-control" formControlName="password" ></td> 
+               <td><input type="password" placeholder=" Password" id="password-input"  [(ngModel)]="pass1" ngModel name="password" required class="form-control" formControlName="password" minlength="6" [ngClass]="{'is-invalid' : profileForm.get('password').touched && profileForm.get('password').invalid}" ></td> 
             </tr>
+            <div class="text-danger" *ngIf = "profileForm.get('password').touched && profileForm.get('password').invalid" >
+                
+                <div *ngIf = "profileForm.get('password').errors.required">Password is required</div>    
+                <div *ngIf = "profileForm.get('password').errors.minlength">Password must be at least 6 characters long</div>
+                  
+                
+             </div>
 
             <tr id="passwordInput2">
-                <td><input type="password" placeholder="Confirm password" id="password-input"  [(ngModel)]="pass2" ngModel name="password2" required class="form-control" formControlName="password2" ></td> 
+                <td><input type="password" placeholder="Confirm password" id="password-input"  [(ngModel)]="pass2" ngModel name="password2" required class="form-control" formControlName="password2" minlength="6" [ngClass]="{'is-invalid' : profileForm.get('password2').touched && profileForm.get('password2').invalid}" ></td> 
                 <div  *ngIf=confirmPass><p class="text-danger">Passwords must match</p></div>
              </tr>
+             <div class="text-danger" *ngIf = "profileForm.get('password2').touched && profileForm.get('password2').invalid" >
+                
+                <div *ngIf = "profileForm.get('password2').errors.required">Password is required</div>    
+                <div *ngIf = "profileForm.get('password2').errors.minlength">Password must be at least 6 characters long</div>    
+                
+             </div>
 
             <tr id="emailInput">
-                <td><input type="email" placeholder="Email" id="email-input" class="form-control" ngModel required  formControlName="email"  ></td> 
+                <td><input type="email" placeholder="Email" id="email-input" class="form-control" ngModel required  formControlName="email" ngModel email [ngClass]="{'is-invalid' : profileForm.get('email').touched && profileForm.get('email').invalid}"  ></td> 
              </tr>
+             <div class="text-danger" *ngIf = "profileForm.get('email').touched && profileForm.get('email').invalid" >
+                
+                <div *ngIf = "profileForm.get('email').errors.required">Email is required</div>    
+                <div *ngIf = "profileForm.get('email').errors.email">Email must be valid</div>    
+                
+             </div>
+             
 
              <tr id="nameInput">
-                <td><input type="text" placeholder="Name" id="name-input" name="nameandlastname" class="form-control" required formControlName="name" ></td> 
+                <td><input type="text" placeholder="Name" id="name-input" name="nameAndLastName" class="form-control" required formControlName="nameAndLastName" [ngClass]="{'is-invalid' : profileForm.get('nameAndLastName').touched && profileForm.get('nameAndLastName').invalid}" ></td> 
              </tr>
+             <div class="text-danger" *ngIf = "profileForm.get('nameAndLastName').touched && profileForm.get('nameAndLastName').invalid" >
+                
+                <div>Name is required</div>   
+           
+             </div>
              <tr id="addressInput">
-                <td><input type="text" placeholder="Adress" id="address-input" ngModel name="address" class="form-control" required formControlName="address" ></td> 
+                <td><input type="text" placeholder="Adress" id="address-input" ngModel name="address" class="form-control" required formControlName="address" [ngClass]="{'is-invalid' : profileForm.get('address').touched && profileForm.get('address').invalid}" ></td> 
              </tr>
+             <div class="text-danger" *ngIf = "profileForm.get('address').touched && profileForm.get('address').invalid" >
+                
+                <div>Address is required</div>   
+           
+             </div>
 
              <tr id="birthDate">
-                <td><input type="date" placeholder="Birth date" id="birth-date" ngModel name="birthdate" class="form-control" required formControlName="birth" ></td>
+                <td><input type="date" placeholder="Birth date" id="birth-date" ngModel name="birthDate" class="form-control" required formControlName="birthDate" [ngClass]="{'is-invalid' : profileForm.get('birthDate').touched && profileForm.get('birthDate').invalid}" ></td>
                
              </tr>
+             <div class="text-danger" *ngIf = "profileForm.get('birthDate').touched && profileForm.get('birthDate').invalid" >
+                
+                <div>Birth date is required</div>   
+           
+             </div>
 
              <tr id="role">
                 <td> 
-                    <select id="inputState" ngModel class="form-control" name="usertype" formControlName="usertype">
-                    <option selected>Worker</option>
+                    <select id="inputState" ngModel class="form-control" name="usertype" formControlName="usertype" [ngClass]="{'is-invalid' : profileForm.get('usertype').touched && profileForm.get('usertype').invalid}">
+                    <option selected="selected">Worker</option>
                     <option>Team member</option>
                     <option>Dispatcher</option>
                     
                   </select>
                 </td> 
              </tr>
-
+             <div class="text-danger" *ngIf = "profileForm.get('usertype').touched && profileForm.get('usertype').invalid" >
+                
+                <div>User type is required </div>   
+           
+             </div>
              <tr id="upload">
                 <td>
                    
@@ -58,7 +109,7 @@
 
                             <div class="col-md-6" style="margin-bottom:15px;">
                                 <div class="col-md-6">
-                                  <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;" accept="image/*" ngModel name="imagedata" class="form-control"  (change)="handleFileInput($event)" required formControlName="imagedata">
+                                  <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;" accept="image/*" ngModel name="imagedata" class="form-control"  (change)="handleFileInput($event)" required formControlName="imagedata" >
                                   <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
                                 </div>
         
@@ -82,7 +133,7 @@
              <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
              <tr>
                 <td>
-                    <input id="submitBtn" type="submit" value="Submit">
+                    <input id="submitBtn" type="submit" value="Submit" [disabled]="profileForm.invalid">
                 </td>
             </tr>
         </table>   

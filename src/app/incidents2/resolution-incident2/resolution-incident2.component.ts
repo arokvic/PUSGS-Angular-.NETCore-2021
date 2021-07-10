@@ -17,6 +17,11 @@ export class ResolutionIncident2Component implements OnInit {
     private router:Router
     ,private swp:SwpInteractionService) { }
 
+
+    causeF:boolean = false;
+    subcauseF:boolean = false;
+    constTypeF:boolean = false;
+    materialF:boolean = false;
     resolutionForm!:FormGroup
 
   ngOnInit(): void {
@@ -25,9 +30,44 @@ export class ResolutionIncident2Component implements OnInit {
 
   save(){
 
+    if (this.validate()){
     console.log(this.resolutionForm.controls.cause);
     this.wrservice.sendMessage(3);
     this.router.navigate(['/incidents/new/calls']);
+    }
 
+  }
+
+
+  validate():boolean {
+    let retVal = true;
+    if(this.resolutionForm.controls.cause.hasError('required')){
+      this.causeF = true;
+      retVal = false;
+    }else{
+      this.causeF = false;
+    }
+    if(this.resolutionForm.controls.subcause.hasError('required')){
+      this.subcauseF = true;
+      retVal = false;
+    }else{
+      this.subcauseF = false;
+    }
+    if(this.resolutionForm.controls.constructionType.hasError('required')){
+      this.constTypeF = true;
+      retVal = false;
+    }else{
+      this.constTypeF = false;
+    }
+    if(this.resolutionForm.controls.material.hasError('required')){
+      this.materialF = true;
+      retVal = false;
+    }else{
+      this.materialF = false;
+    }
+  
+  
+    return retVal;
+  
   }
 }

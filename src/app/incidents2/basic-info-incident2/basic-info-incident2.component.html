@@ -1,132 +1,139 @@
 <ng-container [formGroup]="basicInfo">
-    <mat-card class="form-container">
-    <div>
-      <mat-card-title class="title">Basic Info</mat-card-title>
-    </div>
-    <div>
-  
-      <!-- Type -->
-      <mat-form-field>
-        <mat-select placeholder="Select type" formControlName="typeOfInc">
-            <mat-option value="PlannedWork">Planned Work</mat-option>
-            <mat-option value="UnplanedWork">Unplanned Work</mat-option>
-        </mat-select>
-     
-      </mat-form-field>
-      <!-- /Type -->
-  
-      <!-- Work Request -->
-      <mat-form-field>
-        <mat-label>Priority</mat-label>
-        <input matInput placeholder="Ex. 1" formControlName="priority" />
-      </mat-form-field>
-      <!-- /Work Request -->
-  
-  
-      <!-- Status -->
-      <mat-form-field>
-        <mat-label>Status</mat-label>
-        <input matInput placeholder="Ex. 12345" formControlName="status" />
-      </mat-form-field>
-      <!-- /Status -->
-    </div>
-    <div>
-      <!-- Incident -->
-      <mat-form-field>
-        <mat-label>Confirmed</mat-label>
-        <mat-select placeholder="Select type" formControlName="confirmed">
-            <mat-option value="yes">Yes</mat-option>
-            <mat-option value="no">No</mat-option>
-        </mat-select>
-       
-      </mat-form-field>
-      <!-- /Incident -->
-  
-      <!-- Street -->
-      <mat-form-field>
-        <mat-label>Affected customers</mat-label>
-        <input matInput placeholder="Ex. 1" formControlName="affectedCustomers" />
-       
-      </mat-form-field>
-      <!-- /Street -->
-  
-      <!-- Start Date -->
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker1" formControlName="eta" placeholder="ETA">    
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>    
-        <mat-datepicker touchUi="true" #picker1></mat-datepicker>
-       
-      </mat-form-field>
-      <!-- /Start Date -->
-    </div>
-    <div>
-  
-      <!-- End Date -->
- 
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker2" formControlName="ata" placeholder="ATA">    
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>    
-        <mat-datepicker touchUi="true" #picker2></mat-datepicker>
-      
-      </mat-form-field>
-      <!-- /End Date -->
-  
+  <mat-card class="form-container">
+  <div>
+    <mat-card-title class="title">Basic Info</mat-card-title>
+  </div>
+  <div>
 
-       <!-- End Date -->
- 
-       <mat-form-field>
-        <input matInput [matDatepicker]="picker3" formControlName="etr" placeholder="ETR">    
-        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>    
-        <mat-datepicker touchUi="true" #picker3></mat-datepicker>
-       
-      </mat-form-field>
-      <!-- /End Date -->
-
-  
- <!-- End Date -->
- 
- <mat-form-field>
-    <input matInput [matDatepicker]="picker4" formControlName="outageTime" placeholder="Outage time">    
-    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>    
-    <mat-datepicker touchUi="true" #picker4></mat-datepicker>
+    <!-- Type -->
+    <mat-form-field>
+      <mat-select placeholder="Select type" formControlName="typeOfInc" required>
+          <mat-option value="PlannedWork">Planned Work</mat-option>
+          <mat-option value="UnplanedWork">Unplanned Work</mat-option>
+          <mat-hint class="text-danger"  *ngIf="typeF">Required</mat-hint>
+      </mat-select>
    
-  </mat-form-field>
-  <!-- /End Date -->
+    </mat-form-field>
+    <!-- /Type -->
 
-      <!-- Calls -->
+    <!-- Work Request -->
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <input matInput placeholder="Ex. 1" formControlName="priority" required />
+      <mat-hint class="text-danger"  *ngIf="priorityF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /Work Request -->
+
+
+    <!-- Status -->
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <input matInput placeholder="Ex. 12345" formControlName="status" required />
+      <mat-hint class="text-danger"  *ngIf="statusF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /Status -->
+  </div>
+  <div>
+    <!-- Incident -->
+    <mat-form-field>
+      <mat-label>Confirmed</mat-label>
+      <mat-select placeholder="Select type" formControlName="confirmed" required>
+          <mat-option value="yes">Yes</mat-option>
+          <mat-option value="no">No</mat-option>
+      </mat-select>
+      <mat-hint class="text-danger"  *ngIf="confirmedF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /Incident -->
+
+    <!-- Street -->
+    <mat-form-field>
+      <mat-label>Affected customers</mat-label>
+      <input matInput placeholder="Ex. 1" formControlName="affectedCustomers" required />
+      <mat-hint class="text-danger"  *ngIf="confirmedF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /Street -->
+
+    <!-- Start Date -->
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" formControlName="eta" placeholder="ETA" required>    
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>    
+      <mat-datepicker touchUi="true" #picker1></mat-datepicker>
+      <mat-hint class="text-danger"  *ngIf="etaF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /Start Date -->
+  </div>
+  <div>
+
+    <!-- End Date -->
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" formControlName="ata" placeholder="ATA" required>    
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>    
+      <mat-datepicker touchUi="true" #picker2></mat-datepicker>
+      <mat-hint class="text-danger"  *ngIf="ataF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /End Date -->
+
+
+     <!-- End Date -->
+
+     <mat-form-field>
+      <input matInput [matDatepicker]="picker3" formControlName="etr" placeholder="ETR" required>    
+      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>    
+      <mat-datepicker touchUi="true" #picker3></mat-datepicker>
+      <mat-hint  class="text-danger"  *ngIf="etrF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /End Date -->
+
+
+<!-- End Date -->
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker4" formControlName="outageTime" placeholder="Outage time" required>    
+  <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>    
+  <mat-datepicker touchUi="true" #picker4></mat-datepicker>
+  <mat-hint class="text-danger"  *ngIf="outageTimeF">Required</mat-hint>
+ 
+</mat-form-field>
+<!-- /End Date -->
+
+    <!-- Calls -->
+    <mat-form-field>
+      <mat-label>Calls</mat-label>
+      <input matInput placeholder="Ex. 3" formControlName="calls" required/>
+      <mat-hint class="text-danger"  *ngIf="callsF">Required</mat-hint>
+    </mat-form-field>
+    <!-- Calls -->
+
+    <!-- CreatedBy -->
+    <mat-form-field>
+      <mat-label>CreatedBy</mat-label>
+      <input matInput placeholder="Me"  formControlName="assignedTo"required />
+      <mat-hint class="text-danger"  *ngIf="assignedToF">Required</mat-hint>
+    </mat-form-field>
+    <!-- /CreatedBy -->
+  </div>
+  <div>
+
       <mat-form-field>
-        <mat-label>Calls</mat-label>
-        <input matInput placeholder="Ex. 3" formControlName="calls" />
-      </mat-form-field>
-      <!-- Calls -->
-  
-      <!-- CreatedBy -->
-      <mat-form-field>
-        <mat-label>CreatedBy</mat-label>
-        <input matInput placeholder="Me"  formControlName="assignedTo" />
-      </mat-form-field>
-      <!-- /CreatedBy -->
-    </div>
-    <div>
-  
+          <mat-label>Voltage level</mat-label>
+          <input matInput placeholder="Ex. 300" formControlName="voltageLevel" required />
+          <mat-hint class="text-danger"  *ngIf="voltageLevelF">Required</mat-hint>
+        </mat-form-field>
+
         <mat-form-field>
-            <mat-label>Voltage level</mat-label>
-            <input matInput placeholder="Ex. 300" formControlName="voltageLevel" />
-          </mat-form-field>
+          <input matInput [matDatepicker]="picker5" formControlName="scheduledTime" placeholder="Scheduled time" required>    
+          <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>    
+          <mat-datepicker touchUi="true" #picker5></mat-datepicker>
+          <mat-hint class="text-danger"  *ngIf="scheduledTimeF">Required</mat-hint>
+        </mat-form-field>
 
-          <mat-form-field>
-            <input matInput [matDatepicker]="picker5" formControlName="scheduledTime" placeholder="Scheduled time">    
-            <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>    
-            <mat-datepicker touchUi="true" #picker5></mat-datepicker>
-         
-          </mat-form-field>
-  
-  
-     
-  
-    </div>
-    <div class="button">
-        <button (click)="save()" class="btn btn-primary button">Next</button>
-    </div>
-    </mat-card>
-  </ng-container>
+
+   
+
+  </div>
+  <div class="button">
+      <button (click)="save()" class="btn btn-primary button">Next</button>
+  </div>
+  </mat-card>
+</ng-container>

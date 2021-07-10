@@ -1,49 +1,55 @@
 <ng-container [formGroup]="resolutionForm">
-    <mat-card class="form-container">
-    <div>
-      <mat-card-title class="title">Resolution</mat-card-title>
-    </div>
-    <div>
-  
-      <!-- Type -->
-      <mat-form-field>
-        <mat-select placeholder="Select Cause" formControlName="cause">
-            <mat-option value="Weather">Weather</mat-option>
-            <mat-option value="Human Mistake">Human mistake</mat-option>
-        </mat-select>
-     
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Select Subcause" formControlName="subcause">
-            <mat-option value="Lightning" >Planned Work</mat-option >
-            <mat-option value="Wind">Unplanned Work</mat-option>
-         
-        </mat-select>
-     
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Select construction type" formControlName="constructionType">
-            <mat-option value="Aboveground">Aboveground</mat-option>
-            <mat-option value="Underground">Underground</mat-option>
-        </mat-select>
-     
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Select Material" formControlName="material">
-            <mat-option value="Plastic">Planned Work</mat-option>
-            <mat-option value="Metal">Unplanned Work</mat-option>
-        </mat-select>
-     
-      </mat-form-field>
-      <!-- /Type -->
-  
-      <!-- Work Request -->
-      
-     
-  
-    </div>
-    <div class="button">
-        <button (click)="save()" class="btn btn-primary button">Next</button>
-    </div>
-    </mat-card>
-  </ng-container>
+  <mat-card class="form-container">
+  <div>
+    <mat-card-title class="title">Resolution</mat-card-title>
+  </div>
+  <div>
+
+    <!-- Type -->
+    <mat-form-field>
+      <mat-select placeholder="Select Cause" formControlName="cause" required>
+          <mat-option value="Weather">Weather</mat-option>
+          <mat-option value="Human Mistake">Human mistake</mat-option>
+          
+      </mat-select>
+      <mat-hint class="text-danger"  *ngIf="causeF">Required</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select Subcause" formControlName="subcause" required>
+          <mat-option value="Lightning" >Planned Work</mat-option >
+          <mat-option value="Wind">Unplanned Work</mat-option>
+          
+      </mat-select>
+      <mat-hint class="text-danger"  *ngIf="subcauseF">Required</mat-hint>
+       
+   
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select construction type" formControlName="constructionType" required>
+          <mat-option value="Aboveground">Aboveground</mat-option>
+          <mat-option value="Underground">Underground</mat-option>
+          
+      </mat-select>
+      <mat-hint class="text-danger"  *ngIf="constTypeF">Required</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select Material" formControlName="material" required>
+          <mat-option value="Plastic">Planned Work</mat-option>
+          <mat-option value="Metal">Unplanned Work</mat-option>
+          
+      </mat-select>
+      <mat-hint class="text-danger"  *ngIf="materialF">Required</mat-hint>
+   
+    </mat-form-field>
+    <!-- /Type -->
+
+    <!-- Work Request -->
+    
+   
+
+  </div>
+  <div class="button">
+      <button (click)="save()" class="btn btn-primary button">Next</button>
+  </div>
+  </mat-card>
+</ng-container>

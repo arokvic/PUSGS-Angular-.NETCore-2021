@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import {User} from '../entities/user';
 
 @Component({
   selector: 'app-register',
@@ -24,20 +26,21 @@ message : any;
 progress : any;
 fileToUpload: any;
 succes!: boolean;
+allUsers : User[] = [];
 
  
 @Output() public onUploadFinished = new EventEmitter();
 
-  constructor(private router: Router, private http: HttpClient, private fb: FormBuilder) { 
+  constructor(private router: Router, private http: HttpClient, private fb: FormBuilder, private userService :UserService) { 
     this.profileForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],   
-      password2: ['', Validators.required],
+      password: ['', Validators.required, Validators.minLength(6)],   
+      password2: ['', Validators.required, Validators.minLength(6)],
         address: ['', Validators.required],
-        birth: ['', Validators.required],
+        birthDate: ['', Validators.required],
         usertype: ['', Validators.required],
-        name:['', Validators.required],
-        email: ['', Validators.required],
+        nameAndLastName:['', Validators.required],
+        email: ['', Validators.required, Validators.email],
         imagedata: ['', Validators.required],
   
   
@@ -48,11 +51,32 @@ succes!: boolean;
   }
 
   public register = (form: NgForm) => {
+    this.invalidLogin = false;
     if(this.pass1 != this.pass2){
       this.confirmPass=true;
       return;
     }
-    
+    var x = this.profileForm.controls["username"].value
+    var y = this.invalidLogin
+    this.userService.GetPendingUsers().subscribe(data=> {
+      this.allUsers = data;
+      console.log(this.allUsers);
+      console.log(x); 
+      this.allUsers.forEach(function (element) {
+        console.log(element);
+        if (element.username === x ){
+          console.log("true");
+          y = true;
+          
+
+        }
+      
+      });
+
+    })
+   
+
+    this.invalidLogin = y;
     
     console.log( "eee"+ this.profileForm.value.password);
     console.log( "eee"+ this.profileForm.value.password2);
