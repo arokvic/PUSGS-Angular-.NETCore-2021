@@ -86,6 +86,8 @@ import { InstructionsComponent } from './switching-plans/instructions/instructio
 import { CreateInstructionComponent } from './switching-plans/create-instruction/create-instruction.component';
 import { HistoryComponent } from './switching-plans/history/history.component';
 import { EquipmentComponent } from './switching-plans/equipment/equipment.component';
+import { ElementsPageComponent } from './elements-page/elements-page.component';
+import { CreateElementComponent } from './create-element/create-element.component';
 export function getToken() {
   return localStorage.getItem("jwt");
 }
@@ -145,6 +147,8 @@ export function getToken() {
     InstructionsComponent,
     CreateInstructionComponent,
     EquipmentComponent,
+    ElementsPageComponent,
+    CreateElementComponent,
 
   ],
   imports: [

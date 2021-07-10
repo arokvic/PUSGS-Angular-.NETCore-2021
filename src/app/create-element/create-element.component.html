@@ -1,0 +1,23 @@
+<form [formGroup]="elementForm">
+    <label>Name
+        <input type="text"  formControlName="elementName">
+    </label>
+    <label>Type <br>
+        <select name="types" id="types" formControlName="elementType">
+            <option value="prekidac">Prekidac</option>
+            <option value="diskonektor">Diskonektor</option>
+            <option value="transformator">Transformator</option>
+            <option value="audi">Osigurac</option>
+          </select>
+    </label>
+    <label>Address
+        <input type="text" formControlName="elementAddress">
+    </label>
+    <label>Coordinates
+        <input type="text" formControlName="elementCoordinates">
+    </label>
+    </form>
+    
+    <mat-dialog-actions>
+        <button mat-raised-button (click)="save()">Save</button>
+    </mat-dialog-actions>
