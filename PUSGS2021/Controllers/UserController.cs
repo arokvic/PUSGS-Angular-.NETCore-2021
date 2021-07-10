@@ -464,11 +464,10 @@ namespace PUSGS2021.Controllers
       foreach (var item in _context.Users)
       {
         Console.WriteLine(item.ActiveStatus.Length);
-        if (item.ActiveStatus.Length == 10)
-        {
+        
           users.Add(item);
           Console.WriteLine(item.Username);
-        }
+        
         Console.WriteLine(users.Count);
       }
       return users;

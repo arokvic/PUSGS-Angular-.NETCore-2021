@@ -10,8 +10,8 @@ using PUSGS2021.Data;
 namespace PUSGS2021.Migrations
 {
     [DbContext(typeof(DefaultConnection))]
-    [Migration("20210708223130_novaBazadsada")]
-    partial class novaBazadsada
+    [Migration("20210710144409_nova")]
+    partial class nova
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

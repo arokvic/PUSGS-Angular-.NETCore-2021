@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PUSGS2021.Migrations
 {
-    public partial class novaBazadsada : Migration
+    public partial class nova : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
