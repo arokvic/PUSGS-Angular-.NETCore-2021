@@ -11,7 +11,7 @@
   <div class="sve">
     <div class="not-content">
   <!--<div *ngFor="let notification of showNotifications | slice: (page-1) * pageSize : page * pageSize" ngDefaultControl>-->
-    <div *ngFor="let notification of showNotifications | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin" >
+    <div *ngFor="let notification of showNotifications | paginate: {itemsPerPage:2, currentPage: cp}" class="listMargin" >
       <div [ngStyle]="getBackgroundColor(notification.type)" [(ngModel)]="notification.id" (click)="finish(notification.id)" ngDefaultControl class  class="notification">
         <div class="text">{{notification.text}}</div> 
         <div class="date">{{notification.timeStamp}}</div>
@@ -23,7 +23,9 @@
         <br>
         <button (click)="clearAll()"  class="notButton" id = "submitBtn">Clear All</button>
       
-    </div>
+    </div><br>
+    <br>
+    <br>
     <pagination-controls (pageChange)="cp = $event"></pagination-controls>
   </div>
 </div>

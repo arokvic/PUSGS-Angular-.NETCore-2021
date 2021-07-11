@@ -11,8 +11,8 @@ import {NotificationService} from 'src/app/services/notification.service';
 export class NotificationsComponent implements OnInit {
   notifications: Notification[] = [];
   showNotifications: Notification[] = [];
-  page = 10;
-  pageSize = 4;
+  page = 2;
+  pageSize = 2;
   option:string = "All";
   cp: number = 1;
 
