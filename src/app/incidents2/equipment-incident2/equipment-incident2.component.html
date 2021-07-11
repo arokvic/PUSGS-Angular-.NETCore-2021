@@ -15,7 +15,7 @@
               </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let equip of allEelements" >          
+            <tr *ngFor="let equip of allEelements | paginate: {itemsPerPage:2, currentPage: cp}"  >          
               <td>{{equip.id}}</td>
               <td>{{equip.name}}</td>
               <td>{{equip.type}}</td>  
@@ -28,6 +28,8 @@
           </tbody>
          </table>
         </div>
+        <pagination-controls  (pageChange)="cp = $event"></pagination-controls>
+
         <div class="button">
             
             <button (click)="Save()" class="btn btn-primary button">Next</button>

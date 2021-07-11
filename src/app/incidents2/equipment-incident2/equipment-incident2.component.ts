@@ -21,6 +21,7 @@ export class EquipmentIncident2Component implements OnInit {
   elementsForm!:FormGroup;
   allEelements:Element[] = [];
   hlp : string = "";
+  cp: number = 1;
   constructor(private fb: FormBuilder,
     private wrservice: WrInteractionService,private rootFormGroup: FormGroupDirective,
    private router:Router
