@@ -19,3 +19,7 @@
 .mat-hint{
     color: red;
 }
+
+#input{
+    width: 50px;
+}

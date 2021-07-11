@@ -42,10 +42,10 @@
       -->
       <!-- /Incident -->
 
-      <select class='select-option' formControlName="incident" 
+      <select class='select-option' formControlName="incident" id='input'
       #mySelect
       >
-     <option class='option' 
+     <option class='option' id='input'
      *ngFor='let option of allIncidents' 
      [value]="option.id">{{option.id}}</option>
       </select>

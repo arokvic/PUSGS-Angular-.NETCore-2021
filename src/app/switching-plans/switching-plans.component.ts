@@ -12,7 +12,7 @@ import { SwpInteractionService } from '../services/swp-interaction.service';
 export class SwitchingPlansComponent implements OnInit {
   phone : any;
   status!: string;
-
+  type!: string;
   public page = 10;
   public pageSize = 10;
   sortedData: SwitchingPlan[] = [];
@@ -100,7 +100,7 @@ export class SwitchingPlansComponent implements OnInit {
     this.allswitchingPlans2 = this.allswitchingPlans;
     if (values.currentTarget.checked){
       this.allswitchingPlans = [];
-      this.documentService.getSwitchingPlans().subscribe(data => { this.allswitchingPlans = data;})
+      this.documentService.getMySwitchingPlans().subscribe(data => { this.allswitchingPlans = data;})
       
       
     }

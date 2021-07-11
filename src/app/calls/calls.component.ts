@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ElementsService } from '../services/elements.service';
 import { SharedService } from '../services/shared.service';
 import { Call} from '../entities/call';
+import { CallsService } from '../services/calls.service';
 @Component({
   selector: 'app-calls',
   templateUrl: './calls.component.html',
@@ -27,10 +28,11 @@ export class CallsComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private _sharedService: SharedService, private elementsService: ElementsService) { }
+  constructor(private router: Router, private _sharedService: SharedService, private elementsService: ElementsService, private calls: CallsService) { }
 
   ngOnInit(): void {
-    this.allCalls = [{callId: "299daskd", reason: "No electricity", hazard: "Strong wind", comment: "Popravi to vise"},{callId: "32132daskd", reason: "No electricity", hazard: "Strong wind", comment: "Ajj"} ]
+    //this.allCalls = [{callId: "299daskd", reason: "No electricity", hazard: "Strong wind", comment: "Popravi to vise"},{callId: "32132daskd", reason: "No electricity", hazard: "Strong wind", comment: "Ajj"} ]
+    this.calls.getCalls().subscribe(data => { this.allCalls = data;})
 
   }
 

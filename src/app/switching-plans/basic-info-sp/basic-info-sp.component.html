@@ -42,11 +42,11 @@
       <!-- Incident -->
       <mat-form-field>
         <mat-label>Incident</mat-label>
-        <input matInput placeholder="Ex. Acme" formControlName="incident" />
-        <select class='select-option' formControlName="incident" 
+        <input matInput placeholder="Ex. Acme" formControlName="incident" id='input'/>
+        <select class='select-option' formControlName="incident" id='input'
         #mySelect
         >
-       <option class='option' 
+       <option class='option' id='input'
        *ngFor='let option of allInc' 
        [value]="option.id">{{option.id}}</option>
         </select>

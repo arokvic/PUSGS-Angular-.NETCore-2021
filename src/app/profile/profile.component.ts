@@ -18,7 +18,6 @@ export class ProfileComponent implements OnInit {
     {name: "TeamMember"},
     {name: "Dispatcher"},
     {name: "Worker"},
-    {name: "Admin"}
   ]
 
   //control!: FormControl;

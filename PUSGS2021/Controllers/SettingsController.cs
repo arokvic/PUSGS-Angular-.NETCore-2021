@@ -104,7 +104,6 @@ namespace PUSGS2021.Controllers
 
     [HttpPut]
     [Route("ResetSettings")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<StreetModel>> ResetSettings()
     {
       var street1 = new StreetModel();

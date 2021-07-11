@@ -42,22 +42,7 @@
 
 </div>
 
-<div class="notifications">
-    <p class="title">Visible notifications </p>
-    
-<br><br>
-    <form [formGroup]="notForm" (ngSubmit)="onSubmit2()" id="userType-input">
-    
-<select formControlName='type' id="userType-input" class="form-control">
-  <option *ngFor="let opt of options" [value]="opt">
-    {{opt}}
-  </option>
-</select>
-<button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn22">Save Changes</button>
-</form>
-  
 
-</div>
 <button class="btn btn-lg btn-primary btn-block" style="margin: 5%;" (click)="resetSettings()" id="submitBtn1">Reset to default</button>
 </div>
 

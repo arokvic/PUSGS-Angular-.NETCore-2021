@@ -121,6 +121,22 @@ namespace PUSGS2021.Controllers
     }
 
     [HttpGet]
+    [Route("GetMySwitchingPlans")]
+    public ActionResult<IEnumerable<SwitchingPlanModel>> GetMySwitchingPlans()
+    {
+      List<SwitchingPlanModel> l = new List<SwitchingPlanModel>();
+      foreach (var item in _context.SwitchingPlans)
+      {
+        if (item.CreatedBy == "admin")
+        {
+          l.Add(item);
+        }
+
+      }
+      return l;
+    }
+
+    [HttpGet]
     [Route("GetSwitchingPlan")]
     public async Task<ActionResult<SwitchingPlanModel>> GetSwitchingPlan(long id)
     {

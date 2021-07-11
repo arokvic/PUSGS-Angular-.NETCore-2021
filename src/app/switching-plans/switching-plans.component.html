@@ -6,22 +6,24 @@
 
 <div class="container">
       <nav class ="navbar">
-        <input class="form-control" type="text" name="phone" [(ngModel)]="phone" (ngModelChange)="Search()" placeholder="Enter element name to search">
+        <input class="form-control" type="text" name="phone2" [(ngModel)]="phone" (ngModelChange)="Search()" placeholder="Enter element name to search">
       </nav>
+      <input (change)="fieldsChange($event)" value="angular" type="checkbox"/>
 
       <div>
        
-        <button class="table--modifiers__btn" id="filter-icon">
-          <mat-icon id="icon-absolute" class="icon">filter_alt</mat-icon> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-        </button>
-  
-        <select class="table--modifiers__select" [(ngModel)]="status">
-          <option value=""></option>
-          <option value="Approve">Approve</option>
-          <option value="Deny">Deny</option>
-          <option value="Draft">Draft</option>
-        </select>
-      </div>
+        <div>
+       
+          <button class="table--modifiers__btn" id="filter-icon">
+            <mat-icon id="icon-absolute" class="icon">filter_alt</mat-icon> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          </button>
+    
+          <select class="table--modifiers__select" [(ngModel)]="type">
+            <option value=""></option>
+            <option value="UnplanedWork">UnplanedWork</option>
+            <option value="PlannedWork">PlannedWork</option>
+          </select>
+        </div>
 
       <table id="mojaTabela"  >
         <thead >
@@ -32,7 +34,8 @@
                 <th (click) = "sort('phone')" >Phone&nbsp;<i class="fa fa-sort"></i></th> 
                 <th (click) = "sort('status')" >Status&nbsp;<i class="fa fa-sort"></i></th> 
                 <th (click) = "sort('street')" >Street&nbsp;<i class="fa fa-sort"></i></th> 
-                
+                <th (click) = "sort('type')" >Type&nbsp;<i class="fa fa-sort"></i></th> 
+
           </tr>
       </thead>
      <!-- <tbody>
@@ -47,12 +50,14 @@
       </tbody>-->
 
       <tbody>
-        <tr *ngFor="let switchingPlan of switchingPlans | orderBy : key : reverse | tableFilter: status| paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+        <tr *ngFor="let switchingPlan of switchingPlans | orderBy : key : reverse | tableFilter: type| paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
           <td>{{switchingPlan.id.toString()}}</td>
           <td>{{formatDate(switchingPlan.startDate)}}</td>
           <td>{{switchingPlan.phone}}</td>
           <td>{{switchingPlan.status}}</td>
           <td>{{switchingPlan.street}}</td>
+          <td>{{switchingPlan.type}}</td>
+
           <td><button [(ngModel)]="switchingPlan.id" ngDefaultControl class (click)="openDocument(switchingPlan.id)">Open</button></td>
         </tr>
 

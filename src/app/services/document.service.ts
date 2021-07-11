@@ -27,6 +27,10 @@ export class DocumentService {
     return this.http.get<SwitchingPlan[]>("https://localhost:44364/api/Document/GetSwitchingPlans"); 
   }
 
+  getMySwitchingPlans(): Observable<SwitchingPlan[]>{
+    return this.http.get<SwitchingPlan[]>("https://localhost:44364/api/Document/GetMySwitchingPlans"); 
+  }
+
   saveInstruction(instruction: Instruction) {
     return this.http.post<Instruction>("https://localhost:44364/api/Document/SaveInstruction", instruction);
   }

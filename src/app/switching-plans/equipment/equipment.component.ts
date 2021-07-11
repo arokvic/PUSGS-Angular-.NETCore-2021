@@ -85,7 +85,7 @@ export class EquipmentComponent implements OnInit {
       this.swpService.sendMessage(0);
 
       console.log("saljem zahtev za update")
-      this.router.navigate(['/switching-plans']);
+      this.router.navigate(['/dashboard']);
     }
 }
 
