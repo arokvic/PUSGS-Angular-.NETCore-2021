@@ -1,0 +1,11 @@
+.form-container{
+    margin-left: 10%;
+    background-color: lightgray;
+    width: 100%;
+    font-size: 8px;
+}
+
+.title{
+    color:#0b2833;
+    font-size: 18px;
+}

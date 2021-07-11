@@ -12,7 +12,7 @@
   
       <div class="picture">
         <div class="col align-self-end">
-          <img  width="300" height="400" [src]="imagePath(image)">
+          <img  width="100" height="100" [src]="imagePath(image)">
           <div class="col-md-12">
             <span class="upload" *ngIf="progress > 0">
               {{progress}}%
@@ -27,7 +27,7 @@
   
     
     <div class="buttonC">
-        <button (click)="save()" style="margin-left: 2%;" class="btn btn-primary button">Next</button>
+        <button (click)="save()" style="margin-left: 2%;" class="btn btn-secondary button">Next</button>
     </div>
     </mat-card>
   </ng-container>

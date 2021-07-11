@@ -2,7 +2,9 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 40%;
+    height: 10%;
     border-radius: 5px;
+    margin-top: -40px;
   }
   
   .card:hover {
@@ -16,3 +18,12 @@
   .container {
     padding: 2px 16px;
   }
+
+  .form-container{
+    background-color: lightgray;
+    margin-left: 70px;
+    width: 710px;
+    margin-top: -20px;
+  }
+
+  
