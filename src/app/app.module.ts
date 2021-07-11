@@ -91,8 +91,7 @@ import { CreateElementComponent } from './create-element/create-element.componen
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2OrderModule } from 'ng2-order-pipe';
-import { PieChartComponent } from './pie-chart/piechart';
-import { ChartsModule } from 'ng2-charts';
+
 
 export function getToken() {
   return localStorage.getItem("jwt");
@@ -158,11 +157,10 @@ export function getToken() {
     EquipmentComponent,
     ElementsPageComponent,
     CreateElementComponent,
-    PieChartComponent
+    
   ],
   imports: [
     BrowserModule,
-    ChartsModule,
     NgbModule,
     MatGridListModule,
     MatTableModule,
