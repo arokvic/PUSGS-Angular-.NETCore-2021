@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     margin-top: 40px;
-    margin-left: 20px;
+    margin-left: 15%;
     position: absolute;
 }
 
@@ -19,43 +19,51 @@
 .switchingPlans{
     height: 100px;
     position: absolute;
-    top: 150px;
-    left: 550px;
+    top: 160px;
+    left:50px;
     width: 240px;
-    border: 3px solid #216ead;
+    border: 3px solid #45a29e;
     text-align: center;
-    background-color:antiquewhite ;
+    background-color:#0b0c103d ;
 }
 
 .safety-documents{
     height: 100px;
     position: absolute;
-    top: 150px;
-    left: 850px;
+    top: 50px;
+    left: 300px;
     width: 240px;
-    border: 3px solid #216ead;
+    border: 3px solid #45a29e;
     text-align: center;
-    background-color:antiquewhite ;
+    background-color:#0b0c103d ;
 
 }.incidents{
     height: 100px;
     position: absolute;
-    top: 300px;
-    left: 550px;
+    top: 50px;
+    left: 50px;
     width: 240px;
-    border: 3px solid #216ead;
+    border: 3px solid #45a29e;
     text-align: center;
-    background-color:antiquewhite ;
+    background-color:#0b0c103d ;
 
 }
 .work-requests{
     height: 100px;
     position: absolute;
-    top: 300px;
-    left: 850px;
+    top: 160px;
+    left: 300px;
     width: 240px;
-    border: 3px solid #216ead;
+    border: 3px solid #45a29e;
     text-align: center;
-    background-color:antiquewhite ;
+    background-color:#0b0c103d ;
 
+}
+
+a{
+    color: #66fcf1;
+}
+
+.developer_board{
+    color:#66fcf1;
 }
