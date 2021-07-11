@@ -64,6 +64,17 @@ namespace PUSGS2021.Controllers
 
       };
 
+      NotificationsModel notification = new NotificationsModel()
+      {
+        Type = "Success",
+        Text = "SafetyDocument created",
+        Status = "Unread",
+        TimeStamp = DateTime.Now.ToString(),
+        User = _context.Users.FirstOrDefault(u => u.Username == safeDoc.CreatedBy),
+        Visible = true
+      };
+
+      _context.Notifications.Add(notification);
 
 
 

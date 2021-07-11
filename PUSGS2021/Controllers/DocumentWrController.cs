@@ -80,6 +80,18 @@ namespace PUSGS2021.Controllers
           workingP.ImageData = workRequest.ImageData;
           workingP.Equipment = workRequest.Equipment;
 
+          NotificationsModel notification = new NotificationsModel()
+          {
+            Type = "Success",
+            Text = "Work Request created",
+            Status = "Unread",
+            TimeStamp = DateTime.Now.ToString(),
+            User = _context.Users.FirstOrDefault(u => u.Username == workRequest.CreatedBy),
+            Visible = true
+          };
+
+          _context.Notifications.Add(notification);
+
           wrPlan = workingP;
           _context.WorkRequests.Add(wrPlan);
           await _context.SaveChangesAsync();

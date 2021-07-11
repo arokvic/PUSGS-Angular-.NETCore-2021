@@ -5,15 +5,34 @@
 <button (click)="new()">New</button>
 
 <div class="container">
+      <nav class ="navbar">
+        <input class="form-control" type="text" name="phone" [(ngModel)]="phone" (ngModelChange)="Search()" placeholder="Enter element name to search">
+      </nav>
+
+      <div>
+       
+        <button class="table--modifiers__btn" id="filter-icon">
+          <mat-icon id="icon-absolute" class="icon">filter_alt</mat-icon> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+        </button>
   
-      <table class="table table-dark">
+        <select class="table--modifiers__select" [(ngModel)]="status">
+          <option value=""></option>
+          <option value="Approve">Approve</option>
+          <option value="Deny">Deny</option>
+          <option value="Draft">Draft</option>
+        </select>
+      </div>
+
+      <table class="table table-dark" >
         <thead class="thead-dark">
           <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Start Date</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Status</th>
-              <th scope="col">Address</th>
+              
+                <th (click) = "sort('switchingPlan.id')" >Id&nbsp;<i class="fa fa-sort"></i></th>
+                <th (click) = "sort('startDate')" >Start date&nbsp;<i class="fa fa-sort"></i></th>             
+                <th (click) = "sort('phone')" >Phone&nbsp;<i class="fa fa-sort"></i></th> 
+                <th (click) = "sort('status')" >Status&nbsp;<i class="fa fa-sort"></i></th> 
+                <th (click) = "sort('street')" >Street&nbsp;<i class="fa fa-sort"></i></th> 
+                
           </tr>
       </thead>
      <!-- <tbody>
@@ -28,7 +47,7 @@
       </tbody>-->
 
       <tbody>
-        <tr *ngFor="let switchingPlan of switchingPlans | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
+        <tr *ngFor="let switchingPlan of switchingPlans | orderBy : key : reverse | tableFilter: status| paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
           <td>{{switchingPlan.id.toString()}}</td>
           <td>{{formatDate(switchingPlan.startDate)}}</td>
           <td>{{switchingPlan.phone}}</td>
@@ -36,6 +55,7 @@
           <td>{{switchingPlan.street}}</td>
           <td><button [(ngModel)]="switchingPlan.id" ngDefaultControl class (click)="openDocument(switchingPlan.id)">Open</button></td>
         </tr>
+
       </tbody>
       </table>
       <pagination-controls (pageChange)="cp = $event"></pagination-controls>

@@ -17,6 +17,7 @@ export class Incidents2Component implements OnInit {
 
 
   cause : any;
+  
   allIncidents : Incident [] = [];
   allIncidents2 : Incident [] = [];
   sortedData: Incident[] = [];

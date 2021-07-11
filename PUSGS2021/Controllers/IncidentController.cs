@@ -89,7 +89,15 @@ namespace PUSGS2021.Controllers
         IncidentInfo i = new IncidentInfo();
         i = inc;*/
 
-
+      NotificationsModel notification = new NotificationsModel()
+      {
+        Type = "Success",
+        Text = "Incident created",
+        Status = "Unread",
+        TimeStamp = DateTime.Now.ToString(),
+        User = _context.Users.FirstOrDefault(u => u.Username == "Unknown"),
+        Visible = true
+      };
 
 
       _context.Incidentss.Add(inc2);

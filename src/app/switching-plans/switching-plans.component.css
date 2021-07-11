@@ -3,3 +3,14 @@
  
     margin : 5px;
 }
+
+table{
+    overflow-y:scroll;
+    overflow-x:scroll;
+    height:100%;
+    display:block;
+ }
+
+ .mat-sort-header-container {
+    align-items: center;
+  }

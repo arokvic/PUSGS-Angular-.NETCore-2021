@@ -10,15 +10,22 @@ import { SwpInteractionService } from '../services/swp-interaction.service';
   styleUrls: ['./switching-plans.component.css']
 })
 export class SwitchingPlansComponent implements OnInit {
+  phone : any;
+  status!: string;
 
   public page = 10;
   public pageSize = 10;
-
+  sortedData: SwitchingPlan[] = [];
+  allswitchingPlans : SwitchingPlan [] = [];
+  allswitchingPlans2 : SwitchingPlan [] = [];
   cp: number = 1;
 
   switchingPlans: SwitchingPlan[] = [];
 
-  constructor(private router:Router, private documentService:DocumentService, private swpService:SwpInteractionService) { }
+  constructor(private router:Router, private documentService:DocumentService, private swpService:SwpInteractionService) { 
+    this.sortedData = this.switchingPlans.slice();
+
+  }
 
   ngOnInit(): void {
     this.documentService.getSwitchingPlans()
@@ -27,6 +34,7 @@ export class SwitchingPlansComponent implements OnInit {
         this.switchingPlans = data;
       }
     )
+
 
     this.swpService.currentActiveId$
       .subscribe(
@@ -84,6 +92,49 @@ export class SwitchingPlansComponent implements OnInit {
     console.log(retVal.toLocaleString().split(',')[0])
 
     return retVal.toLocaleString().split(',')[0];
+  }
+
+  fieldsChange(values:any):void {
+
+    
+    this.allswitchingPlans2 = this.allswitchingPlans;
+    if (values.currentTarget.checked){
+      this.allswitchingPlans = [];
+      this.documentService.getSwitchingPlans().subscribe(data => { this.allswitchingPlans = data;})
+      
+      
+    }
+    else{
+      this.documentService.getSwitchingPlans()
+      .subscribe(
+        data=>{
+          this.allswitchingPlans = data;
+        })
+      
+    }
+  }
+  
+
+ 
+  Search(){
+    if(this.phone == ""){
+      this.ngOnInit();
+    }else{
+      this.allswitchingPlans = this.allswitchingPlans.filter(res => {
+        return res.phone.toLocaleLowerCase().match(this.phone.toLocaleLowerCase());
+      })
+    }
+    console.log(this.status);
+  }
+
+
+
+
+  key  : string= 'id';
+  reverse : boolean = false;
+  sort (key : any){
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
 

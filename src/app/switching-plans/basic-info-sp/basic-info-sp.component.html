@@ -20,6 +20,13 @@
       <mat-form-field>
         <mat-label>Work request</mat-label>
         <input matInput placeholder="Ex. 12" formControlName="workRequest" />
+        <select class='select-option' formControlName="workRequest" 
+        #mySelect
+        >
+       <option class='option' 
+       *ngFor='let option of allWr' 
+       [value]="option.id">{{option.id}}</option>
+        </select>
       </mat-form-field>
       <!-- /Work Request -->
   
@@ -36,6 +43,13 @@
       <mat-form-field>
         <mat-label>Incident</mat-label>
         <input matInput placeholder="Ex. Acme" formControlName="incident" />
+        <select class='select-option' formControlName="incident" 
+        #mySelect
+        >
+       <option class='option' 
+       *ngFor='let option of allInc' 
+       [value]="option.id">{{option.id}}</option>
+        </select>
       </mat-form-field>
       <!-- /Incident -->
   
@@ -43,6 +57,7 @@
       <mat-form-field>
         <mat-label>Street</mat-label>
         <input matInput placeholder="Bul Cara Lazara" formControlName="street" />
+        
         <mat-hint *ngIf="streetF">Required</mat-hint>
       </mat-form-field>
       <!-- /Street -->
@@ -74,6 +89,13 @@
       <mat-form-field>
         <mat-label>Crew</mat-label>
         <input matInput placeholder="Ex. Acme" formControlName="crew" />
+        <select class='select-option' formControlName="crew" 
+        #mySelect
+        >
+       <option class='option' 
+       *ngFor='let option of allCrew' 
+       [value]="option.name">{{option.name}}</option>
+        </select>
       </mat-form-field>
       <!-- /Crew -->
   

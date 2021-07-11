@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Crew } from 'src/app/entities/crew';
+import { Incident } from 'src/app/entities/incident';
+import { Street } from 'src/app/entities/street';
+import { WorkRequest } from 'src/app/entities/workRequest';
+import { CrewService } from 'src/app/services/crew.service';
+import { DocumentWrService } from 'src/app/services/document-wr.service';
+import { Inc1Service } from 'src/app/services/inc1.service';
 import { SwpInteractionService } from 'src/app/services/swp-interaction.service';
 @Component({
   selector: 'app-basic-info-sp',
@@ -20,12 +27,33 @@ export class BasicInfoSpComponent implements OnInit {
   companyF:boolean = false;
   phoneF:boolean = false;
   badDate:boolean = false;
+  allWr:WorkRequest[] = [];
+  allInc:Incident[] = [];
+  allCrew:Crew[] = [];
 
-
-  constructor(private rootFormGroup: FormGroupDirective, private router:Router, private swpService:SwpInteractionService ) { }
+  constructor(private rootFormGroup: FormGroupDirective, private router:Router, private swpService:SwpInteractionService,private doc:DocumentWrService,private inc:Inc1Service,private crew:CrewService) { }
 
   ngOnInit(): void {
     this.form = this.rootFormGroup.control.get('basicInfo') as FormGroup
+
+    this.doc.getWorkRequests().subscribe(data=> {
+      this.allWr = data;
+      console.log(this.allWr);
+
+
+    })
+    this.inc.getIncidents().subscribe(data=> {
+      this.allInc = data;
+      console.log(this.allInc);
+
+
+    })
+    this.crew.loadlCrews().subscribe(data=> {
+      this.allCrew = data;
+      console.log(this.allCrew);
+
+
+    })
   }
 
   
