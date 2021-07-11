@@ -43,7 +43,7 @@
             </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let incident of allIncidents | slice: (page-1) * pageSize : page * pageSize | orderBy : key : reverse">
+        <tr *ngFor="let incident of allIncidents  | orderBy : key : reverse | paginate: {itemsPerPage:3, currentPage: cp}" class="listMargin">
             <td>{{incident.id.toString()}}</td>
             <td>{{incident.typeOfInc}}</td>
             <td>{{incident.priority}}</td>
@@ -53,8 +53,8 @@
             <td>{{incident.ata}}</td>
             <td>{{incident.outageTime}}</td>
             <td>{{incident.etr}}</td>
-            <td>{{incident.affectedCustomers.toString()}}</td>
-            <td>{{incident.calls.toString()}}</td>
+            <td>{{incident.affectedCustomers}}</td>
+            <td>{{incident.calls}}</td>
             <td>{{incident.voltageLevel}}</td>
             <td>{{incident.scheduledTime}}</td>
 
@@ -75,16 +75,16 @@
       
           </tr> 
       </tbody>
-      
+      <pagination-controls (pageChange)="cp = $event"></pagination-controls>
       </table>
     
-      <br> <br>
+    <!--  <br> <br>
       <div class="container__pagination">
         <ngb-pagination 
           [(page)]="page"
           [pageSize]="pageSize"
           [collectionSize]="allIncidents.length"></ngb-pagination>
-        </div>
+        </div>-->
     </div>
     
   

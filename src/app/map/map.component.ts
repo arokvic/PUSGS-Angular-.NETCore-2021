@@ -90,11 +90,13 @@ constructor(private  inc : Inc1Service) {
 }
 
 ngOnInit(): void {
- //this.inc.getIncidents().subscribe(data => {this.allIncidents = data;
-  //console.log(this.allIncidents);
-//});
+ this.inc.getIncidents().subscribe(data => {this.allIncidents = data;
+  console.log(this.allIncidents);
+});
 
-var markers = [];
+
+
+var markers : any[] = [];
 const map = L.map('map').setView([ 45.267136, 19.833549], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -105,11 +107,13 @@ this.inc.getIncidentCoordinates().subscribe(data=>{
   this.allCoordinates = data;
   console.log(this.allCoordinates);
   console.log(this.allCoordinates.length);
-
+  
   for (var i = 0; i <= (this.allCoordinates.length - 2) ; i = i+2) {
 
     markers[i] = L.marker([this.allCoordinates[i], this.allCoordinates[i+1]], this.icon).addTo(map);
-   // markers[i].bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    markers[i].bindPopup("Coordinates" + this.allCoordinates[i] + " " + this.allCoordinates[i+1] +
+    "<br>Incident : " + this.allIncidents[i/2].id + "<br>Crew : " + this.allIncidents[i/2].crewId).openPopup();
+   
    }
   ;})
 

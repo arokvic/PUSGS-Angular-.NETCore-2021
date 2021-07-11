@@ -20,8 +20,9 @@ export class Incidents2Component implements OnInit {
   allIncidents : Incident [] = [];
   allIncidents2 : Incident [] = [];
   sortedData: Incident[] = [];
- public page = 10
- public pageSize = 10;
+ public page = 3;
+ public pageSize = 3;
+ cp: number = 1;
   constructor(private router:Router, private  inc : Inc1Service, private wrService:WrInteractionService) {
 
     this.sortedData = this.allIncidents.slice();
@@ -45,17 +46,7 @@ export class Incidents2Component implements OnInit {
       }
     );
 
-    (async () => {
-      console.log("Primljena");
-      await this.delay(1000);
-      console.log("Izvrsena")
-      this.inc.getIncidents()
-      .subscribe(
-        data => {
-          this.allIncidents = data;
-        }
-      )
-    })();
+   
 
 
   }
@@ -103,21 +94,26 @@ export class Incidents2Component implements OnInit {
 
  
   Search(){
-    console.log("asdaddadasa");
+   
     console.log(this.cause);
     if (this.cause === ''){
-      console.log ("prazno");
+      
       this.ngOnInit();
     } 
     else {
-      console.log ("nije prazno");
+      console.log ("nije prazno " + this.cause);
       this.allIncidents = this.allIncidents.filter(res => {
+       console.log (res.cause.toLocaleLowerCase().match(this.cause.toLocaleLowerCase()));
         return res.cause.toLocaleLowerCase().match(this.cause.toLocaleLowerCase());
         
       });
       console.log(this.allIncidents);
     }
   }
+
+
+
+
   key  : string= 'id';
   reverse : boolean = false;
   sort (key : any){

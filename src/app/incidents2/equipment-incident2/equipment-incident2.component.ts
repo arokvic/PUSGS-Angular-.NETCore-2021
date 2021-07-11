@@ -20,7 +20,7 @@ export class EquipmentIncident2Component implements OnInit {
 
   elementsForm!:FormGroup;
   allEelements:Element[] = [];
-  hlp! : string;
+  hlp : string = "";
   constructor(private fb: FormBuilder,
     private wrservice: WrInteractionService,private rootFormGroup: FormGroupDirective,
    private router:Router
@@ -53,10 +53,10 @@ export class EquipmentIncident2Component implements OnInit {
       this.allEelements = data
       );
       console.log(this.allEelements.length);
-      let s = new Element("asd", 123, "name1" , "adresa" , "123" , true);
-      let ss = new Element("qqq", 444, "name2" , "adres222a" , "444" , false);
-      this.allEelements.push(s);
-      this.allEelements.push(ss);
+     // let s = new Element("asd", 123, "name1" , "adresa" , "123" , true);
+     // let ss = new Element("qqq", 444, "name2" , "adres222a" , "444" , false);
+    //  this.allEelements.push(s);
+     // this.allEelements.push(ss);
       
 
   }
@@ -69,7 +69,7 @@ export class EquipmentIncident2Component implements OnInit {
       ,this.basicInfo.controls.calls.value,
       this.basicInfo.controls.voltageLevel.value,this.basicInfo.controls.scheduledTime.value,this.basicInfo.controls.assignedTo.value,this.resolution.controls.cause.value
       ,this.resolution.controls.subcause.value,
-      this.resolution.controls.material.value,this.resolution.controls.constructionType.value,"+",this.calls.controls.comment.value,this.calls.controls.hazard.value,this.calls.controls.reason.value,
+      this.resolution.controls.material.value,this.resolution.controls.constructionType.value,this.calls.controls.consumerId.value,this.calls.controls.comment.value,this.calls.controls.hazard.value,this.calls.controls.reason.value,
       "deviceId",this.equipment.controls.equipmentId.value,this.multimedia.controls.imageData.value,this.crew.controls.crewId.value);
   
 
@@ -89,21 +89,14 @@ export class EquipmentIncident2Component implements OnInit {
 
   Add(id : string){
     
-    this.hlp = this.hlp + " " + id;
-    console.log(this.hlp);
-    this.elementsForm.controls['equipmentId'].setValue(this.hlp);
+    //this.hlp = this.hlp + " " + id;
+   // console.log(this.hlp);
+    this.elementsForm.controls['equipmentId'].setValue(id);
 
 
 
   }
 
-  Remove(id : string){
-    console.log(id);
-    this.hlp = this.hlp.replace(' ' + id,'');
-    console.log("id" +this.hlp + "id");
-    this.elementsForm.controls['equipmentId'].setValue(this.hlp);
-
-
-  }
+  
 
 }
