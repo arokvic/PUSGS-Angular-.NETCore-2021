@@ -4,12 +4,7 @@
    
     <form class="register-form" #registerForm="ngForm" (ngSubmit)="register(profileForm)" [formGroup]="profileForm">
         <table id="registerTable">
-            <tr>
-                <td id="registerLabel">
-                    
-                </td>
-            </tr>
-            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+          
             <tr id="usernameInput">
                 <div>
                 <td> <input type="text" placeholder="Username" id="username-input"  name="username" required class="form-control" formControlName="username" minlength="4" [ngClass]="{'is-invalid' : profileForm.get('username').touched && profileForm.get('username').invalid}" ></td>
