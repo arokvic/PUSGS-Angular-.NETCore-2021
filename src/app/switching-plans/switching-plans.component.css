@@ -14,3 +14,22 @@ table{
  .mat-sort-header-container {
     align-items: center;
   }
+
+  .navbar{
+      margin-top: -40px;
+  }
+
+  #btn{
+      margin-left: 4%;
+  }
+  .icon{
+      width: 0px;
+  }
+
+  
+  #mojaTabela{
+    background-color: #00000067;
+    color: #c5c6c7
+  }
+
+ 

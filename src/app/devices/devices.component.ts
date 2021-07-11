@@ -29,6 +29,8 @@ export class DevicesComponent implements OnInit {
   public pageUsed = 10;
   public pageSize = 3;
   public pageSizeUsed = 3;
+  cp: number = 1;
+  cpp: number = 1;
   
   constructor(private router: Router, private _sharedService: SharedService, private elementsService: ElementsService) { 
     this.allElementsList = new Array<Array<Element>>();

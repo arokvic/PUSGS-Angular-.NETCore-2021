@@ -1,0 +1,12 @@
+.boja{
+    background-color: #1f2833;
+}
+
+#str{
+    color:white;
+    background-color: lightgreen;
+}
+
+.table--modifiers__btn{
+    position: absolute;
+}

@@ -4,12 +4,12 @@
   
   <div  class="row">
     <div class="form-group col-md-4">
-      <label for="inputImage"  style="width: 100%;">Image</label>
+      <label for="inputImage"  style="width: 100%; color:lightgray">Image</label>
       <input type="file" (change)="uploadFile(file.files)" formControlName="file" #file  accept="image/*"  name="imagedata" class="form-control"  (change)="handleFileInput($event)" required>
     </div>
     <div class="col-md-8">
       <div class="col align-self-end">
-        <img  width="300" height="400" [src]="imageUrl">
+        <img  width="200" height="200" [src]="imageUrl">
         <div class="col-md-12">
           <span class="upload" *ngIf="progress > 0">
             {{progress}}%

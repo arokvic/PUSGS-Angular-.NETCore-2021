@@ -5,10 +5,14 @@
     grid-template-rows: 5% 20% 20% 20% 20% 10%;
     /*background-color: darkgreen;
     */
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(211, 211, 211, 0);
 }
 
 .drugiDiv{
-    background-color: darkmagenta;
+    /*background-color: darkmagenta;*/
+    
 }
 .button{
     display: flex;
@@ -28,16 +32,42 @@
 }
 .history-table {
     margin-top: 40px;
-    background-color: coral;
+   /* background-color: coral;*/
+    margin-top: 10px;
+    margin-left: 80px;
 }
 .page{
     display: grid;
     grid-template-columns: 50% 50%;
     height: 80%;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
 }
 mat-card {
     margin-top: 30px;
     background-color:  #303030;
     box-shadow: none;
+}
+mat-form-field{
+    margin-top: 10%;
+    margin-left: 50%;
+}
+
+.table--modifiers{
+    margin-top: 10%;
+    margin-left: 30%;
+}
+
+#tabelica{
+    background-color: #0b0c104f;
+    color: lightgray;
+    width: 700px;
+}
+
+.title{
+    color:lightgray;
+    font-size: 12px;
+}
+
+placeholder{
+    color:red;
 }
