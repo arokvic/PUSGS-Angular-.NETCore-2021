@@ -2,12 +2,8 @@
 <div class = "profileDiv">
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
         <table id="profileTable">
-            <tr>
-                <td id="profileLabel">
-                    Fill out the following form to change profile
-                </td>
-            </tr>
-            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+          
+          
             <tr id="usernameInput">
                 <td> <input type="text" placeholder="Username" id="username-input" class ="form-control"formControlName = 'username' readonly ></td>
             </tr>            
@@ -38,15 +34,14 @@
                         <span *ngIf="userTypeR" class="error">UserType required</span>
                     </td>
                  </tr>
-                 <tr>
-                     <td id="address-input">
-                         <label for="inputImage" style="width: 100%;">Image</label>
-                        <input type="file" #file (change)="uploadFile(file.files)" name="image" class="form-control" accept="image/*">
+                 <tr >
+                     <td id="image-input">
+                        <input type="file" #file (change)="uploadFile(file.files)" name="image" class="form-control-slika" accept="image/*">
                     </td>
                  </tr>
-                 <tr>
+                 <tr id="idUpload">
                      <td>
-                        <img  width="300" height="400" [src]="imagePath(image)">
+                        <img class="slicica"  height="100" width="100" [src]="imagePath(image)">
                        
                           <span class="upload" *ngIf="progress > 0">
                             {{progress}}%

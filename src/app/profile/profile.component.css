@@ -4,6 +4,7 @@
 
 .profileDiv{
     background-color: #0b0c1063;
+    overflow: hidden;
     position: relative;
     height: 100%;
     width: 30%;
@@ -13,11 +14,29 @@
 }
 
 .profile-form{
-    height: 70%;
-    position: relative;
+    height: 85%;
+    position: absolute;
     top: 0%;
-    overflow: auto;
-   
+    overflow: hidden;
+   width: 100%;
+}
+
+
+.form-control{
+    width: 100%;
+    height: 30px;
+}
+
+.form-control-slika{
+    width: 100%;
+    height: 25px;
+}
+#idUpload{
+    position: absolute;
+}
+
+#idSlika{
+    font-size: 0.5vw;
 }
 
 #profileTable
@@ -35,10 +54,10 @@
 
 #username-input
 {
-    font-size: 1.9vw;
+    font-size: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
@@ -48,44 +67,44 @@
     font-size: 1.9vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
     background-color: transparent;
 }
 #email-input{
-    font-size: 1.9vw;
+    font-size: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
     background-color: transparent;
 }
 #name-input{
-    font-size: 1.9vw;
+    font-size: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
     background-color: transparent;
 }
 #address-input{
-    font-size: 1.9vw;
+    font-size: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
     background-color: transparent;
 }
 
-
+/*
 #profileLabel{
     font-family: Arial, Helvetica, sans-serif;
      font-size: 1.5vw;
@@ -98,33 +117,39 @@
      
     
 }
+*/
+
 
 #image-input{
-    font-size: 1.9vw;
+    font-size: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
     background-color: transparent;
 }
 
+.slicica{
+    margin-left: 50px;
+   position: absolute;
+}
 
 #submitBtn{
     background-color: #45a29e;
     color: rgb(238, 238, 238);
     height: 3vw;
     width: 17vw;
-    margin-top: 2%;
+    margin-top: 110px;
     font-size: 1.5vw;
 }
 
 #userType-input{
-    font-size: 1.9vw;
+    font-size: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #c5c6c7;
-    border-width:3px;
+    border-width:1.5px;
     border-style:double;
     border-color: #66fcf1;
     border-radius: 4ex;
