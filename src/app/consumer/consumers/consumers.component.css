@@ -11,6 +11,22 @@
     justify-content: center;
 }
 
+#elementTabela{
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color: #00000067;
+    color: rgb(255, 255, 255);
+}
+
+#newCon{
+    background-color: #c5c6c7;
+}
+
+#PrviRed{
+    background-color: #66fcf23b;
+    color: #c5c6c7;
+}
+
 .listMargin{
  
     margin : 5px;
