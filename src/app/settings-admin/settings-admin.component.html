@@ -2,7 +2,6 @@
 <div class="settings">
     <div class="password-change">
       <p class="title">Change Password </p>
-<br>
     <div class="form">
     <form #passwordForm="ngForm" (ngSubmit)="changePassword(passwordForm)">
         <div>
@@ -24,26 +23,26 @@
     <form [formGroup]="streetForm" (ngSubmit)="onSubmit()">
 
         <label for="street-name">Select street: </label>
-        <select formControlName='streetName' id="inputState" class="form-control">
+        <select formControlName='streetName' id="userType-input" class="form-control">
             <option *ngFor="let opt of streets" [value]="opt.name">
               {{opt.name}}
             </option>
           </select>
       
         <label for="last-name">Priority: </label>
-        <select formControlName='streetPriority' id="inputState" class="form-control">
+        <select formControlName='streetPriority' id="userType-input" class="form-control">
             <option *ngFor="let opt of priorities" [value]="opt">
               {{opt}}
             </option>
           </select>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn3">Save changes</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">Save changes</button>
       
       </form>
 
 </div>
 
 
-<button class="btn btn-lg btn-primary btn-block" style="margin: 5%;" (click)="resetSettings()" id="submitBtn1">Reset to default</button>
+<button class="btn btn-lg btn-primary btn-block" style="margin: 5%;" (click)="resetSettings()" id="submitBtn">Reset to default</button>
 </div>
 
 

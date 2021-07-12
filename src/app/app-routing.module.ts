@@ -358,7 +358,15 @@ const routes: Routes = [
     },
     {
       path: "crew",
-      component: CrewComponent
+      component:AppComponent,
+      canActivate: [AuthGuard],
+       children: [
+        {
+          path: '', // child route path
+          canActivate: [AuthGuard],
+          component: CrewComponent, // child route component that the router renders
+        }
+      ]
     },
     {
 
