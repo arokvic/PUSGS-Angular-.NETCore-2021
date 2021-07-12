@@ -1,8 +1,10 @@
 .form-container{
-    height: 70%;
+    height: 50%;
     justify-content: center;
     display: grid;
     grid-template-rows: 5% 20% 20% 20% 20% 10%;
+    margin-top: 180px;
+    margin-left: -100%;
 }
 
 .button{
@@ -10,6 +12,11 @@
     justify-content: center;
     height: fit-content;
     margin-left: 2%;
+    margin-top: 10%;
+}
+
+table{
+    margin-left: 50%;
 }
 
 .mat-form-field{

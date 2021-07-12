@@ -18,6 +18,7 @@ export class HistoryWrComponent implements OnInit {
 
   public page = 10;
   public pageSize = 3;
+  cp: number = 1;
  
 
   constructor(private documentService: DocumentWrService, private rootFormGroup: FormGroupDirective, private router:Router, private wrService: WrInteractionService) { }

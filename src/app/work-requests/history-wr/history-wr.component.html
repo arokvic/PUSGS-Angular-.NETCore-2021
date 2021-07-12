@@ -1,7 +1,7 @@
 <div class="page">
     <div>
-      <table class="table table-dark">
-        <thead class="thead-dark">
+      <table class="table table-light">
+        <thead class="thead-light">
           <tr>
               <th scope="col">State</th>
               <th></th>
@@ -11,7 +11,7 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let state of historyStates | slice: (page-1) * pageSize : page * pageSize">
+        <tr *ngFor="let state of historyStates | paginate: {itemsPerPage:2, currentPage: cp}">
           <td>{{state.newStatus}}</td>
           <td></td>
           <td>{{state.dateChange}}</td>
@@ -22,12 +22,8 @@
       </table>
     
       <br> <br>
-    <div class="container__pagination">
-      <ngb-pagination 
-        [(page)]="page"
-        [pageSize]="pageSize"
-        [collectionSize]="historyStates.length"></ngb-pagination>
-      </div>
+      <pagination-controls  (pageChange)="cp = $event"></pagination-controls>
+
     </div>
     
     <div>
