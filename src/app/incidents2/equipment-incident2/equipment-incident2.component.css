@@ -1,3 +1,23 @@
+.icon {
+    background: url('/src/assets/icons8-add-50.png');
+   color : transparent;
+    height : 53px;
+    width: 53px;
+   
+    border-radius: 40px;
+    position: relative;
+}
+
+.icon2 {
+    background: url('/src/assets/rem2.png');
+   
+    color : transparent;
+    height : 30px;
+    width:  30px;
+   
+   
+    position: relative;
+}
 
 
 html body {

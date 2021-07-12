@@ -84,6 +84,20 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },
+    {
+      label: 'Crew',
+      icon: 'group',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Map',
+      icon: 'place',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
   
     {
       label: 'Logout',
@@ -163,10 +177,24 @@ export class AppComponent{
       showOnTablet: true,
       showOnDesktop: true
     },
+    {
+      label: 'Crew',
+      icon: 'group',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
   
     {
       label: 'Requests',
       icon: 'question_answer',
+      showOnMobile: true,
+      showOnTablet: true,
+      showOnDesktop: true
+    },
+    {
+      label: 'Map',
+      icon: 'place',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true
@@ -349,6 +377,14 @@ clickMenuItem2(menuItemsLogged : MenuItem){
   {
     this.router.navigate(['/consumers']);
   }
+  if(menuItemsLogged.label ==='Map')
+  {
+    this.router.navigate(['/map']);
+  }
+  if(menuItemsLogged.label ==='Crew')
+  {
+    this.router.navigate(['/crew']);
+  }
 
   if(menuItemsLogged.label ==='Logout')
   {
@@ -417,6 +453,14 @@ clickMenuItem3(menuItemsLogged : MenuItem){
   if(menuItemsLogged.label ==='Requests')
   {
     this.router.navigate(['/requests']);
+  }
+  if(menuItemsLogged.label ==='Map')
+  {
+    this.router.navigate(['/map']);
+  }
+  if(menuItemsLogged.label ==='Crew')
+  {
+    this.router.navigate(['/crew']);
   }
 
   if(menuItemsLogged.label ==='Logout')

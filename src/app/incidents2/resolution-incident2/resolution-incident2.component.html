@@ -34,8 +34,10 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Select Material" formControlName="material" required>
-          <mat-option value="Plastic">Planned Work</mat-option>
-          <mat-option value="Metal">Unplanned Work</mat-option>
+          <mat-option value="Plastic">Plastic</mat-option>
+          <mat-option value="Metal">Metal</mat-option>
+          <mat-option value="Glass">Glass</mat-option>
+
           
       </mat-select>
       <mat-hint class="text-danger"  *ngIf="materialF">Required</mat-hint>

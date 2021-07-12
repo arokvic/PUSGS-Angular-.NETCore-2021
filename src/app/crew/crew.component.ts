@@ -73,7 +73,7 @@ export class CrewComponent implements OnInit {
     this.crew.name = this.crewForm.controls["name"].value;
     console.log(this.crew);
     this.crewService.saveCrew(this.crew);
-   // location.reload();
+    location.reload();
     
 
   }
@@ -82,6 +82,9 @@ export class CrewComponent implements OnInit {
     console.log(username);
     event.target.disabled = true;
     this.crew.members = this.crew.members.concat(username + " ");
+    setTimeout(() => {
+      console.log('hello');
+  }, 1000);
     console.log(this.crew.members);
     
 

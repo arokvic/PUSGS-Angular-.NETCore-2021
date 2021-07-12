@@ -16,7 +16,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 export class Incidents2Component implements OnInit {
 
 
-  cause : any;
+  hazard : any;
   
   allIncidents : Incident [] = [];
   allIncidents2 : Incident [] = [];
@@ -96,19 +96,19 @@ export class Incidents2Component implements OnInit {
  
   Search(){
    
-    console.log(this.cause);
-    if (this.cause === ''){
+    console.log(this.hazard);
+    if (this.hazard == ""){
       
       this.ngOnInit();
     } 
     else {
-      console.log ("nije prazno " + this.cause);
+      
       this.allIncidents = this.allIncidents.filter(res => {
-       console.log (res.cause.toLocaleLowerCase().match(this.cause.toLocaleLowerCase()));
-        return res.cause.toLocaleLowerCase().match(this.cause.toLocaleLowerCase());
+       console.log (res.hazard.toLocaleLowerCase().match(this.hazard.toLocaleLowerCase()));
+       return res.hazard.toLocaleLowerCase().match(this.hazard.toLocaleLowerCase());
         
-      });
-      console.log(this.allIncidents);
+      })
+      //console.log(this.allIncidents);
     }
   }
 
